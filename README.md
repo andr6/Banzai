@@ -1,3 +1,10 @@
-# Banzai Project
+# Banzai - AppSec Pipeline Project
 
-Test readme
+# install dependencies
+pip install defectdojo_api
+
+# run environment
+sudo docker-compose up
+
+# local access to DefectDojo
+localhost:8000
