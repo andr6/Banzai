@@ -1,13 +1,28 @@
 # Banzai - AppSec Pipeline Project
 
-# install dependencies
+
+### Setup
+
+__install dependencies__
 pip install defectdojo_api
 
-# run environment
+__run environment__
 sudo docker-compose up
 
-# local access to DefectDojo
+__local access to DefectDojo__
 localhost:8000
+
+### Data Persistence
+
+See docker-compose.yml for content that persists between local/containers.
+
+
+__StackStorm Packs__
+local: ./StackStorm/packs.dev
+container: ./opt/stackstorm/packs.dev
+* Banzai-specific rules, actions, workflows are defined in packs.dev.
+
+NOTE: See docker-compose.yml for 
 
 ### TO-DO LIST ###
 
