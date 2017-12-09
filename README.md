@@ -1,4 +1,4 @@
-# Banzai - AppSec Pipeline Project
+Banzai - AppSec Pipeline Project
 ====================================
 
 ### To-Do List
