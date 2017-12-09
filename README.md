@@ -39,7 +39,7 @@ __StackStorm Packs__
 
 ## Issues ##
 
-### StackStorm Container ###
+### StackStorm Container: apt-get install ###
 
 A ToolChain install script `toolchain_install.sh` from `StackStorm/runtime/entrypoint.d` is run upon container startup.
 The script installs all security tools for use within the AppSec Pipeline, using the 'apt-get install' command.
@@ -47,9 +47,15 @@ The script installs all security tools for use within the AppSec Pipeline, using
 If you have the NetworkManager daemon installed on your machine, go into the `NetworkManager.conf` file and comment out `dns=dnsmasq` line.
 The path to Networkmanager.conf should be `/etc/NetworkManager/NetworkManager.conf`
 
+OS tested with issues:
+* Ubuntu 16.04
+
+OS tested without issues:
+* MacOS High Sierra
+
 ### Port Clashes ###
 
-If a port number defined in the docker-compose.yaml is already being used by your host machine, docker-compose will fail to start up.
-You must either stop the service on your local machine that is using the port, or change the port number in the docker-compose.yaml config file.
+If a port number defined in the docker-compose.yaml is already being used by a running application on your host machine, docker-compose will fail to start up.
+You must either stop the application that is using the port, or change the port number in the docker-compose.yaml config file to an unused port number.
 
 For more instructions on editing Docker Compose configuration files, please see: `https://docs.docker.com/compose/overview/`
