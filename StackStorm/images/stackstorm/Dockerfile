@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:latest
 
 # let Upstart know it's in a container
 ENV container docker
@@ -20,7 +20,8 @@ RUN DEBIAN_FRONTEND=noninteractive \
       crudini \
       uuid-runtime \
       apache2-utils \
-      bash-completion
+      bash-completion \
+      nmap
 
 # enable bash-completion
 RUN dpkg-divert /etc/bash.bashrc && \

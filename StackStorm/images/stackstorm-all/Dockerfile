@@ -1,4 +1,5 @@
-FROM ubuntu:14.04
+#FROM ubuntu:14.04
+FROM ubuntu:latest
 
 COPY mongod.init /etc/init.d/mongod
 

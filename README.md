@@ -28,3 +28,11 @@ NOTE: See docker-compose.yml for
 
 * Configure docker-compose.yml to include ToolChain services
 * Script to perform POST request from DD -> SS, when a user creates a new Test from DD.
+
+### STACKSTORM ISSUES ###
+
+A ToolChain install script 'toolchain_install.sh' from StackStorm/runtime/entrypoint.d is run on container startup.
+The script installs all security tools for use within the AppSec Pipeline, using the 'apt-get install' command.
+This script may not work during container startup due to DNS errors.
+
+
