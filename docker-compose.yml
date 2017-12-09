@@ -82,6 +82,7 @@ services:
       - ./StackStorm/runtime/st2.d:/st2-docker/st2.d
       - ./StackStorm/conf/stackstorm.env:/st2-docker/env
       # mount Tool Chain content
+      - ./scan_output:/opt/stackstorm/scan_output
       - ./scripts:/st2-docker/scripts
     dns_search: .
 

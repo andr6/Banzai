@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker run uzyexe/nmap www.google.com -oX - > output.xml
+nmap www.brianl.io -oX - > output.xml

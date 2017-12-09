@@ -16,16 +16,16 @@ NOTE: Explore ToolChain deployment outside of SS container.
 
 ## Setup
 
-__install dependencies__
+install dependencies
 * `pip install defectdojo_api`
 
-__run environment__
+run environment
 * `sudo docker-compose up`
 
-__browser access to DefectDojo__
+browser access to DefectDojo
 * `localhost:8000`
 
-__browser access to StackStorm GUI__
+browser access to StackStorm GUI
 * `localhost`
 
 ## Data Persistence

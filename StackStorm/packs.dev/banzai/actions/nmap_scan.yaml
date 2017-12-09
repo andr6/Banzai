@@ -1,13 +1,10 @@
 ---
-name: "hello"
+name: "nmap"
 runner_type: "local-shell-cmd"
-description: "Says hello with a shell command"
+description: "run nmap port scan"
 entry_point: ""
 parameters:
   cmd:
-    immutable: true
-    default: "echo Hello {{name}}!"
-  name:
-    type: string
-    description: "A human name"
-    default: "human"
+    default: "sudo nmap www.brianl.io -oX /opt/stackstorm/scan_output/nmap_results.xml"
+  timeout:
+    default: 99999
