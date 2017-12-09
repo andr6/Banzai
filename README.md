@@ -1,5 +1,6 @@
-Banzai - AppSec Pipeline
-==========================
+# Banzai - AppSec Pipeline
+
+Project Description:
 
 ## To-Do List
 
@@ -12,24 +13,24 @@ __install dependencies__
 * pip install defectdojo_api
 
 __run environment__
-
 * sudo docker-compose up
 
-__local access to DefectDojo__
-
+__browser access to DefectDojo__
 * localhost:8000
+
+__browser access to StackStorm GUI__
+* localhost
 
 ## Data Persistence
 
-See docker-compose.yml for content that persists between local/containers.
+See docker-compose.yml for content that persists between your local machine / containers.
 
 __StackStorm Packs__
 * local: ./StackStorm/packs.dev
 * container: ./opt/stackstorm/packs.dev
 * Banzai-specific rules, actions, workflows are defined in packs.dev.
 
-
-## ISSUES ##
+## Issues ##
 
 ### StackStorm Container ###
 
