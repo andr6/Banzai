@@ -1,12 +1,12 @@
-Banzai - AppSec Pipeline Project
-====================================
+Banzai - AppSec Pipeline
+==========================
 
-### To-Do List
+## To-Do List
 
 * Configure docker-compose.yml to include ToolChain services
 * Script to perform POST request from DD -> SS, when a user creates a new Test from DD.
 
-### Setup
+## Setup
 
 __install dependencies__
 * pip install defectdojo_api
@@ -19,7 +19,7 @@ __local access to DefectDojo__
 
 * localhost:8000
 
-### Data Persistence
+## Data Persistence
 
 See docker-compose.yml for content that persists between local/containers.
 
