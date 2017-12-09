@@ -1,4 +1,4 @@
-# Banzai - AppSec Pipeline Project
+\# Banzai - AppSec Pipeline Project
 
 
 ### Setup
@@ -24,15 +24,15 @@ container: ./opt/stackstorm/packs.dev
 
 NOTE: See docker-compose.yml for 
 
-### TO-DO LIST ###
+### To-Do List ###
 
 * Configure docker-compose.yml to include ToolChain services
 * Script to perform POST request from DD -> SS, when a user creates a new Test from DD.
 
-### STACKSTORM ISSUES ###
+### StackStorm Container Issues ###
 
-A ToolChain install script 'toolchain_install.sh' from StackStorm/runtime/entrypoint.d is run on container startup.
+A ToolChain install script 'toolchain_install.sh' from StackStorm/runtime/entrypoint.d is run upon container startup.
 The script installs all security tools for use within the AppSec Pipeline, using the 'apt-get install' command.
-This script may not work during container startup due to DNS errors.
 
-
+If you have the NetworkManager daemon installed on your machine, go into the NetworkManager.conf file and comment out 'dns=dnsmasq' line.
+The path to Networkmanager.conf should be '/etc/NetworkManager/NetworkManager.conf'
