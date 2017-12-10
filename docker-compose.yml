@@ -41,7 +41,7 @@ services:
     build: ./DefectDojo/nginx/
     ports:
       - "80:80"
-      - "8443:443"
+      - "8443:8443"
     expose:
       - "80"
       - "8443"
@@ -51,6 +51,7 @@ services:
       - dojo
     volumes:
       - nginxdata:/etc/nginx/external/
+      - ./scripts:/scripts
     depends_on:
       - dojo
 

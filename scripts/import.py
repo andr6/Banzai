@@ -19,4 +19,4 @@ dd = defectdojo.DefectDojoAPI(host, api_key, user, debug=True)
 
 upload_scan = dd.upload_scan(1, "Nmap Scan", "/home/brian/Documents/Banzai_Real/ddojo_api_test/output.xml", "true", "2017-11-30", "API")
 
-#print(upload_scan)
+print(upload_scan)

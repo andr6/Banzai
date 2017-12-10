@@ -10,7 +10,8 @@ import os
 from datetime import datetime
 
 # setup DefectDojo connection information
-host = 'http://localhost:8000'
+#host = 'http://localhost:8000'
+host = 'http://172.21.0.3:8000'
 api_key = 'd5300ae832fd73e64b9ca1697a91ff63ef917dd1'
 user = 'admin'
 
