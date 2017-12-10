@@ -28,6 +28,11 @@ browser access to DefectDojo
 browser access to StackStorm GUI
 * `localhost`
 
+## Docker Network Setup
+
+Connect containers to the same Docker bridge network
+* sudo docker network connect [default_bridge_name] [container_name]
+
 ## Data Persistence
 
 See docker-compose.yml for content that persists between your local machine / containers.

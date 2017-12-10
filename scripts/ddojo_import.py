@@ -12,7 +12,7 @@ from datetime import datetime
 # setup DefectDojo connection information
 #host = 'http://localhost:8000'
 host = 'http://172.21.0.3:8000'
-api_key = 'd5300ae832fd73e64b9ca1697a91ff63ef917dd1'
+api_key = 'fcb8f6bb22d59816898731cca83fcf5ca5490295'
 user = 'admin'
 
 # instantiate the DefectDojo api wrapper
