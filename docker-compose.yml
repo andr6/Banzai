@@ -83,7 +83,7 @@ services:
       - ./StackStorm/conf/stackstorm.env:/st2-docker/env
       # mount Tool Chain content
       - ./scan_output:/opt/stackstorm/scan_output
-      - ./scripts:/st2-docker/scripts
+      - ./scripts:/opt/stackstorm/scripts
     dns_search: .
 
 ### StackStorm External Services
