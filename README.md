@@ -4,11 +4,13 @@ Project Description:
 
 ## To-Do List
 
-### Connect DefectDojo with StackStorm
+### DefectDojo <-> StackStorm Workflows
 * Script to perform POST request from DD -> SS, when a user creates a new Test from DD.
+* Script to upload test scan output from a StackStorm Action/Workflow to DD. `[COMPLETE]`
 
 ### ToolChain Setup
 NOTE: Explore ToolChain deployment outside of SS container.
+* Install NMAP within StackStorm container `[COMPLETE]`
 * Install ZAP within StackStorm container
 * Install Burp within StackStorm container
 * Install Nessus within StackStorm container
