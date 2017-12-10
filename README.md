@@ -29,6 +29,7 @@ browser access to StackStorm GUI
 * `localhost`
 
 ## Docker Network Setup
+Docker Containers must be within the same network to be able to talk to each other. When Docker spins up containers, it assigns each container to the default bridge network. Due to the AppSec Pipeline setup, some services within the pipeline connect to a different default bridge network. For example, the StackStorm container will be on a different network, so you must manually connect it to the main `banzaireal_default` bridge network.
 
 Connect containers to the same Docker bridge network
 * sudo docker network connect [default_bridge_name] [container_name]
