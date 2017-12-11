@@ -67,6 +67,12 @@ OS tested with issues:
 OS tested without issues:
 * MacOS High Sierra
 
+### Docker-Compose Network Bridge ###
+
+Docker adds containers to a "default bridge network" when they are first run. Due to the Banzai implementation, the StackStorm container will be connected to a separate bridge network than the DefectDojo container. To solve this issue, you must use the command `sudo docker network connect [NETWORK_NAME] [CONTAINER]` to connect your StackStorm container to the network that DefectDojo belongs to, so they can communicate.
+
+See more about Docker Networking here: https://docs.docker.com/engine/userguide/networking/
+
 ### Port Clashes ###
 
 If a port number defined in the docker-compose.yaml is already being used by a running application on your host machine, docker-compose will fail to start up.
