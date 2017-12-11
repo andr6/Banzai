@@ -1,6 +1,6 @@
 ---
 name: "dojo_import"
-runner_type: "local-shell-cmd"
+runner_type: "python-script"
 description: "Import test scan results into DefectDojo"
 entry_point: "action_scripts/ddojo_import.py"
 parameters:
@@ -8,4 +8,3 @@ parameters:
     default: "python ddojo_import.py"
   timeout:
     default: 99999
-
