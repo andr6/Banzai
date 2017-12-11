@@ -5,8 +5,10 @@ Project Description:
 ## To-Do List
 
 ### DefectDojo <-> StackStorm Workflows
-* Script to perform POST request from DD -> SS, when a user creates a new Test from DD.
+* Script to Poll DefectDojo MySQL db for new Test entries.
+* Script to perform POST request, taking new Test data as the payload and sending it through to StackStorm via. its webhook. (sensor alternative)
 * Script to upload test scan output from a StackStorm Action/Workflow to DD. `[COMPLETE]`
+
 
 ### ToolChain Setup
 NOTE: Explore ToolChain deployment outside of SS container.
