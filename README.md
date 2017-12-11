@@ -16,6 +16,12 @@ NOTE: Explore ToolChain deployment outside of SS container.
 * Install Nessus within StackStorm container
 * Install Veracode within StackStorm container
 
+### Testing + Exceptions
+* Set up local gruyere instance deployed via. Docker `[COMPLETE]`
+* Exception handling for failed action: DefectDojo import
+* Exception handling for failed action: request to StackStorm webhook API
+* Exception handling for failed action: execute Nmap test scan
+
 ## Setup
 
 install dependencies
