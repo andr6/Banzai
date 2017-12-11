@@ -78,4 +78,4 @@ See more about Docker Networking here: https://docs.docker.com/engine/userguide/
 If a port number defined in the docker-compose.yaml is already being used by a running application on your host machine, docker-compose will fail to start up.
 You must either stop the application that is using the port, or change the port number in the docker-compose.yaml config file to an unused port number.
 
-For more instructions on editing Docker Compose configuration files, please see: `https://docs.docker.com/compose/overview/`
+For more instructions on editing Docker Compose configuration files, please see: https://docs.docker.com/compose/overview/
