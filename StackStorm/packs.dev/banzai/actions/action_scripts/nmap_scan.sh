@@ -1,3 +1,5 @@
 #!/bin/bash
 
-nmap www.brianl.io -oX - > output.xml
+url=$1
+
+sudo nmap $url -oX /opt/stackstorm/scan_output/nmap_results.xml

@@ -11,7 +11,7 @@ from datetime import datetime
 
 # setup DefectDojo connection information
 host = 'http://localhost:8000'
-api_key = 'd5300ae832fd73e64b9ca1697a91ff63ef917dd1'
+api_key = '69db82421964ed926d0d99e027d2f9f73120e1d9'
 user = 'admin'
 
 # instantiate the DefectDojo api wrapper

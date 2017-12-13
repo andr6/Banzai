@@ -14,7 +14,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - django-DefectDojo:/django-DefectDojo
+      - ./DefectDojo:/django-DefectDojo
     depends_on:
       - mysql
     env_file:
