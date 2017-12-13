@@ -1,5 +1,4 @@
 ---
-# Action definition metadata
 name: "nmap_chain"
 description: "Nmap scan and Dojo import workflow"
 
@@ -9,11 +8,10 @@ runner_type: "action-chain"
 # `entry_point` path to the ActionChain definition file, relative to the pack's action directory.
 entry_point: "chains/nmap_chain.yaml"
 
-# ENABLED: Action can be invoked
 enabled: true
 
-parameters: {}
-
-notify:
-  on-complete:
-    message: "Workflow has begun"
+parameters:
+  url:
+    type: "string"
+    description: "url to perform a port scan on"
+    required: true

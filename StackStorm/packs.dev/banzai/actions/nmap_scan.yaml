@@ -1,10 +1,14 @@
+# st2 command: st2 run banzai.nmap url=xxx.com
 ---
 name: "nmap"
-runner_type: "local-shell-cmd"
+runner_type: "local-shell-script"
 description: "run nmap port scan"
-entry_point: ""
+entry_point: "action_scripts/nmap_scan.sh"
 parameters:
-  cmd:
-    default: "sudo nmap www.brianl.io -oX /opt/stackstorm/scan_output/nmap_results.xml"
+  url:
+    type: "string"
+    description: "url to perform a port scan on"
+    required: true
+    position: 1
   timeout:
     default: 99999
