@@ -153,7 +153,7 @@ volumes:
   rabbitmq-volume:
   redis-volume:
   stackstorm-packs-volume:
-  stackstorm-virtualenvs-volume:
+  stackstorm-virtualenvs-volume: ./StackStorm/virtualenvs
   stackstorm-configs-volume:
   stackstorm-log-volume:
 
