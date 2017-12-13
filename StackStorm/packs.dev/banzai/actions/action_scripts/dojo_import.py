@@ -18,7 +18,7 @@ class Dojo_Import(Action):
         dd = defectdojo.DefectDojoAPI(host, api_key, user, debug=True)
 
         # perform upload request + print response
-        upload_scan = dd.upload_scan(1, "Nmap Scan", "/opt/stackstorm/scan_output/nmap_results.xml", "true", "2024-1-1", "API")
+        upload_scan = dd.reupload_scan(44, "Nmap Scan", "/opt/stackstorm/scan_output/nmap_results.xml", "true", "2024/1/1", "API")
         print("Test number: {}".format(upload_scan))
 
 
