@@ -1,6 +1,6 @@
 import MySQLdb as db
 import time
-import requests
+import requests, json
 
 HOST = "localhost"
 PORT = 3306
@@ -8,9 +8,9 @@ USER = "root"
 PASSWORD = "Cu3zehoh7eegoogohdoh1the"
 DB = "dojodb"
 
-url = "http://172.18.0.5/api/v1/webhooks/banzaihook" 
+url = "https://172.18.0.5/api/v1/webhooks/banzaihook"
 key = "NWNjMDc2ODVlM2RlMmUxZWY5NjZlNGYzMGI2ZTdjMDdiNDZjYWQ5NWQxZWRmOWQ2NzU0Nzk4N2JkMmExODYzYg"
-headers = {'St2-Api-Key': key, 'Content-Type': 'application/json'}
+headers = {"St2-Api-Key": key, "Content-Type": "application/json"}
 
 try:
     
@@ -36,14 +36,13 @@ try:
       testname = result[num][2]
       prev = num+1
 
-      payload = {'testid': testid, 'url': testurl, 'testname': testname}
+      payload = {'testid': testid, 'url': testurl}
 
-      response = requests.post(url, headers=headers, data=payload, verify=False)
-      print(response.content)
+      r = requests.post(url, headers=headers, data=json.dumps(payload), verify=False)
+      print(r.text)
 
       time.sleep(2)
 
-      
     time.sleep(5)
 
 except Exception as e:
