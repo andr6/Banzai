@@ -79,7 +79,7 @@ services:
       - private
     volumes:
       - stackstorm-packs-volume:/opt/stackstorm/packs
-      - stackstorm-virtualenvs-volume:/opt/stackstorm/virtualenvs
+      - ./StackStorm/virtualenvs:/opt/stackstorm/virtualenvs
       - stackstorm-configs-volume:/opt/stackstorm/configs
       - stackstorm-log-volume:/var/log
       - ./StackStorm/packs.dev:/opt/stackstorm/packs.dev
@@ -153,7 +153,7 @@ volumes:
   rabbitmq-volume:
   redis-volume:
   stackstorm-packs-volume:
-  stackstorm-virtualenvs-volume: ./StackStorm/virtualenvs
+  stackstorm-virtualenvs-volume:
   stackstorm-configs-volume:
   stackstorm-log-volume:
 
