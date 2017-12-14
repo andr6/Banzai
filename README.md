@@ -41,6 +41,7 @@ To fix this, navigate to `/etc/NetworkManager/NetworkManager.conf` and comment o
 OS tested with issues:
 * Ubuntu 16.04
 * Ubuntu 14.04
+
 OS tested without issues:
 * MacOS High Sierra
 
@@ -55,15 +56,7 @@ See more about Docker Networking here: https://docs.docker.com/engine/userguide/
 `defectdojo_api` is a python wrapper for DefectDojo's API used within the AppSec Pipeline. Currently, the public package does not support the `/reimportscan` API, so we have implemented a method to facilitate this.
 
 The additional method must be included in the Banzai Pack's virtualenv. To do this:
-* Open a shell in the StackStorm Docker container. `sudo docker exec -it [stackstorm_container_name] bash`
 * Navigate to the main wrapper python file `/opt/stackstorm/virtualenvs/banzai/lib/python2.7/site-packages/defectdojo_api/defectdojo.py` within the container.
 * Add the additional code to support the reimport_scan API.
 
 __NOTE: This only needs to be done upon initial setup of the AppSec Pipeline, when a fresh StackStorm container is created. This issue should be solved by persisting the custom method via. mounting a Docker volume.__
-
-### Port Clashes ###
-
-If a port number defined in the docker-compose.yaml is already being used by a running application on your host machine, docker-compose will fail to start up.
-You must either stop the application that is using the port, or change the port number in the docker-compose.yaml config file to an unused port number.
-
-For more instructions on editing Docker Compose configuration files, please see: https://docs.docker.com/compose/overview/
