@@ -1,6 +1,7 @@
 import MySQLdb as db
 import time
 import requests, json
+import re
 
 HOST = "localhost"
 PORT = 3306
@@ -8,8 +9,8 @@ USER = "root"
 PASSWORD = "Cu3zehoh7eegoogohdoh1the"
 DB = "dojodb"
 
-url = "https://172.18.0.5/api/v1/webhooks/banzaihook"
-key = "NWNjMDc2ODVlM2RlMmUxZWY5NjZlNGYzMGI2ZTdjMDdiNDZjYWQ5NWQxZWRmOWQ2NzU0Nzk4N2JkMmExODYzYg"
+url = "https://172.21.0.5/api/v1/webhooks/banzaihook"
+key = "M2EwOTg1NWFiZDc4ODUyODgxNDk5NDQzYTRiZGIxMzNiOTUwMmNjYmI1YTJmNjRiOTc0YzdmYjZlZDAwMGJkNA"
 headers = {"St2-Api-Key": key, "Content-Type": "application/json"}
 
 try:
@@ -33,8 +34,10 @@ try:
     for num in range(prev, len(result)):
       testid = result[num][0]
       testurl = result[num][1]
+      testurl = re.sub(r"http://", "", testurl)
       testname = result[num][2]
       prev = num+1
+      print(testurl)
 
       payload = {'testid': testid, 'url': testurl}
 

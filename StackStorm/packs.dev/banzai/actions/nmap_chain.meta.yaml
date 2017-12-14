@@ -15,3 +15,6 @@ parameters:
     type: "string"
     description: "url to perform a port scan on"
     required: true
+#  testid:
+#    description: "test id number"
+#    required: true

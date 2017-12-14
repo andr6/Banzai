@@ -2,28 +2,6 @@
 
 Project Description:
 
-## To-Do List
-
-### DefectDojo <-> StackStorm Workflows
-* Script to Poll DefectDojo MySQL db for new Test entries.
-* Script to perform POST request, taking new Test data as the payload and sending it through to StackStorm via. its webhook. (sensor alternative)
-* Script to upload test scan output from a StackStorm Action/Workflow to DD. `[COMPLETE]`
-* Create StackStorm Action Chain to chain the test + import actions `[COMPLETE]`
-
-### ToolChain Setup
-NOTE: Explore ToolChain deployment outside of SS container.
-* Install NMAP within StackStorm container `[COMPLETE]`
-* Install ZAP within StackStorm container
-* Install Burp within StackStorm container
-* Install Nessus within StackStorm container
-* Install Veracode within StackStorm container
-
-### Testing + Exceptions
-* Set up local gruyere instance deployed via. Docker `[COMPLETE]`
-* Exception handling for failed action: DefectDojo import
-* Exception handling for failed action: request to StackStorm webhook API
-* Exception handling for failed action: execute Nmap test scan
-
 ## Setup
 
 install dependencies
@@ -57,15 +35,12 @@ __StackStorm Packs__
 
 ### StackStorm Container: apt-get install ###
 
-A ToolChain install script `toolchain_install.sh` from `StackStorm/runtime/entrypoint.d` is run upon container startup.
-The script installs all security tools for use within the AppSec Pipeline, using the 'apt-get install' command.
-
-If you have the NetworkManager daemon installed on your machine, go into the `NetworkManager.conf` file and comment out `dns=dnsmasq` line.
-The path to Networkmanager.conf should be `/etc/NetworkManager/NetworkManager.conf`
+`apt-get install [package]` within the containers may have issues with DNS resolution if you are using Ubuntu due to a Network Manager feature..
+To fix this, navigate to `/etc/NetworkManager/NetworkManager.conf` and comment out `dns=dnsmasq` line.
 
 OS tested with issues:
 * Ubuntu 16.04
-
+* Ubuntu 14.04
 OS tested without issues:
 * MacOS High Sierra
 

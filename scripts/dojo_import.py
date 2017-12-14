@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 
 '''
-IMPORT API TEST
+IMPORT SCAN RESULTS
+
+This creates a new test in an existing engagement.
+
 '''
 
 # import the package

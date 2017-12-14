@@ -1,0 +1,15 @@
+---
+name: webhook_trigger
+description: Rule that triggers when webhook receives a request
+enabled: true
+
+trigger:
+  type: "core.st2.webhook"
+  parameters:
+    url: "banzaihook"
+
+action:
+  ref: "banzai.nmap_chain"
+  parameters:
+    url: "{{trigger.body.url}}"
+    #test_id: "{{trigger.body.testid}}"
