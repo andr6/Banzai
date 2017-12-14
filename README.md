@@ -4,8 +4,7 @@ Project Description:
 
 ## Setup
 
-install dependencies
-* `pip install defectdojo_api`
+Run `bash setup.sh` to install dependencies and spin up the AppSec Pipeline services.
 
 run environment
 * `sudo docker-compose up`
@@ -22,7 +21,7 @@ DefectDojo
 
 ## Data Persistence between local <-> containers
 
-See docker-compose.yml for content that persists between your local machine / containers.
+See `docker-compose.yml` in root folder to configure paths between local <-> containers
 
 StackStorm Packs
 * local: `./StackStorm/packs.dev`
