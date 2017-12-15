@@ -74,9 +74,9 @@ services:
       - 9101:9101
     expose:
       - 9101
-    networks:
-      - public
-      - private
+    #networks:      -> Disabled default setting. DefectDojo needs to communicate with StackStorm.
+    #  - public
+    #  - private
     volumes:
       - stackstorm-packs-volume:/opt/stackstorm/packs
       - ./StackStorm/virtualenvs:/opt/stackstorm/virtualenvs
