@@ -6,9 +6,6 @@ Project Description:
 
 Run `bash setup.sh` to install dependencies and spin up the AppSec Pipeline services.
 
-run environment
-* `sudo docker-compose up`
-
 ## Access services
 
 StackStorm
