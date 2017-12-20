@@ -12,8 +12,8 @@ from st2actions.runners.pythonrunner import Action
 #print("TEST ID = {}".format(test_id))
 #test_id = int(test_id)
 
-host = 'http://172.21.0.3:8000'
-api_key = 'b18415230de7e5717c1119bd8e8ee876f9fb603f'
+host = 'http://172.18.0.8:8000'
+api_key = '721d5ba4622e04958da1e673608344a5ae72a29a'
 user = 'admin'
 
 class Dojo_Import(Action):
@@ -22,7 +22,7 @@ class Dojo_Import(Action):
         dd = defectdojo.DefectDojoAPI(host, api_key, user, debug=True)
 
         # perform upload request + print response
-        upload_scan = dd.reupload_scan(8, "Nmap Scan", "/opt/stackstorm/scan_output/nmap_results.xml", "true", "2024/1/1", "API")
+        upload_scan = dd.reupload_scan(1, "Nmap Scan", "/opt/stackstorm/scan_output/nmap_results.xml", "true", "2024/1/1", "API")
         print("Test number: {}".format(upload_scan))
 
 

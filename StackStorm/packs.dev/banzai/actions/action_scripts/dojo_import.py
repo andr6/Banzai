@@ -1,5 +1,12 @@
 #!/usr/bin/python3
 
+'''
+dojo_import.py
+
+This script creates a new test within DefectDojo and uploads test scan results to the new test.
+'''
+
+
 import sys
 import os
 

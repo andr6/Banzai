@@ -9,8 +9,8 @@ USER = "root"
 PASSWORD = "Cu3zehoh7eegoogohdoh1the"
 DB = "dojodb"
 
-url = "https://172.21.0.5/api/v1/webhooks/banzaihook"
-key = "M2EwOTg1NWFiZDc4ODUyODgxNDk5NDQzYTRiZGIxMzNiOTUwMmNjYmI1YTJmNjRiOTc0YzdmYjZlZDAwMGJkNA"
+url = "https://172.18.0.4/api/v1/webhooks/banzaihook"
+key = "OTE0MDYxZTdjYTg3OTE0ZTA1MWI1ZGEwMTdhZGQ3NjQyMTE3MjI4YTQ5YTQzNTdiNzliYjNlYTMzMDg4Zjk0Nw"
 headers = {"St2-Api-Key": key, "Content-Type": "application/json"}
 
 try:

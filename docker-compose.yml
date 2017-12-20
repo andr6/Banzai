@@ -74,9 +74,9 @@ services:
       - 9101:9101
     expose:
       - 9101
-    #networks:      -> Disabled default setting. DefectDojo needs to communicate with StackStorm.
-    #  - public
-    #  - private
+#    networks:
+#      - public
+#      - private
     volumes:
       - stackstorm-packs-volume:/opt/stackstorm/packs
       - ./StackStorm/virtualenvs:/opt/stackstorm/virtualenvs
@@ -98,8 +98,8 @@ services:
     container_name: mongo
     env_file:
       - StackStorm/conf/mongo.env
-    networks:
-      - private
+#    networks:
+#      - private
     volumes:
       - mongo-volume:/data/db
     dns_search: .
@@ -108,8 +108,8 @@ services:
     container_name: rabbitmq
     env_file:
       - ./StackStorm/conf/rabbitmq.env
-    networks:
-      - private
+#    networks:
+#      - private
     volumes:
       - rabbitmq-volume:/var/lib/rabbitmq
     dns_search: .
@@ -118,8 +118,8 @@ services:
     container_name: postgres
     env_file:
       - ./StackStorm/conf/postgres.env
-    networks:
-      - private
+#    networks:
+#      - private
     volumes:
       - postgres-volume:/var/lib/postgresql/data
     dns_search: .
@@ -128,8 +128,8 @@ services:
     container_name: redis
     env_file:
       - ./StackStorm/conf/redis.env
-    networks:
-      - private
+#    networks:
+#      - private
     volumes:
       - redis-volume:/data
     dns_search: .
@@ -159,9 +159,8 @@ volumes:
 
 ### StackStorm Networks
 
-networks:
-  public:
-    driver: bridge
-  private:
-    driver: bridge
-
+#networks:
+#  public:
+#    driver: bridge
+#  private:
+#    driver: bridge
