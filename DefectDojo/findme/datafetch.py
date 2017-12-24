@@ -2,6 +2,7 @@ import MySQLdb as db
 import time
 import requests, json
 import re
+import os
 
 HOST = "localhost"
 PORT = 3306
@@ -9,8 +10,28 @@ USER = "root"
 PASSWORD = "Cu3zehoh7eegoogohdoh1the"
 DB = "dojodb"
 
-url = "https://172.18.0.4/api/v1/webhooks/banzaihook"
-key = "OTE0MDYxZTdjYTg3OTE0ZTA1MWI1ZGEwMTdhZGQ3NjQyMTE3MjI4YTQ5YTQzNTdiNzliYjNlYTMzMDg4Zjk0Nw"
+# grab StackStorm container IP
+network_file = open("/opt/django-DefectDojo/common/networks.txt", "r")
+data = network_file.readlines()
+ip = ''
+for line in data:
+  if re.search('SS_IP', line):
+    ip = re.sub('SS_IP=', '', line)
+ip = ip.replace("\n","")
+network_file.close()
+
+# grab StackStorm instance API_KEY
+apikey_file = open("/opt/django-DefectDojo/common/api_keys.txt", "r")
+data = apikey_file.readlines()
+key = ''
+for line in data:
+  if re.search('SS_APIKEY', line):
+    key = re.sub('SS_APIKEY=', '', line)
+key = key.replace("\n","")
+apikey_file.close()
+
+url = "https://" + ip + "/api/v1/webhooks/banzaihook"
+#key = "YWEwY2ViMzE3MWQ1NzUyMDMxODIyMDZlOGMxZWEzZGZiODhiN2Y1M2RjNTIzZjE0MzViMjMwYTczMjNkYTRmYQ"
 headers = {"St2-Api-Key": key, "Content-Type": "application/json"}
 
 try:

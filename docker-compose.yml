@@ -6,6 +6,69 @@ version: "2"
 
 services:
 
+### StackStorm Core Service
+
+  stackstorm:
+    image: stackstorm/stackstorm:latest
+    container_name: stackstorm
+    env_file:
+      - StackStorm/conf/stackstorm.env
+      - StackStorm/conf/mongo.env
+      - StackStorm/conf/rabbitmq.env
+      - StackStorm/conf/postgres.env
+      - StackStorm/conf/redis.env
+    ports:
+      - 443:443
+      - 9101:9101
+    expose:
+      - 9101
+    volumes:
+      - stackstorm-packs-volume:/opt/stackstorm/packs
+      - stackstorm-configs-volume:/opt/stackstorm/configs
+      - stackstorm-log-volume:/var/log
+      - ./StackStorm/runtime/entrypoint.d:/st2-docker/entrypoint.d
+      - ./StackStorm/runtime/st2.d:/st2-docker/st2.d
+      - ./StackStorm/conf/stackstorm.env:/st2-docker/env
+      # mount custom content
+      - ./StackStorm/virtualenvs:/opt/stackstorm/virtualenvs
+      - ./StackStorm/packs.dev:/opt/stackstorm/packs.dev
+      - ./common:/opt/stackstorm/common
+      - ./scan_output:/opt/stackstorm/scan_output
+
+### StackStorm External Services
+
+  mongo:
+    image: mongo:3.4
+    container_name: mongo
+    env_file:
+      - StackStorm/conf/mongo.env
+    volumes:
+      - mongo-volume:/data/db
+
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    env_file:
+      - ./StackStorm/conf/rabbitmq.env
+    volumes:
+      - rabbitmq-volume:/var/lib/rabbitmq
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    env_file:
+      - ./StackStorm/conf/postgres.env
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    env_file:
+      - ./StackStorm/conf/redis.env
+    volumes:
+      - redis-volume:/data
+
 ### DefectDojo Core Service
 
   dojo:
@@ -15,13 +78,16 @@ services:
       - "8000:8000"
     volumes:
       - django-DefectDojo:/django-DefectDojo
+      # mount custom volumes
       - ./DefectDojo/findme:/opt/django-DefectDojo/findme
+      - ./common:/opt/django-DefectDojo/common
     depends_on:
       - mysql
     env_file:
         - ./DefectDojo/env/common.env
         - ./DefectDojo/env/dojo.env
-    command: bash /django-DefectDojo/docker/docker-startup.bash
+  # run DefectDojo database polling service
+    command: python /opt/django-DefectDojo/findme/datafetch.py
 
 ### DefectDojo External Services
 
@@ -56,88 +122,6 @@ services:
     depends_on:
       - dojo
 
-### StackStorm Core Service
-
-  stackstorm:
-    #image: stackstorm/stackstorm:${TAG:-latest}  -> version 3 config not compatible with version 2
-    image: stackstorm/stackstorm:latest
-    container_name: stackstorm
-    env_file:
-      - StackStorm/conf/stackstorm.env
-      - StackStorm/conf/mongo.env
-      - StackStorm/conf/rabbitmq.env
-      - StackStorm/conf/postgres.env
-      - StackStorm/conf/redis.env
-    ports:
-      #- "443:443"  -> clash with port 443 for Nginx service
-      - 443:443
-      - 9101:9101
-    expose:
-      - 9101
-#    networks:
-#      - public
-#      - private
-    volumes:
-      - stackstorm-packs-volume:/opt/stackstorm/packs
-      - ./StackStorm/virtualenvs:/opt/stackstorm/virtualenvs
-      - stackstorm-configs-volume:/opt/stackstorm/configs
-      - stackstorm-log-volume:/var/log
-      - ./StackStorm/packs.dev:/opt/stackstorm/packs.dev
-      - ./StackStorm/runtime/entrypoint.d:/st2-docker/entrypoint.d
-      - ./StackStorm/runtime/st2.d:/st2-docker/st2.d
-      - ./StackStorm/conf/stackstorm.env:/st2-docker/env
-      # mount Tool Chain content
-      - ./scan_output:/opt/stackstorm/scan_output
-      - ./scripts:/opt/stackstorm/scripts
-    dns_search: .
-
-### StackStorm External Services
-
-  mongo:
-    image: mongo:3.4
-    container_name: mongo
-    env_file:
-      - StackStorm/conf/mongo.env
-#    networks:
-#      - private
-    volumes:
-      - mongo-volume:/data/db
-    dns_search: .
-  rabbitmq:
-    image: rabbitmq:management
-    container_name: rabbitmq
-    env_file:
-      - ./StackStorm/conf/rabbitmq.env
-#    networks:
-#      - private
-    volumes:
-      - rabbitmq-volume:/var/lib/rabbitmq
-    dns_search: .
-  postgres:
-    image: postgres:latest
-    container_name: postgres
-    env_file:
-      - ./StackStorm/conf/postgres.env
-#    networks:
-#      - private
-    volumes:
-      - postgres-volume:/var/lib/postgresql/data
-    dns_search: .
-  redis:
-    image: redis:latest
-    container_name: redis
-    env_file:
-      - ./StackStorm/conf/redis.env
-#    networks:
-#      - private
-    volumes:
-      - redis-volume:/data
-    dns_search: .
-
-### Tool Chain Services
-
-  # nmap doesn't need to be started. Only run as needed.
-
 volumes:
 
 ### DefectDojo Volumes
@@ -156,11 +140,3 @@ volumes:
   stackstorm-virtualenvs-volume:
   stackstorm-configs-volume:
   stackstorm-log-volume:
-
-### StackStorm Networks
-
-#networks:
-#  public:
-#    driver: bridge
-#  private:
-#    driver: bridge
