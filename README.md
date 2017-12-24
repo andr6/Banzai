@@ -4,7 +4,7 @@ Project Description:
 
 ## Setup
 
-Run `./setup.sh` to install dependencies and spin up the AppSec Pipeline services.
+Run `./setup.sh` to launch the AppSec Pipeline.
 
 ## Access services
 
