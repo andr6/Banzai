@@ -1,2 +1,5 @@
+# This is obviously not a secure way to store the keys.
+# Upon key generation, migrate to mysql db for storage rather than as an env variable.
+
 SS_APIKEY=MzdkZDBkOWFmZDlkYzNjM2UzNWQwMjFkMWZjYjcxZDA1MjRmZmFiZDBmMTJlZDJhZjhkMThjY2Q2YWI2NDhiZA
 DD_APIKEY=26f1ed862895024f6d3b9f148f70f2e716af7a5f
