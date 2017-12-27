@@ -65,7 +65,7 @@ echo '... pip successfully installed'
 echo
 
 # install DefectDojo Python module
-sudo docker exec stackstorm bash -c 'echo 'Y' | sudo pip install defectdojo_api'
+sudo docker exec stackstorm bash -c 'echo 'Y' | sudo pip install -U defectdojo_api'
 echo '... defectdojo_api module successfully installed'
 echo
 
