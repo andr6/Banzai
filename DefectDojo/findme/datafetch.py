@@ -55,6 +55,7 @@ try:
     for num in range(prev, len(result)):
       testid = result[num][0]
       testurl = result[num][1]
+      # remove http prefix - need implementation to remove https prefix too
       testurl = re.sub(r"http://", "", testurl)
       testname = result[num][2]
       prev = num+1

@@ -83,3 +83,4 @@ echo '============================================================'
 echo '                        SETUP COMPLETE                      '
 echo '      RUN "sudo docker-compose down" TO STOP SERVICES       '
 echo '============================================================'
+
