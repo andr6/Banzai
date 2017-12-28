@@ -1,6 +1,10 @@
 #!/bin/bash
 
+# STANDARD NMAP SCAN
+
 # url param specified in nmap_chain
 url=$1
 
-sudo nmap $url -oX /opt/stackstorm/scan_output/nmap_results.xml
+sudo touch /opt/stackstorm/scan_results/nmap/nmap_standard.xml
+sudo chmod +x /opt/stackstorm/scan_results/nmap/nmap_standard.xml
+sudo nmap $url -oX /opt/stackstorm/scan_results/nmap/nmap_standard.xml

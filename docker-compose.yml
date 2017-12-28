@@ -33,7 +33,7 @@ services:
       - ./StackStorm/virtualenvs:/opt/stackstorm/virtualenvs
       - ./StackStorm/packs.dev:/opt/stackstorm/packs.dev
       - ./common:/opt/stackstorm/common
-      - ./scan_output:/opt/stackstorm/scan_output
+      - ./scan_results:/opt/stackstorm/scan_results
 
 ### StackStorm External Services
 
