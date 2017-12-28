@@ -2,6 +2,9 @@ name: "dojo_reimport"
 runner_type: "python-script"
 description: "Import test scan results into DefectDojo"
 entry_point: "action_scripts/dojo_reimport.py"
+parameters:
+  testid:
+    required: true
 
 # NOTE
 # "python-script" runner type must be used for python scripts, as it takes advantage of the python virtualenv.

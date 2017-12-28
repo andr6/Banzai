@@ -11,9 +11,8 @@
         -
             name: "c2"
             ref: "banzai.dojo_reimport"
-            # terminate action chain with SUCCESS status
-            #parameters:
-            #  testid: "{{ testid }}"
+            parameters:
+              testid: "{{ testid }}"
             on-success: ""
             on-failure: "c3"
         -

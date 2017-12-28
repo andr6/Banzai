@@ -81,6 +81,8 @@ echo
 
 echo '============================================================'
 echo '                        SETUP COMPLETE                      '
+echo '    execute "run_datafetch.bash" to complete the launch     '
+echo '                                                            '
 echo '      RUN "sudo docker-compose down" TO STOP SERVICES       '
 echo '============================================================'
 

@@ -4,16 +4,22 @@ import requests, json
 import re
 import os
 
+# DefectDojo endpoint
 HOST = "localhost"
 PORT = 3306
+
+# MySQL db credentials
 USER = "root"
 PASSWORD = "Cu3zehoh7eegoogohdoh1the"
 DB = "dojodb"
 
+# StackStorm ip and apikey
+ip = None
+key = None
+
 # grab StackStorm container IP
 network_file = open("/opt/django-DefectDojo/common/networks.txt", "r")
 data = network_file.readlines()
-ip = ''
 for line in data:
   if re.search('SS_IP', line):
     ip = re.sub('SS_IP=', '', line)
@@ -23,7 +29,6 @@ network_file.close()
 # grab StackStorm instance API_KEY
 apikey_file = open("/opt/django-DefectDojo/common/api_keys.txt", "r")
 data = apikey_file.readlines()
-key = ''
 for line in data:
   if re.search('SS_APIKEY', line):
     key = re.sub('SS_APIKEY=', '', line)
@@ -31,8 +36,9 @@ key = key.replace("\n","")
 apikey_file.close()
 
 url = "https://" + ip + "/api/v1/webhooks/banzaihook"
-#key = "YWEwY2ViMzE3MWQ1NzUyMDMxODIyMDZlOGMxZWEzZGZiODhiN2Y1M2RjNTIzZjE0MzViMjMwYTczMjNkYTRmYQ"
 headers = {"St2-Api-Key": key, "Content-Type": "application/json"}
+
+# include exception handling here if 'ip' or 'key' == None
 
 try:
     
@@ -54,14 +60,16 @@ try:
 
     for num in range(prev, len(result)):
       testid = result[num][0]
+      testid = str(testid)
+      print("TEST ID = {}".format(testid))
       testurl = result[num][1]
       # remove http prefix - need implementation to remove https prefix too
       testurl = re.sub(r"http://", "", testurl)
       testname = result[num][2]
       prev = num+1
-      print(testurl)
 
       payload = {'testid': testid, 'url': testurl}
+      print("PAYLOAD = \n {}".format(payload))
 
       r = requests.post(url, headers=headers, data=json.dumps(payload), verify=False)
       print(r.text)

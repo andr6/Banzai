@@ -12,4 +12,4 @@ action:
   ref: "banzai.nmap_chain"
   parameters:
     url: "{{trigger.body.url}}"
-    #test_id: "{{trigger.body.testid}}"
+    testid: "{{trigger.body.testid}}"

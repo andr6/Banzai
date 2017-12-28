@@ -6,7 +6,8 @@ The aim of the AppSec pipeline is to provide the ability to perform automated se
 
 ## Setup
 
-Run `./setup.sh` to launch the AppSec Pipeline.
+1. Run `./setup.sh` for initial setup.
+2. Run `./run_datafetch.py` to finalise the setup. This process must be kept running throughout the life of the pipeline.
 
 ## Access services
 
