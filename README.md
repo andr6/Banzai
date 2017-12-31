@@ -1,7 +1,5 @@
 ## Overview
 
-Test early, test often.
-
 The aim of the AppSec pipeline is to provide the ability to perform automated security assessments against a system. The pipeline should help reduce the amount of time spent on repetitive AppSec activities, to optimise use of a security team. It should also be a tool that can serve as a consistent process which can be followed by security teams.
 
 ## Setup
