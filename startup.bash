@@ -39,7 +39,9 @@ echo '... StackStorm API Key retrieved'
 
 # retrieve DefectDojo api key
 echo
-echo 'Insert your DefectDojo API Key:'
+echo 'Insert your DefectDojo API Key to continue:'
+echo
+echo 'To find the key, log in to DefectDojo through your web browser and go to the "API Key" page.'
 read dd_apikey
 echo
 
@@ -53,11 +55,13 @@ echo '============================================================'
 
 # adjusting DefectDojo "ALLOWED_HOSTS" settings
 sudo docker exec banzai_dojo_1 sed -i 's/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = \[\"\*\"\]/' /opt/django-DefectDojo/dojo/settings.py
-echo '... Django "ALLOWED_HOSTS" settings adjusted'
+echo '... Django settings adjusted'
 
 echo '============================================================'
 echo '                  INSTALLING CONTAINER PACKAGES             '
 echo '============================================================'
+
+echo '... STARTING STACKSTORM INSTALLATIONS'
 
 # install pip - python package manager
 sudo docker exec stackstorm bash -c 'echo 'Y' | sudo apt-get install python-pip'
