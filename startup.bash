@@ -85,8 +85,16 @@ echo
 
 echo '============================================================'
 echo '                        SETUP COMPLETE                      '
-echo '    execute "run_datafetch.bash" to complete the launch     '
 echo '                                                            '
 echo '      RUN "sudo docker-compose down" TO STOP SERVICES       '
 echo '============================================================'
+
+echo '============================================================'
+echo '                    RUNNING DATAFETCH SERVER                '
+echo '                                                            '
+echo '         This needs to run for the life of the pipeline     '
+echo '============================================================'
+
+# run datafetch script
+sudo docker exec -it banzai_dojo_1 bash -c 'python findme/datafetch.py'
 
