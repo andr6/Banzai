@@ -1,15 +1,15 @@
 ---
-name: burp_trigger
-description: Webhook trigger for Burp
+name: nessus_trigger
+description: Webhook trigger for Nessus
 enabled: true
 
 trigger:
   type: "core.st2.webhook"
   parameters:
-    url: "burphook"
+    url: "nessushook"
 
 action:
-  ref: "banzai.burp_chain"
+  ref: "banzai.nessus_chain"
   parameters:
     url: "{{trigger.body.url}}"
     testid: "{{trigger.body.testid}}"

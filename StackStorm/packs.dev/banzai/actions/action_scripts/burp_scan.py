@@ -11,10 +11,18 @@ import requests
 # stackstorm action runner module
 from st2actions.runners.pythonrunner import Action
 
-#target_url = None           # user-specified target
-api_port = "8090"           # default api port
-proxy_url = "http://172.18.0.4"
-#proxy_url = "http://127.0.0.1"     # default proxy url
+# grab Burp container IP
+network_file = open("/opt/stackstorm/common/networks.txt", "r")
+data = network_file.readlines()
+BURP_IP = ''
+for line in data:
+    if re.search('BURP_IP', line):
+        BURP_IP = re.sub('BURP_IP=', '', line)
+BURP_IP = BURP_IP.replace('\n', '')
+network_file.close()
+
+api_port = "8090"                   # default api port
+proxy_url = "http://" + BURP_IP     # default Burp proxy URL (localhost of Burp container)
 proxy_port = "8080"         # default proxy port
 
 class Burp_Scan(Action):

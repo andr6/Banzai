@@ -1,7 +1,7 @@
 # st2 command: st2 run banzai.nmap url=xxx.com
 ---
 name: "nessus"
-runner_type: "python"
+runner_type: "python-script"
 description: "run nessus full network scan"
 entry_point: "action_scripts/nessus_flow.py"
 parameters:
@@ -10,7 +10,8 @@ parameters:
     description: "url to perform a nessus scan on"
     required: true
     position: 1
-  name:
+  testid:
+    type: "integer"
     description: "id of defect dojo test"
     required: true
     position: 2

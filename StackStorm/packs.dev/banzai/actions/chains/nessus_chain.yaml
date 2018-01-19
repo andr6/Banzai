@@ -5,7 +5,7 @@
             ref: "banzai.nessus"
             parameters:
                url: "{{ url }}"
-               name: "{{ testid }}"
+               testid: "{{ testid }}"
             on-success: "c2"
             on-failure: "c3"
         -
@@ -13,6 +13,7 @@
             ref: "banzai.dojo_reimport"
             parameters:
               testid: "{{ testid }}"
+              scantype: "{{ scantype }}"
             on-success: ""
             on-failure: "c3"
         -
