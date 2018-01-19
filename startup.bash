@@ -82,3 +82,7 @@ echo '============================================================'
 
 # run datafetch script
 sudo docker exec -it banzai_dojo_1 bash -c 'python findme/datafetch.py'
+<<<<<<< HEAD
+=======
+
+>>>>>>> c32bc096e5ee7acdfc8c9a5029662c069a813e15
