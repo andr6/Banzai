@@ -1,0 +1,16 @@
+---
+name: burp_trigger
+description: Webhook trigger for Burp
+enabled: true
+
+trigger:
+  type: "core.st2.webhook"
+  parameters:
+    url: "burphook"
+
+action:
+  ref: "banzai.burp_chain"
+  parameters:
+    url: "{{trigger.body.url}}"
+    testid: "{{trigger.body.testid}}"
+    scantype: "{{trigger.body.scantype}}"

@@ -1,0 +1,15 @@
+# st2 command: st2 run banzai.burp url=http://xxx.com
+---
+name: "burp"
+runner_type: "python-script"
+description: "run burp spider, scan and generate report"
+entry_point: "action_scripts/burp_scan.py"
+parameters:
+  url:
+    type: "string"
+    description: "url to perform burp scan on"
+    required: true
+    position: 1
+  timeout:
+    default: 99999
+

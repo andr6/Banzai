@@ -1,0 +1,23 @@
+---
+name: "burp_chain"
+description: "Burp scan and Dojo import workflow"
+
+# `runner_type` has value `action-chain` to identify that action is an ActionChain.
+runner_type: "action-chain"
+
+# `entry_point` path to the ActionChain definition file, relative to the pack's action directory.
+entry_point: "chains/burp_chain.yaml"
+
+enabled: true
+
+parameters:
+  url:
+    type: "string"
+    description: "url to perform a Burp scan on"
+    required: true
+  testid:
+    description: "test id number"
+    required: true
+  scantype:
+    description: "type of scan"
+    required: true

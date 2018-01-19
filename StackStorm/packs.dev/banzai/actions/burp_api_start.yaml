@@ -1,0 +1,6 @@
+# st2 command: st2 run banzai.burp_api_start
+---
+name: "burp"
+runner_type: "local-shell-script"
+description: "Start Burp API"
+entry_point: "action_scripts/burp_api_start.sh"
