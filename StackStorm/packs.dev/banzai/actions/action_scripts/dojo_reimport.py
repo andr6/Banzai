@@ -26,18 +26,24 @@ for line in data:
 api_key = api_key.replace('\n', '')
 apikey_file.close()
 
-
 host = "http://" + DD_IP + ":8000"
 user = 'admin'
 
 class Dojo_Reimport(Action):
-    def run(self, testid):
+    def run(self, testid, scantype):
         # check params
         print("testid = {}".format(testid))
-
+        print("scan type = {}".format(scantype))
         # instantiate the DefectDojo api wrapper
         dd = defectdojo.DefectDojoAPI(host, api_key, user, debug=True)
 
+        if scantype == 'Nmap Scan':
+          filepath = "/opt/stackstorm/scan_results/nmap/nmap_standard.xml"
+        elif scantype == 'Burp Scan':
+          filepath = "/opt/stackstorm/scan_results/burp/burp_scan.xml"
+        elif scantype == 'Nessus Scan':
+          filepath = "/opt/stackstorm/scan_results/nessus/nessus_scan.xml"
+
         # perform upload request + print response
-        upload_scan = dd.reupload_scan(testid, "Nmap Scan", "/opt/stackstorm/scan_results/nmap/nmap_standard.xml", "true", "2024/1/1", "API")
+        upload_scan = dd.reupload_scan(testid, scantype, filepath, "true", "2024/1/1", "API")
         print("Test number: {}".format(upload_scan))

@@ -58,35 +58,27 @@ sudo docker exec banzai_dojo_1 sed -i 's/ALLOWED_HOSTS = \[\]/ALLOWED_HOSTS = \[
 echo '... Django settings adjusted'
 
 echo '============================================================'
-echo '                  INSTALLING CONTAINER PACKAGES             '
+echo '                 INSTALLING ADDITIONAL PACKAGES             '
 echo '============================================================'
 
-echo '... STARTING STACKSTORM INSTALLATIONS'
+echo '... INSTALLING STACKSTORM COMPONENTS'
 
-# install pip - python package manager
-sudo docker exec stackstorm bash -c 'echo 'Y' | sudo apt-get install python-pip'
-echo '... pip successfully installed'
-echo
-
-# install DefectDojo Python module
-sudo docker exec stackstorm bash -c 'echo 'Y' | sudo pip install -U defectdojo_api'
-echo '... defectdojo_api module successfully installed'
-echo
-
-# upgrade Python Requests module
-sudo docker exec stackstorm bash -c 'sudo pip install -U requests'
-echo '... Python requests module successfully updated'
-echo
-
-# install nmap
-sudo docker exec stackstorm bash -c 'echo 'Y' | sudo apt-get install nmap'
-echo '... nmap successfully installed'
-echo
+sudo docker exec stackstorm bash -c 'sudo apt-get install -y python-pip'                # python pip
+sudo docker exec stackstorm bash -c 'echo 'Y' | sudo pip install -U defectdojo_api'     # defectdojo
+sudo docker exec stackstorm bash -c 'sudo pip install -U requests'                      # requests
+sudo docker exec stackstorm bash -c 'sudo apt-get install -y nmap'                      # nmap
 
 echo '============================================================'
 echo '                        SETUP COMPLETE                      '
-echo '    execute "run_datafetch.bash" to complete the launch     '
 echo '                                                            '
 echo '      RUN "sudo docker-compose down" TO STOP SERVICES       '
 echo '============================================================'
 
+echo '============================================================'
+echo '                    RUNNING DATAFETCH SERVER                '
+echo '                                                            '
+echo '         This needs to run for the life of the pipeline     '
+echo '============================================================'
+
+# run datafetch script
+sudo docker exec -it banzai_dojo_1 bash -c 'python findme/datafetch.py'

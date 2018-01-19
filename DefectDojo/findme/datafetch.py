@@ -35,7 +35,6 @@ for line in data:
 key = key.replace("\n","")
 apikey_file.close()
 
-url = "https://" + ip + "/api/v1/webhooks/banzaihook"
 headers = {"St2-Api-Key": key, "Content-Type": "application/json"}
 
 # include exception handling here if 'ip' or 'key' == None
@@ -64,13 +63,26 @@ try:
       print("TEST ID = {}".format(testid))
       testurl = result[num][1]
       # remove http prefix - need implementation to remove https prefix too
-      testurl = re.sub(r"http://", "", testurl)
       testname = result[num][2]
       prev = num+1
 
-      payload = {'testid': testid, 'url': testurl}
+      # remove 'http://' if nmap scan
+      if testname == 'Nmap Scan':
+        print("Scan = Nmap Scan")
+        testurl = re.sub(r"http://", "", testurl)
+        trigger = 'banzaihook'
+      # keep 'http://' for others
+      elif testname == 'Burp Scan':
+        print("Scan = Burp Scan")
+        trigger = 'burphook'
+      elif testname == 'Nessus Scan':
+        print("Scan = Nessus Scan")
+        trigger = 'nessushook'
+
+      payload = {'testid': testid, 'url': testurl, 'scantype': testname}
       print("PAYLOAD = \n {}".format(payload))
 
+      url = "https://" + ip + "/api/v1/webhooks/" + trigger
       r = requests.post(url, headers=headers, data=json.dumps(payload), verify=False)
       print(r.text)
 

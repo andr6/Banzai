@@ -2,19 +2,18 @@
     chain:
         -
             name: "c1"
-            ref: "banzai.nmap"
+            ref: "banzai.burp"
             parameters:
-                cmd: "echo c1"
+                url: "{{ url }}"
             on-success: "c2"
             on-failure: "c3"
         -
             name: "c2"
-            ref: "banzai.dojo_import"
-            #parameters:
-            #    cmd: "echo \"c2: parent exec is {{action_context.parent.execution_id}}.\""
-            # terminate action chain with SUCCESS status
+            ref: "banzai.dojo_reimport"
+            parameters:
+                testid: "{{ testid }}"
+                scantype: "{{ scantype }}"
             on-success: ""
-            # exception handling action
             on-failure: "c3"
         -
             # write a better exception handling case for final build

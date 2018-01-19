@@ -6,7 +6,17 @@ version: "2"
 
 services:
 
-### StackStorm Core Service
+  burpdock:
+    image: brianlam38/burpdock:latest
+    container_name: burpdock
+    ports:
+      - 8090:8090
+    volumes:
+      - ./burp-rest-api:/opt/burpdock/burp-rest-api
+    stdin_open: true
+    tty: true
+
+### StackStorm Core Service + Nmap + Burp
 
   stackstorm:
     image: stackstorm/stackstorm:latest
@@ -34,6 +44,8 @@ services:
       - ./StackStorm/packs.dev:/opt/stackstorm/packs.dev
       - ./common:/opt/stackstorm/common
       - ./scan_results:/opt/stackstorm/scan_results
+      # mount burp automation volume
+      #- ./burp-rest-api:/opt/burp/burp-rest-api
 
 ### StackStorm External Services
 
