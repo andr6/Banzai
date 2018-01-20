@@ -37,14 +37,12 @@ apikey_file.close()
 
 headers = {"St2-Api-Key": key, "Content-Type": "application/json"}
 
-# include exception handling here if 'ip' or 'key' == None
-
 try:
-    
+
   prev = 0
 
-  while 1:  
-  
+  while 1:
+    # fetch new Test data
     connection = db.Connection(host=HOST, port=PORT, user=USER, passwd=PASSWORD, db=DB)
     dbhandler = connection.cursor()
     dbhandler.execute("SELECT T.id as testid, E.test_strategy as testurl, TT.name as testname FROM dojo_test_type TT, dojo_engagement E, dojo_test T WHERE T.engagement_id = E.id and T.test_type_id = TT.id;")
@@ -57,16 +55,19 @@ try:
     #                                                                       #
     #########################################################################
 
+    # grab testid, testurl, testname
     for num in range(prev, len(result)):
       testid = result[num][0]
       testid = str(testid)
-      print("TEST ID = {}".format(testid))
       testurl = result[num][1]
-      # remove http prefix - need implementation to remove https prefix too
       testname = result[num][2]
       prev = num+1
 
-      # remove 'http://' if nmap scan
+      print("TEST ID = {}".format(testid))
+      print("TEST URL = {}".format(testurl))
+      print("TEST NAME = {}".format(testname))
+
+      # parse target URL and assign appropriate StackStorm webhook trigger
       if testname == 'Nmap Scan':
         print("Scan = Nmap Scan")
         testurl = re.sub(r"http://", "", testurl)
@@ -79,9 +80,11 @@ try:
         print("Scan = Nessus Scan")
         trigger = 'nessushook'
 
+      # create webhook payload
       payload = {'testid': testid, 'url': testurl, 'scantype': testname}
       print("PAYLOAD = \n {}".format(payload))
 
+      # send request to webhook. to trigger scan
       url = "https://" + ip + "/api/v1/webhooks/" + trigger
       r = requests.post(url, headers=headers, data=json.dumps(payload), verify=False)
       print(r.text)
