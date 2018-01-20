@@ -12,10 +12,10 @@ echo '============================================================'
 echo '               SETTING UP PIPELINE VARIABLES                '
 echo '============================================================'
 
-# remove old variables
+# remove old env variables
 > common/networks.txt
 > common/api_keys.txt
-echo '... Old variables removed successfully'
+echo '... Old env variables removed successfully'
 
 # get StackStorm container IP (for use by DefectDojo)
 ss_key="SS_IP="
@@ -30,6 +30,14 @@ dd_value=$(sudo docker network inspect banzai_default | grep -A 3 'banzai_dojo_1
 dd_ip=$dd_key$dd_value
 echo $dd_ip >> common/networks.txt
 echo '... DefectDojo container IP retrieved'
+
+
+# get DefectDojo container IP (for use by StackStorm)
+burp_key="BURP_IP="
+burp_value=$(sudo docker network inspect banzai_default | grep -A 3 'burpdock' | grep 'IPv4' | sed 's/.*: "//' | sed 's/\/.*//')
+burp_ip=$burp_key$burp_value
+echo $burp_ip >> common/networks.txt
+echo '... Burp container IP retrieved'
 
 # generate + retrieve StackStorm api key
 ss="SS_APIKEY="
@@ -82,7 +90,3 @@ echo '============================================================'
 
 # run datafetch script
 sudo docker exec -it banzai_dojo_1 bash -c 'python findme/datafetch.py'
-<<<<<<< HEAD
-=======
-
->>>>>>> c32bc096e5ee7acdfc8c9a5029662c069a813e15
