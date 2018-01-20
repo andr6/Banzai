@@ -6,7 +6,7 @@ The aim of the AppSec pipeline is to provide the ability to perform automated se
 
 1. Run `./setup.bash` to setup the pipeline and start a webhook service. This process must be kept running throughout the life of the pipeline.
 2. Access the `Burpdock` container by running `sudo docker exec -it burpdock bash`
-3. Inside the container, navigate to `opt/burpdock/burp-rest-api` and run `java -jar build/libs/burp-rest-api-1.0.0.jar` to launch the Burp Rest API service. You will be prompted to enter your Burp Professional license. Keep this proces running throughout the life of the pipeline.
+3. Inside the container, run `java -jar opt/burpdock/burp-rest-api/build/libs/burp-rest-api-1.0.0.jar` to launch the Burp Rest API service. You will be prompted to enter your Burp Professional license. Keep this proces running throughout the life of the pipeline.
 
 ## Access services
 
@@ -15,8 +15,11 @@ StackStorm
 * UI: `localhost`
 
 DefectDojo
-* Container: `sudo docker exec -it banzaireal_dojo_1`
+* Container: `sudo docker exec -it banzaireal_dojo_1 bash`
 * UI: `localhost:8000`
+
+Burp Rest API
+* Container: `sudo docker exec it burpdock bash`
 
 ## Data Persistence between local <-> containers
 
