@@ -6,6 +6,8 @@ version: "2"
 
 services:
 
+### Burp Rest API service
+
   burpdock:
     image: brianlam38/burpdock:latest
     container_name: burpdock
@@ -16,7 +18,7 @@ services:
     stdin_open: true
     tty: true
 
-### StackStorm Core Service + Nmap + Burp
+### StackStorm Core Service + Nmap
 
   stackstorm:
     image: stackstorm/stackstorm:latest
@@ -44,8 +46,6 @@ services:
       - ./StackStorm/packs.dev:/opt/stackstorm/packs.dev
       - ./common:/opt/stackstorm/common
       - ./scan_results:/opt/stackstorm/scan_results
-      # mount burp automation volume
-      #- ./burp-rest-api:/opt/burp/burp-rest-api
 
 ### StackStorm External Services
 
@@ -98,8 +98,6 @@ services:
     env_file:
         - ./DefectDojo/env/common.env
         - ./DefectDojo/env/dojo.env
-  # run DefectDojo database polling service
-    command: python /opt/django-DefectDojo/findme/datafetch.py
 
 ### DefectDojo External Services
 
