@@ -45,7 +45,7 @@ try:
     # fetch new Test data
     connection = db.Connection(host=HOST, port=PORT, user=USER, passwd=PASSWORD, db=DB)
     dbhandler = connection.cursor()
-    dbhandler.execute("SELECT T.id as testid, E.test_strategy as testurl, TT.name as testname. E.target_start as startdate FROM dojo_test_type TT, dojo_engagement E, dojo_test T WHERE T.engagement_id = E.id and T.test_type_id = TT.id;")
+    dbhandler.execute("SELECT T.id as testid, E.test_strategy as testurl, TT.name as testname. T.target_start as startdate FROM dojo_test_type TT, dojo_engagement E, dojo_test T WHERE T.engagement_id = E.id and T.test_type_id = TT.id;")
     result = dbhandler.fetchall()
 
     #########################################################################
