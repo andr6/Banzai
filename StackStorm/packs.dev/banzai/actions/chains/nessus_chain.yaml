@@ -2,23 +2,30 @@
     chain:
         -
             name: "c1"
+            ref: "banzai.waiting"
+            parameters:
+               startdate: "{{ startdate }}"
+            on-success: "c2"
+            on-failure: "c4"
+        -
+            name: "c2"
             ref: "banzai.nessus"
             parameters:
                url: "{{ url }}"
                testid: "{{ testid }}"
-            on-success: "c2"
-            on-failure: "c3"
+            on-success: "c3"
+            on-failure: "c4"
         -
-            name: "c2"
+            name: "c3"
             ref: "banzai.dojo_reimport"
             parameters:
               testid: "{{ testid }}"
               scantype: "{{ scantype }}"
             on-success: ""
-            on-failure: "c3"
+            on-failure: "c4"
         -
             # write a better exception handling case for final build
-            name: "c3"
+            name: "c4"
             ref: "core.local"
             parameters:
                 cmd: "echo Failed to import test results to DefectDojo."
