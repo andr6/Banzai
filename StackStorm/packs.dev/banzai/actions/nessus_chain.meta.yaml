@@ -13,11 +13,14 @@ enabled: true
 parameters:
   url:
     type: "string"
-    description: "url to perform a port scan on"
+    description: "url to perform a Nessus scan on"
     required: true
   testid:
     description: "test id number"
     required: true
   scantype:
-    description: "scan type"
+    description: "type of scan"
+    required: true
+  startdate:
+    description: "start date for schedule"
     required: true
