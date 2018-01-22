@@ -19,7 +19,11 @@ DefectDojo
 * UI: `localhost:8000`
 
 Burp Rest API
-* Container: `sudo docker exec it burpdock bash`
+* Container: `sudo docker exec -it burpdock bash`
+
+Google Gruyere
+* Container: `sudo docker exec -it gruyere bash`
+* UI: localhost:8008
 
 ## Data Persistence between local host <-> containers
 
