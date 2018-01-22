@@ -4,7 +4,11 @@ The aim of the AppSec pipeline is to provide the ability to perform automated se
 
 ## Setup
 
+<<<<<<< HEAD
 1. Run `./setup.bash` to setup the pipeline and start a DefectDojo polling service. This process must be kept running throughout the life of the pipeline.
+=======
+1. Run `./startup.bash` to setup the pipeline and start a webhook service. This process must be kept running throughout the life of the pipeline.
+>>>>>>> bcad7f38db8dd17297590f0f75e22edff9337c8d
 2. Access the `Burpdock` container by running `sudo docker exec -it burpdock bash`
 3. Inside the container, run `java -jar opt/burpdock/burp-rest-api/build/libs/burp-rest-api-1.0.0.jar` to launch the Burp Rest API service. You will be prompted to enter your Burp Professional license. Keep this process running throughout the life of the pipeline.
 

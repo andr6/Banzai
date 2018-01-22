@@ -43,7 +43,7 @@ try:
     # fetch new Test data
     connection = db.Connection(host=HOST, port=PORT, user=USER, passwd=PASSWORD, db=DB)
     dbhandler = connection.cursor()
-    dbhandler.execute("SELECT T.id as testid, E.test_strategy as testurl, TT.name as testname FROM dojo_test_type TT, dojo_engagement E, dojo_test T WHERE T.engagement_id = E.id and T.test_type_id = TT.id;")
+    dbhandler.execute("SELECT T.id as testid, E.test_strategy as testurl, TT.name as testname, T.target_start as startdate FROM dojo_test_type TT, dojo_engagement E, dojo_test T WHERE T.engagement_id = E.id and T.test_type_id = TT.id;")
     result = dbhandler.fetchall()
 
     #########################################################################
@@ -59,11 +59,13 @@ try:
       testid = str(testid)
       testurl = result[num][1]
       testname = result[num][2]
+      startdate = result[num][3]
       prev = num+1
 
       print("TEST ID = {}".format(testid))
       print("TEST URL = {}".format(testurl))
       print("TEST NAME = {}".format(testname))
+      print("START DATE = {}".format(startdate))
 
       # parse target URL and assign appropriate StackStorm webhook trigger
       if testname == 'Nmap Scan':
@@ -79,7 +81,7 @@ try:
         trigger = 'nessushook'
 
       # create webhook payload
-      payload = {'testid': testid, 'url': testurl, 'scantype': testname}
+      payload = {'testid': testid, 'url': testurl, 'scantype': testname, 'startdate': startdate}
       print("PAYLOAD = \n {}".format(payload))
 
       # send request to webhook. to trigger scan
