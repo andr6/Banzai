@@ -1,0 +1,13 @@
+---
+name: "waiting"
+runner_type: "python-script"
+description: "script for scheduling"
+entry_point: "action_scripts/waiting.py"
+parameters:
+  startdate:
+    type: "string"
+    description: "date to start the scans"
+    required: true
+    position: 1
+  timeout:
+    default: 99999
