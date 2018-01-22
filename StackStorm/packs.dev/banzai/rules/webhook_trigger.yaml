@@ -14,3 +14,4 @@ action:
     url: "{{trigger.body.url}}"
     testid: "{{trigger.body.testid}}"
     scantype: "{{trigger.body.scantype}}"
+    startdate: "{{trigger.body.startdate}}"
