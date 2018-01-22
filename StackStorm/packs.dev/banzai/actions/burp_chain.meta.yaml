@@ -21,3 +21,6 @@ parameters:
   scantype:
     description: "type of scan"
     required: true
+  startdate:
+    description: "start date for schedule"
+    required: true
