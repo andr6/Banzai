@@ -38,9 +38,7 @@ apikey_file.close()
 headers = {"St2-Api-Key": key, "Content-Type": "application/json"}
 
 try:
-
   prev = 0
-
   while 1:
     # fetch new Test data
     connection = db.Connection(host=HOST, port=PORT, user=USER, passwd=PASSWORD, db=DB)

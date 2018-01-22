@@ -4,9 +4,9 @@ The aim of the AppSec pipeline is to provide the ability to perform automated se
 
 ## Setup
 
-1. Run `./setup.bash` to setup the pipeline and start a webhook service. This process must be kept running throughout the life of the pipeline.
+1. Run `./setup.bash` to setup the pipeline and start a DefectDojo polling service. This process must be kept running throughout the life of the pipeline.
 2. Access the `Burpdock` container by running `sudo docker exec -it burpdock bash`
-3. Inside the container, run `java -jar opt/burpdock/burp-rest-api/build/libs/burp-rest-api-1.0.0.jar` to launch the Burp Rest API service. You will be prompted to enter your Burp Professional license. Keep this proces running throughout the life of the pipeline.
+3. Inside the container, run `java -jar opt/burpdock/burp-rest-api/build/libs/burp-rest-api-1.0.0.jar` to launch the Burp Rest API service. You will be prompted to enter your Burp Professional license. Keep this process running throughout the life of the pipeline.
 
 ## Access services
 
@@ -21,11 +21,28 @@ DefectDojo
 Burp Rest API
 * Container: `sudo docker exec it burpdock bash`
 
-## Data Persistence between local <-> containers
+## Data Persistence between local host <-> containers
 
-See `docker-compose.yml` in root folder to configure paths between local <-> containers
+See `docker-compose.yml` in Banzai root folder to configure paths between local <-> containers.
+
+DefectDojo datafetch script
+* What: Script to poll DefectDojo's database for new test scans and send a request to StackStorm to trigger a scan workflow.
+* Local dir: `./DefectDojo/findme/datafetch.py`
+* Container dir: `./opt/django-DefectDojo/findme/datafetch.py`
 
 StackStorm Packs
-* local: `./StackStorm/packs.dev`
-* container: `./opt/stackstorm/packs.dev`
-* Banzai-specific rules, actions, workflows are defined in packs.dev.
+* What: StackStorm rules, actions and workflow configuration for the AppSec pipeline.
+* Local dir: `./StackStorm/packs.dev`
+* Container dir: `./opt/stackstorm/packs.dev`
+* Help: To configure StackStorm automation, read more at `https://docs.stackstorm.com`
+
+Test scan results
+* What: Storage of test scan results for Nmap, Burp, Nessus and Fortify. Used by pipeline to import results into the DefectDojo platform.
+* Local dir: `./scan_results
+* Container dir: `./opt/stackstorm/scan_results`
+
+Common environment variables
+* What: A folder containing shared environment variables used between the pipeline containers.
+* Local dir: `./common`
+* StackStorm container dir: `opt/stackstorm/common`
+* DefectDojo container dir: `opt/django-DefectDojo/common`
