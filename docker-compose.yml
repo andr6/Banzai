@@ -6,18 +6,6 @@ version: "2"
 
 services:
 
-### Burp Rest API service
-
-  burpdock:
-    image: brianlam38/burpdock:latest
-    container_name: burpdock
-    ports:
-      - 8090:8090
-    volumes:
-      - ./burp-rest-api:/opt/burpdock/burp-rest-api
-    stdin_open: true
-    tty: true
-
 ### StackStorm Core Service + Nmap
 
   stackstorm:
@@ -131,6 +119,26 @@ services:
       - ./scripts:/scripts
     depends_on:
       - dojo
+
+### Burp Rest API service
+
+  burpdock:
+    image: brianlam38/burpdock:latest
+    container_name: burpdock
+    ports:
+      - 8090:8090
+    volumes:
+      - ./burp-rest-api:/opt/burpdock/burp-rest-api
+    stdin_open: true
+    tty: true
+
+### Google Gruyere vulnerable webapp
+
+  gruyere:
+    image: karthequian/gruyere:latest
+    container_name: gruyere
+    ports:
+      - 8008:8008
 
 volumes:
 
