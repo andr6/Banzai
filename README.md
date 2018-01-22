@@ -25,28 +25,11 @@ Google Gruyere
 * Container: `sudo docker exec -it gruyere bash`
 * UI: localhost:8008
 
-## Data Persistence between local host <-> containers
+## Help
 
-See `docker-compose.yml` in Banzai root folder to configure paths between local <-> containers.
+For more detailed information, go to this repository's Wiki page: https://github.com/brianlam38/Banzai/wiki.
 
-DefectDojo datafetch script
-* What: Script to poll DefectDojo's database for new test scans and send a request to StackStorm to trigger a scan workflow.
-* Local dir: `./DefectDojo/findme/datafetch.py`
-* Container dir: `./opt/django-DefectDojo/findme/datafetch.py`
+## Contributors
 
-StackStorm Packs
-* What: StackStorm rules, actions and workflow configuration for the AppSec pipeline.
-* Local dir: `./StackStorm/packs.dev`
-* Container dir: `./opt/stackstorm/packs.dev`
-* Help: To configure StackStorm automation, read more at `https://docs.stackstorm.com`
-
-Test scan results
-* What: Storage of test scan results for Nmap, Burp, Nessus and Fortify. Used by pipeline to import results into the DefectDojo platform.
-* Local dir: `./scan_results
-* Container dir: `./opt/stackstorm/scan_results`
-
-Common environment variables
-* What: A folder containing shared environment variables used between the pipeline containers.
-* Local dir: `./common`
-* StackStorm container dir: `opt/stackstorm/common`
-* DefectDojo container dir: `opt/django-DefectDojo/common`
+* Brian Lam
+* Jacqueline Lee
