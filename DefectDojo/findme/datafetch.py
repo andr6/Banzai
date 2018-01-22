@@ -60,6 +60,7 @@ try:
       testurl = result[num][1]
       testname = result[num][2]
       startdate = result[num][3]
+      startdate = startdate.strftime("%Y-%m-%d %H:%M:%S.%f")
       prev = num+1
 
       print("TEST ID = {}".format(testid))
