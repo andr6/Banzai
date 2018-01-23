@@ -19,18 +19,18 @@ You will be prompted to enter your Burp Professional license. Keep this process 
 ## Access services
 
 StackStorm
-* Container: <pre>sudo docker exec -it stackstorm bash</prev>
+* Container: <pre>$ sudo docker exec -it stackstorm bash</pre>
 * UI: `localhost`
 
 DefectDojo
-* Container: `sudo docker exec -it banzaireal_dojo_1 bash`
+* Container: <pre>$ sudo docker exec -it banzaireal_dojo_1 bash</pre>
 * UI: `localhost:8000`
 
 Burp Rest API
-* Container: `sudo docker exec -it burpdock bash`
+* Container: <pre>$ sudo docker exec -it burpdock bash</pre>
 
 Google Gruyere
-* Container: `sudo docker exec -it gruyere bash`
+* Container: <pre>$ sudo docker exec -it gruyere bash</pre>
 * UI: `localhost:8008`
 
 ## Help
