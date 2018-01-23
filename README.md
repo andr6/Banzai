@@ -36,7 +36,7 @@ Google Gruyere
 
 ## Help
 
-For more detailed information, go to this repository's Wiki page: https://github.com/brianlam38/Banzai/wiki.
+For more detailed information, go to the repository's Wiki page: https://github.com/brianlam38/Banzai/wiki.
 
 ## Contributors
 
