@@ -71,7 +71,10 @@ try:
         # parse target URL and assign appropriate StackStorm webhook trigger
         if testname == 'Nmap Scan':
           print("Scan = Nmap Scan")
-          testurl = re.sub(r"http://", "", testurl)
+          if re.search(r"https://", testurl):
+            testurl = re.sub(r"https://", "", testurl)
+          else:
+            testurl = re.sub(r"http://", "", testurl)
           trigger = 'banzaihook'
         # keep 'http://' for others
         elif testname == 'Burp Scan':
