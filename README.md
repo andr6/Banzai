@@ -24,7 +24,7 @@ StackStorm
 * UI: `localhost`
 
 DefectDojo
-* Container: <pre>$ sudo docker exec -it banzaireal_dojo_1 bash</pre>
+* Container: <pre>$ sudo docker exec -it banzai_dojo_1 bash</pre>
 * UI: `localhost:8000`
 
 Burp Rest API
