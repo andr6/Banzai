@@ -86,6 +86,7 @@ services:
     env_file:
         - ./DefectDojo/env/common.env
         - ./DefectDojo/env/dojo.env
+    command: bash /django-DefectDojo/docker/docker-startup.bash
 
 ### DefectDojo External Services
 
