@@ -1,1 +1,1 @@
-### Psuedo-environment variables for use within the AppSec pipeline containers.
+#### Common Psuedo-environment variables for use between AppSec pipeline containers.
