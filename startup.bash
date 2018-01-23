@@ -32,7 +32,7 @@ echo $dd_ip >> common/networks.txt
 echo '... DefectDojo container IP retrieved'
 
 
-# get DefectDojo container IP (for use by StackStorm)
+# get Burp container IP (for use by StackStorm)
 burp_key="BURP_IP="
 burp_value=$(sudo docker network inspect banzai_default | grep -A 3 'burpdock' | grep 'IPv4' | sed 's/.*: "//' | sed 's/\/.*//')
 burp_ip=$burp_key$burp_value
