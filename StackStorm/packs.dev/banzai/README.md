@@ -1,4 +1,4 @@
-# Banzai Pack
+#### Banzai Pack
 
 To VIEW the list of actions within the pack, run `st2 action list -p banzai`.
 
