@@ -54,7 +54,7 @@ try:
     #########################################################################
 
     # grab testid, testurl, testname
-    for num in range(prev, len(result)):
+    for num in range(0, len(result)):
       testid = result[num][0]
       testid = str(testid)
       testurl = result[num][1]
@@ -63,35 +63,37 @@ try:
       startdate = startdate.strftime("%Y-%m-%d %H:%M:%S.%f")
       prev = num+1
 
-      print("TEST ID = {}".format(testid))
-      print("TEST URL = {}".format(testurl))
-      print("TEST NAME = {}".format(testname))
-      print("START DATE = {}".format(startdate))
+      if int(testid) > prev:
+        print("TEST ID = {}".format(testid))
+        print("TEST URL = {}".format(testurl))
+        print("TEST NAME = {}".format(testname))
+        print("START DATE = {}".format(startdate))
+      
+        # parse target URL and assign appropriate StackStorm webhook trigger
+        if testname == 'Nmap Scan':
+          print("Scan = Nmap Scan")
+          testurl = re.sub(r"http://", "", testurl)
+          trigger = 'banzaihook'
+        # keep 'http://' for others
+        elif testname == 'Burp Scan':
+          print("Scan = Burp Scan")
+          trigger = 'burphook'
+        elif testname == 'Nessus Scan':
+          print("Scan = Nessus Scan")
+          trigger = 'nessushook'
 
-      # parse target URL and assign appropriate StackStorm webhook trigger
-      if testname == 'Nmap Scan':
-        print("Scan = Nmap Scan")
-        testurl = re.sub(r"http://", "", testurl)
-        trigger = 'banzaihook'
-      # keep 'http://' for others
-      elif testname == 'Burp Scan':
-        print("Scan = Burp Scan")
-        trigger = 'burphook'
-      elif testname == 'Nessus Scan':
-        print("Scan = Nessus Scan")
-        trigger = 'nessushook'
+        # create webhook payload
+        payload = {'testid': testid, 'url': testurl, 'scantype': testname, 'startdate': startdate}
+        print("PAYLOAD = \n {}".format(payload))
 
-      # create webhook payload
-      payload = {'testid': testid, 'url': testurl, 'scantype': testname, 'startdate': startdate}
-      print("PAYLOAD = \n {}".format(payload))
+        # send request to webhook. to trigger scan
+        url = "https://" + ip + "/api/v1/webhooks/" + trigger
+        r = requests.post(url, headers=headers, data=json.dumps(payload), verify=False)
+        print(r.text)
+        prev = int(testid)
 
-      # send request to webhook. to trigger scan
-      url = "https://" + ip + "/api/v1/webhooks/" + trigger
-      r = requests.post(url, headers=headers, data=json.dumps(payload), verify=False)
-      print(r.text)
-
-      time.sleep(2)
-
+        time.sleep(2)
+        
     time.sleep(5)
 
 except Exception as e:
