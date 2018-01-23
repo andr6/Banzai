@@ -116,7 +116,8 @@ services:
       - dojo
     volumes:
       - nginxdata:/etc/nginx/external/
-      - ./scripts:/scripts
+     # unused
+     #- ./scripts:/scripts
     depends_on:
       - dojo
 
