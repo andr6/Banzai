@@ -5,8 +5,12 @@ The aim of the AppSec pipeline is to provide the ability to perform automated se
 ## Setup
 
 1. Run `./startup.bash` to setup the pipeline and start a webhook service. This process must be kept running throughout the life of the pipeline.
-2. Access the `Burpdock` container by running `sudo docker exec -it burpdock bash`
-3. Inside the container, run `java -jar opt/burpdock/burp-rest-api/build/libs/burp-rest-api-1.0.0.jar` to launch the Burp Rest API service. You will be prompted to enter your Burp Professional license. Keep this process running throughout the life of the pipeline.
+2. Download a Burp Suite Professional .jar and place it inside `/burp-rest-api/lib`.
+3. Access the `Burpdock` container by running `sudo docker exec -it burpdock bash`
+4. Inside the container, navigate to `opt/burpdock/burp-rest-api` and run: <pre>$ gradle clean build</pre>
+This will build the Burp Suite jar.
+5. Once Burp is built, launch the API service: <pre>java -jar opt/burpdock/burp-rest-api/build/libs/burp-rest-api-1.0.0.jar</pre>
+You will be prompted to enter your Burp Professional license. Keep this process running throughout the life of the pipeline.
 
 ## Access services
 
