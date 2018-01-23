@@ -14,7 +14,7 @@ This will also start a webhook service between DefectDojo and StackStorm. This p
 4. Inside the container, navigate to `opt/burpdock/burp-rest-api` and build the Burp Suite .jar by running: <pre>$ gradle clean build</pre>
 An error message may show up during the build, but this is irrelevant and can be ignored.
 
-5. Once Burp is built, launch the API service: <pre>$ java -jar opt/burpdock/burp-rest-api/build/libs/burp-rest-api-1.0.0.jar</pre>
+5. Once Burp is built, launch the API service: <pre>$ java -jar build/libs/burp-rest-api-1.0.0.jar</pre>
 You will be prompted to enter your Burp Professional license. Keep this process running throughout the life of the pipeline.
 
 ## Access services
