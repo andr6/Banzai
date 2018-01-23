@@ -1,5 +1,3 @@
-# burp-rest-api
-
 ## Overview
 
 A REST/JSON API to the Burp Suite security tool.
