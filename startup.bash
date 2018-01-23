@@ -89,4 +89,5 @@ echo '         This needs to run for the life of the pipeline     '
 echo '============================================================'
 
 # run datafetch script
+sudo docker exec -it banzai_dojo_1 bash -c 'python findme/insertnmap.py'
 sudo docker exec -it banzai_dojo_1 bash -c 'python findme/datafetch.py'
