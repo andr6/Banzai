@@ -55,7 +55,7 @@ echo
 
 dd="DD_APIKEY="
 echo $dd$dd_apikey >> common/api_keys.txt
-echo '... DefectDojo API Key retrived'
+echo '... DefectDojo API Key retrieved'
 
 echo '============================================================'
 echo '                       ADJUSTING SETTINGS                   '
