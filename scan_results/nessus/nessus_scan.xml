@@ -8,7 +8,7 @@
 <value>webapp_quick</value>
 </preference>
 <preference><name>TARGET</name>
-<value>http://example.com</value>
+<value>http://google-gruyere.appspot.com</value>
 </preference>
 <preference><name>throttle_scan</name>
 <value>yes</value>
@@ -113,7 +113,7 @@
 <value>yes</value>
 </preference>
 <preference><name>report_task_id</name>
-<value>615b784d-cb75-dc3f-fff9-eeb285fb5d707a2b212e4e85b330</value>
+<value>95a8dfc2-c41e-4991-5c33-ff46a3bf02004575920027d026b8</value>
 </preference>
 <preference><name>stop_scan_on_hang</name>
 <value>no</value>
@@ -5356,13 +5356,13 @@
 </PluginItem>
 </IndividualPluginSelection>
 </Policy>
-<Report name="10" xmlns:cm="http://www.nessus.org/cm">
-<ReportHost name="example.com"><HostProperties>
-<tag name="HOST_END">Fri Jan 19 16:57:39 2018</tag>
-<tag name="LastUnauthenticatedResults">1516341459</tag>
+<Report name="6" xmlns:cm="http://www.nessus.org/cm">
+<ReportHost name="google-gruyere.appspot.com"><HostProperties>
+<tag name="HOST_END">Wed Jan 24 12:10:10 2018</tag>
+<tag name="LastUnauthenticatedResults">1516756210</tag>
 <tag name="Credentialed_Scan">false</tag>
 <tag name="policy-used">Banzai Default Scan Policy</tag>
-<tag name="patch-summary-total-cves">9</tag>
+<tag name="patch-summary-total-cves">3</tag>
 <tag name="cpe">cpe:/o:linux:linux_kernel</tag>
 <tag name="os">linux</tag>
 <tag name="cpe-2">cpe:/o:linux:linux_kernel:2.6</tag>
@@ -5372,24 +5372,2245 @@
 <tag name="operating-system">Linux Kernel 2.2
 Linux Kernel 2.4
 Linux Kernel 2.6</tag>
-<tag name="traceroute-hop-13">93.184.216.34</tag>
-<tag name="traceroute-hop-12">152.195.77.133</tag>
-<tag name="traceroute-hop-11">?</tag>
-<tag name="traceroute-hop-10">49.255.255.9</tag>
-<tag name="traceroute-hop-9">49.255.255.1</tag>
-<tag name="traceroute-hop-8">49.255.255.10</tag>
-<tag name="traceroute-hop-7">114.31.192.114</tag>
-<tag name="traceroute-hop-6">114.31.196.50</tag>
-<tag name="traceroute-hop-5">49.255.202.65</tag>
-<tag name="traceroute-hop-4">150.207.242.17</tag>
-<tag name="traceroute-hop-3">121.200.226.193</tag>
+<tag name="traceroute-hop-7">216.58.203.116</tag>
+<tag name="traceroute-hop-6">209.85.255.165</tag>
+<tag name="traceroute-hop-5">108.170.247.65</tag>
+<tag name="traceroute-hop-4">45.127.172.73</tag>
+<tag name="traceroute-hop-3">103.36.4.44</tag>
 <tag name="traceroute-hop-2">103.36.4.32</tag>
 <tag name="traceroute-hop-1">103.36.6.66</tag>
 <tag name="traceroute-hop-0">10.142.120.251</tag>
-<tag name="host-ip">93.184.216.34</tag>
-<tag name="host-fqdn">example.com</tag>
-<tag name="HOST_START">Fri Jan 19 16:26:42 2018</tag>
+<tag name="host-ip">216.58.203.116</tag>
+<tag name="host-fqdn">google-gruyere.appspot.com</tag>
+<tag name="HOST_START">Wed Jan 24 11:18:22 2018</tag>
 </HostProperties>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="39470" pluginName="CGI Generic Tests Timeout" pluginFamily="CGI abuses">
+<description>Some generic CGI tests ran out of time during the scan. The results may be incomplete.</description>
+<fname>torture_cgi_timeout.nasl</fname>
+<plugin_modification_date>2016/09/21</plugin_modification_date>
+<plugin_name>CGI Generic Tests Timeout</plugin_name>
+<plugin_publication_date>2009/06/19</plugin_publication_date>
+<plugin_type>summary</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.13 $</script_version>
+<solution>Consider increasing the &apos;maximum run time (minutes)&apos; preference for the &apos;Web Applications Settings&apos; in order to prevent the CGI scanning from timing out. Less ambitious options could also be used, such as :
+
+  - Test more that one parameter at a time per form :
+    &apos;Test all combinations of parameters&apos; is much slower     than &apos;Test random pairs of parameters&apos; or &apos;Test all     pairs of parameters (slow)&apos;.
+
+  - &apos;Stop after one flaw is found per web server (fastest)&apos;     under &apos;Do not stop after the first flaw is found per web     page&apos; is quicker than &apos;Look for all flaws (slowest)&apos;.
+
+  - In the Settings/Advanced menu, try reducing the value     for &apos;Max number of concurrent TCP sessions per host&apos; or     &apos;Max simultaneous checks per host&apos;.</solution>
+<synopsis>Some generic CGI attacks ran out of time.</synopsis>
+<plugin_output>The following tests timed out without finding any flaw :
+- blind SQL injection
+- SQL injection
+- SQL injection (on HTTP headers)
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="2" pluginID="39466" pluginName="CGI Generic XSS (quick test)" pluginFamily="CGI abuses : XSS">
+<cvss_base_score>4.3</cvss_base_score>
+<cvss_vector>CVSS2#AV:N/AC:M/Au:N/C:N/I:P/A:N</cvss_vector>
+<cwe>20</cwe>
+<cwe>74</cwe>
+<cwe>79</cwe>
+<cwe>80</cwe>
+<cwe>81</cwe>
+<cwe>83</cwe>
+<cwe>86</cwe>
+<cwe>116</cwe>
+<cwe>442</cwe>
+<cwe>692</cwe>
+<cwe>712</cwe>
+<cwe>722</cwe>
+<cwe>725</cwe>
+<cwe>751</cwe>
+<cwe>801</cwe>
+<cwe>811</cwe>
+<cwe>928</cwe>
+<cwe>931</cwe>
+<description>The remote web server hosts CGI scripts that fail to adequately sanitize request strings with malicious JavaScript.  By leveraging this issue, an attacker may be able to cause arbitrary HTML and script code to be executed in a user&apos;s browser within the security context of the affected site.
+These XSS are likely to be &apos;non persistent&apos; or &apos;reflected&apos;.</description>
+<fname>torture_cgi_cross_site_scripting.nasl</fname>
+<plugin_modification_date>2017/06/12</plugin_modification_date>
+<plugin_name>CGI Generic XSS (quick test)</plugin_name>
+<plugin_publication_date>2009/06/19</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>Medium</risk_factor>
+<script_version>$Revision: 1.40 $</script_version>
+<see_also>https://en.wikipedia.org/wiki/Cross_site_scripting#Non-persistent
+http://www.nessus.org/u?9717ad85
+http://projects.webappsec.org/Cross-Site+Scripting</see_also>
+<solution>Restrict access to the vulnerable application. Contact the vendor for a patch or upgrade.</solution>
+<synopsis>The remote web server is prone to cross-site scripting attacks.</synopsis>
+<xref>CWE:20</xref>
+<xref>CWE:74</xref>
+<xref>CWE:79</xref>
+<xref>CWE:80</xref>
+<xref>CWE:81</xref>
+<xref>CWE:83</xref>
+<xref>CWE:86</xref>
+<xref>CWE:116</xref>
+<xref>CWE:442</xref>
+<xref>CWE:692</xref>
+<xref>CWE:712</xref>
+<xref>CWE:722</xref>
+<xref>CWE:725</xref>
+<xref>CWE:751</xref>
+<xref>CWE:801</xref>
+<xref>CWE:811</xref>
+<xref>CWE:928</xref>
+<xref>CWE:931</xref>
+<plugin_output>
+Using the GET HTTP method, Nessus found that :
+
++ The following resources may be vulnerable to cross-site scripting (quick test) :
+
++ The &apos;uid&apos; parameter of the /559093312705275149262138428183007231424/snippets.gtl CGI :
+
+/559093312705275149262138428183007231424/snippets.gtl?uid=&quot;&gt;&lt;object%20ty
+pe=&quot;text/html&quot;%20data=&quot;http://www.example.com/include.html&quot;&gt;&lt;/object&gt;
+
+-------- output --------
+&lt;h2 class=&apos;has-refresh&apos; id=&quot;user_name&quot;&gt;
+
+&quot;&gt;&lt;object type=&quot;text/html&quot; data=&quot;http://www.example.com/include.html&quot;&gt;&lt;/
+object&gt;
+------------------------
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="33817" pluginName="CGI Generic Tests Load Estimation (all tests)" pluginFamily="CGI abuses">
+<description>This script computes the maximum number of requests that would be done by the generic web tests, depending on miscellaneous options. It does not perform any test by itself.
+
+The results can be used to estimate the duration of these tests, or the complexity of additional manual tests.
+
+Note that the script does not try to compute this duration based on external factors such as the network and web servers loads.</description>
+<fname>torture_cgi_load_estimation.nasl</fname>
+<plugin_modification_date>2014/03/12</plugin_modification_date>
+<plugin_name>CGI Generic Tests Load Estimation (all tests)</plugin_name>
+<plugin_publication_date>2009/10/26</plugin_publication_date>
+<plugin_type>summary</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.63 $</script_version>
+<solution>n/a</solution>
+<synopsis>Load estimation for web application tests.</synopsis>
+<plugin_output>Here are the estimated number of requests in miscellaneous modes
+for one method only (GET or POST) :
+[Single / Some Pairs / All Pairs / Some Combinations / All Combinations]
+
+cross-site scripting (comprehensive test): S=28         SP=60        AP=60        SC=68        AC=68       
+cross-site scripting (quick test)        : S=11         SP=11        AP=11        SC=11        AC=11       
+persistent XSS                           : S=28         SP=60        AP=60        SC=68        AC=68       
+arbitrary command execution              : S=112        SP=240       AP=240       SC=272       AC=272      
+web code injection                       : S=7          SP=15        AP=15        SC=17        AC=17       
+HTML injection                           : S=5          SP=5         AP=5         SC=5         AC=5        
+arbitrary command execution (time based) : S=42         SP=90        AP=90        SC=102       AC=102      
+script injection                         : S=1          SP=1         AP=1         SC=1         AC=1        
+XML injection                            : S=7          SP=15        AP=15        SC=17        AC=17       
+unseen parameters                        : S=245        SP=525       AP=525       SC=595       AC=595      
+directory traversal (write access)       : S=14         SP=30        AP=30        SC=34        AC=34       
+SQL injection (2nd order)                : S=7          SP=15        AP=15        SC=17        AC=17       
+on site request forgery                  : S=1          SP=1         AP=1         SC=1         AC=1        
+blind SQL injection (4 requests)         : S=28         SP=60        AP=60        SC=68        AC=68       
+HTTP response splitting                  : S=9          SP=9         AP=9         SC=9         AC=9        
+directory traversal (extended test)      : S=357        SP=765       AP=765       SC=867       AC=867      
+header injection                         : S=2          SP=2         AP=2         SC=2         AC=2        
+cookie manipulation                      : S=2          SP=2         AP=2         SC=2         AC=2        
+injectable parameter                     : S=14         SP=30        AP=30        SC=34        AC=34       
+local file inclusion                     : S=7          SP=15        AP=15        SC=17        AC=17       
+directory traversal                      : S=175        SP=375       AP=375       SC=425       AC=425      
+cross-site scripting (extended patterns) : S=6          SP=6         AP=6         SC=6         AC=6        
+blind SQL injection                      : S=84         SP=180       AP=180       SC=204       AC=204      
+SQL injection                            : S=168        SP=360       AP=360       SC=408       AC=408      
+SSI injection                            : S=21         SP=45        AP=45        SC=51        AC=51       
+format string                            : S=14         SP=30        AP=30        SC=34        AC=34       
+
+All tests                                : S=1395       SP=2947      AP=2947      SC=3335      AC=3335     
+
+Here are the estimated number of requests in miscellaneous modes
+for both methods (GET and POST) :
+[Single / Some Pairs / All Pairs / Some Combinations / All Combinations]
+
+cross-site scripting (comprehensive test): S=56         SP=120       AP=120       SC=136       AC=136      
+cross-site scripting (quick test)        : S=22         SP=22        AP=22        SC=22        AC=22       
+persistent XSS                           : S=56         SP=120       AP=120       SC=136       AC=136      
+arbitrary command execution              : S=224        SP=480       AP=480       SC=544       AC=544      
+web code injection                       : S=14         SP=30        AP=30        SC=34        AC=34       
+HTML injection                           : S=10         SP=10        AP=10        SC=10        AC=10       
+arbitrary command execution (time based) : S=84         SP=180       AP=180       SC=204       AC=204      
+script injection                         : S=2          SP=2         AP=2         SC=2         AC=2        
+XML injection                            : S=14         SP=30        AP=30        SC=34        AC=34       
+unseen parameters                        : S=490        SP=1050      AP=1050      SC=1190      AC=1190     
+directory traversal (write access)       : S=28         SP=60        AP=60        SC=68        AC=68       
+SQL injection (2nd order)                : S=14         SP=30        AP=30        SC=34        AC=34       
+on site request forgery                  : S=2          SP=2         AP=2         SC=2         AC=2        
+blind SQL injection (4 requests)         : S=56         SP=120       AP=120       SC=136       AC=136      
+HTTP response splitting                  : S=18         SP=18        AP=18        SC=18        AC=18       
+directory traversal (extended test)      : S=714        SP=1530      AP=1530      SC=1734      AC=1734     
+header injection                         : S=4          SP=4         AP=4         SC=4         AC=4        
+cookie manipulation                      : S=4          SP=4         AP=4         SC=4         AC=4        
+injectable parameter                     : S=28         SP=60        AP=60        SC=68        AC=68       
+local file inclusion                     : S=14         SP=30        AP=30        SC=34        AC=34       
+directory traversal                      : S=350        SP=750       AP=750       SC=850       AC=850      
+cross-site scripting (extended patterns) : S=12         SP=12        AP=12        SC=12        AC=12       
+blind SQL injection                      : S=168        SP=360       AP=360       SC=408       AC=408      
+SQL injection                            : S=336        SP=720       AP=720       SC=816       AC=816      
+SSI injection                            : S=42         SP=90        AP=90        SC=102       AC=102      
+format string                            : S=28         SP=60        AP=60        SC=68        AC=68       
+
+All tests                                : S=2790       SP=5894      AP=5894      SC=6670      AC=6670     
+
+Your mode : single, GET or POST.
+Maximum number of requests : 1395
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="2" pluginID="49067" pluginName="CGI Generic HTML Injections (quick test)" pluginFamily="CGI abuses : XSS">
+<cvss_base_score>4.3</cvss_base_score>
+<cvss_vector>CVSS2#AV:N/AC:M/Au:N/C:N/I:P/A:N</cvss_vector>
+<cwe>80</cwe>
+<cwe>86</cwe>
+<description>The remote web server hosts CGI scripts that fail to adequately sanitize request strings with malicious JavaScript.  By leveraging this issue, an attacker may be able to cause arbitrary HTML to be executed in a user&apos;s browser within the security context of the affected site.
+
+The remote web server may be vulnerable to IFRAME injections or cross-site scripting attacks :
+
+  - IFRAME injections allow &apos;virtual defacement&apos; that     might scare or anger gullible users. Such injections     are sometimes implemented for &apos;phishing&apos; attacks. 
+
+  - XSS are extensively tested by four other scripts.
+
+  - Some applications (e.g. web forums) authorize a subset     of HTML without any ill effect. In this case, ignore     this warning.</description>
+<fname>torture_cgi_inject_html.nasl</fname>
+<plugin_modification_date>2017/01/05</plugin_modification_date>
+<plugin_name>CGI Generic HTML Injections (quick test)</plugin_name>
+<plugin_publication_date>2010/09/01</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>Medium</risk_factor>
+<script_version>$Revision: 1.13 $</script_version>
+<see_also>http://www.nessus.org/u?f8fdd645</see_also>
+<solution>Either restrict access to the vulnerable application or contact the vendor for an update.</solution>
+<synopsis>The remote web server may be prone to HTML injections.</synopsis>
+<xref>CWE:80</xref>
+<xref>CWE:86</xref>
+<plugin_output>
+Using the GET HTTP method, Nessus found that :
+
++ The following resources may be vulnerable to HTML injection :
+
++ The &apos;uid&apos; parameter of the /559093312705275149262138428183007231424/snippets.gtl CGI :
+
+/559093312705275149262138428183007231424/snippets.gtl?uid=&lt;&quot;orxahw%0A&gt;
+
+-------- output --------
+&lt;h2 class=&apos;has-refresh&apos; id=&quot;user_name&quot;&gt;
+
+&lt;&quot;orxahw
+&gt;
+------------------------
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="10302" pluginName="Web Server robots.txt Information Disclosure" pluginFamily="Web Servers">
+<description>The remote host contains a file named &apos;robots.txt&apos; that is intended to prevent web &apos;robots&apos; from visiting certain directories in a website for maintenance or indexing purposes.  A malicious user may also be able to use the contents of this file to learn of sensitive documents or directories on the affected site and either retrieve them directly or target them for other attacks.</description>
+<fname>webserver_robot.nasl</fname>
+<osvdb>238</osvdb>
+<plugin_modification_date>2014/05/09</plugin_modification_date>
+<plugin_name>Web Server robots.txt Information Disclosure</plugin_name>
+<plugin_publication_date>1999/10/12</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.39 $</script_version>
+<see_also>http://www.robotstxt.org/wc/exclusion.html</see_also>
+<solution>Review the contents of the site&apos;s robots.txt file, use Robots META tags instead of entries in the robots.txt file, and/or adjust the web server&apos;s access controls to limit access to sensitive material.</solution>
+<synopsis>The remote web server contains a &apos;robots.txt&apos; file.</synopsis>
+<xref>OSVDB:238</xref>
+<plugin_output>Contents of robots.txt :
+
+User-agent: *
+Disallow: /0
+Disallow: /1
+Disallow: /2
+Disallow: /3
+Disallow: /4
+Disallow: /5
+Disallow: /6
+Disallow: /7
+Disallow: /8
+Disallow: /9
+Disallow: /start
+Disallow: /resetbutton
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="24260" pluginName="HyperText Transfer Protocol (HTTP) Information" pluginFamily="Web Servers">
+<description>This test gives some information about the remote HTTP protocol - the version used, whether HTTP Keep-Alive and HTTP pipelining are enabled, etc... 
+
+This test is informational only and does not denote any security problem.</description>
+<fname>http_info.nasl</fname>
+<plugin_modification_date>2011/05/31</plugin_modification_date>
+<plugin_name>HyperText Transfer Protocol (HTTP) Information</plugin_name>
+<plugin_publication_date>2007/01/30</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.12 $</script_version>
+<solution>n/a</solution>
+<synopsis>Some information about the remote HTTP configuration can be extracted.</synopsis>
+<plugin_output>
+Protocol version : HTTP/1.1
+SSL : yes
+Keep-Alive : no
+Options allowed : (Not implemented)
+Headers :
+
+  Cache-Control: no-cache
+  Pragma: no-cache
+  Content-Type: text/html; charset=utf-8
+  X-Cloud-Trace-Context: a70936838f3b2e24f36f4f8de8686de3
+  Date: Wed, 24 Jan 2018 00:39:49 GMT
+  Server: Google Frontend
+  Content-Length: 11506
+  Alt-Svc: hq=&quot;:443&quot;; ma=2592000; quic=51303431; quic=51303339; quic=51303338; quic=51303337; quic=51303335,quic=&quot;:443&quot;; ma=2592000; v=&quot;41,39,38,37,35&quot;
+  Connection: close
+  
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="47830" pluginName="CGI Generic Injectable Parameter" pluginFamily="CGI abuses">
+<cwe>86</cwe>
+<description>Nessus was able to to inject innocuous strings into CGI parameters and read them back in the HTTP response.
+
+The affected parameters are candidates for extended injection tests like cross-site scripting attacks.
+
+This is not a weakness per se, the main purpose of this test is to speed up other scripts.  The results may be useful for a human pen-tester.</description>
+<fname>torture_cgi_injectable_param.nasl</fname>
+<plugin_modification_date>2017/01/05</plugin_modification_date>
+<plugin_name>CGI Generic Injectable Parameter</plugin_name>
+<plugin_publication_date>2010/07/26</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.14 $</script_version>
+<solution>n/a</solution>
+<synopsis>Some CGIs are candidate for extended injection tests.</synopsis>
+<xref>CWE:86</xref>
+<plugin_output>
+Using the GET HTTP method, Nessus found that :
+
++ The following resources may be vulnerable to injectable parameter :
+
++ The &apos;uid&apos; parameter of the /559093312705275149262138428183007231424/snippets.gtl CGI :
+
+/559093312705275149262138428183007231424/snippets.gtl?uid=%00rmtrom
+
+-------- output --------
+&lt;h2 class=&apos;has-refresh&apos; id=&quot;user_name&quot;&gt;
+
+.rmtrom
+------------------------
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="84502" pluginName="HSTS Missing From HTTPS Server" pluginFamily="Web Servers">
+<description>The remote HTTPS server is not enforcing HTTP Strict Transport Security (HSTS). The lack of HSTS allows downgrade attacks, SSL-stripping man-in-the-middle attacks, and weakens cookie-hijacking protections.</description>
+<fname>hsts_missing_on_https_server.nasl</fname>
+<plugin_modification_date>2015/07/02</plugin_modification_date>
+<plugin_name>HSTS Missing From HTTPS Server</plugin_name>
+<plugin_publication_date>2015/07/02</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.1 $</script_version>
+<see_also>https://tools.ietf.org/html/rfc6797</see_also>
+<solution>Configure the remote web server to use HSTS.</solution>
+<synopsis>The remote web server is not enforcing HSTS.</synopsis>
+<plugin_output>
+  The remote HTTPS server does not send the HTTP
+  &quot;Strict-Transport-Security&quot; header.
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="43111" pluginName="HTTP Methods Allowed (per directory)" pluginFamily="Web Servers">
+<description>By calling the OPTIONS method, it is possible to determine which HTTP methods are allowed on each directory. 
+
+As this list may be incomplete, the plugin also tests - if &apos;Thorough tests&apos; are enabled or &apos;Enable web applications tests&apos; is set to &apos;yes&apos; in the scan policy - various known HTTP methods on each directory and considers them as unsupported if it receives a response code of 400, 403, 405, or 501. 
+
+Note that the plugin output is only informational and does not necessarily indicate the presence of any security vulnerabilities.</description>
+<fname>web_directory_options.nasl</fname>
+<plugin_modification_date>2013/05/09</plugin_modification_date>
+<plugin_name>HTTP Methods Allowed (per directory)</plugin_name>
+<plugin_publication_date>2009/12/10</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.7 $</script_version>
+<solution>n/a</solution>
+<synopsis>This plugin determines which HTTP methods are allowed on various CGI directories.</synopsis>
+<plugin_output>Based on the response to an OPTIONS request :
+
+  - HTTP methods  POST GET are allowed on : 
+
+    /559093312705275149262138428183007231424
+
+  - HTTP method GET is allowed on :
+
+    /
+    /code
+
+
+Based on tests of each method : 
+
+  - HTTP methods BCOPY BDELETE BMOVE BPROPFIND BPROPPATCH DEBUG 
+    DELETE GET HEAD INDEX NOTIFY OPTIONS ORDERPATCH POLL POST PUT 
+    RPC_IN_DATA RPC_OUT_DATA SEARCH SUBSCRIBE UNSUBSCRIBE 
+    X-MS-ENUMATTS are allowed on : 
+
+    /
+
+  - HTTP methods BCOPY BDELETE BMOVE BPROPFIND BPROPPATCH DEBUG GET 
+    INDEX NOTIFY ORDERPATCH POLL POST RPC_IN_DATA RPC_OUT_DATA SEARCH 
+    SUBSCRIBE UNSUBSCRIBE X-MS-ENUMATTS are allowed on : 
+
+    /559093312705275149262138428183007231424
+
+  - HTTP methods BCOPY BDELETE BMOVE BPROPFIND BPROPPATCH DEBUG GET 
+    INDEX NOTIFY ORDERPATCH POLL RPC_IN_DATA RPC_OUT_DATA SEARCH 
+    SUBSCRIBE UNSUBSCRIBE X-MS-ENUMATTS are allowed on : 
+
+    /code
+
+  - Invalid/unknown HTTP methods are allowed on :
+
+    /
+    /559093312705275149262138428183007231424
+    /code
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="49704" pluginName="External URLs" pluginFamily="Web Servers">
+<description>Nessus gathered HREF links to external sites by crawling the remote web server.</description>
+<fname>webmirror_ext_URL.nasl</fname>
+<plugin_modification_date>2011/08/19</plugin_modification_date>
+<plugin_name>External URLs</plugin_name>
+<plugin_publication_date>2010/10/04</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.3 $</script_version>
+<solution>n/a</solution>
+<synopsis>Links to external sites were gathered.</synopsis>
+<plugin_output>
+37 external URLs were gathered on this web server : 
+URL...                                  - Seen on...
+
+
+http://www.json.org/                    - 
+https://creativecommons.org/licenses/by-nd/3.0/us/ - 
+https://creativecommons.org/licenses/by/3.0/us/ - 
+https://images.google.com/?q=cheddar+cheese - 
+https://news.google.com/news/search?q=brie - 
+https://portswigger.net/burp/           - 
+https://security.googleblog.com/        - 
+https://svn.python.org/projects/python/trunk/Objects/stringobject.c - 
+https://www.google.com/about/appsecurity/ - 
+https://www.google.com/intl/en/policies/terms/ - 
+https://www.google.com/search?q=%22cross+site+script+inclusion%22 - 
+https://www.google.com/search?q=%22defense+in+depth%22+security - 
+https://www.google.com/search?q=E4X+markup+security - 
+https://www.google.com/search?q=XSS+auto+escaping - 
+https://www.google.com/search?q=all+your+base+are+belong+to+us - 
+https://www.google.com/search?q=blaster+worm - 
+https://www.google.com/search?q=buffer+overflow - 
+https://www.google.com/search?q=choosing+a+good+password - 
+https://www.google.com/search?q=code+red+worm - 
+https://www.google.com/search?q=fuzz+testing - 
+https://www.google.com/search?q=http+cookies - 
+https://www.google.com/search?q=integer+overflow+vulnerability - 
+https://www.google.com/search?q=least+privileges - 
+https://www.google.com/search?q=password+hashing - 
+https://www.google.com/search?q=preventing+(XSRF+OR+CSRF) - 
+https://www.google.com/search?q=same+origin+policy - 
+https://www.google.com/search?q=sanitize+html - 
+https://www.google.com/search?q=sql+injection - 
+https://www.google.com/search?q=sql+slammer - 
+https://www.google.com/search?q=understanding+cross-site+scripting - 
+https://www.google.com/search?q=unsafe+string+functions - 
+https://www.google.com/search?q=utf-7   - 
+https://www.kb.cert.org/vuls/           - 
+https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project - 
+https://www.python.org/downloads/       - 
+https://www.w3.org/TR/html40/index/attributes.html - 
+https://xkcd.com/327/                   - 
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="91815" pluginName="Web Application Sitemap" pluginFamily="Web Servers">
+<description>The remote web server contains linkable content that can be used to gather information about a target.</description>
+<fname>http_sitemap.nasl</fname>
+<plugin_modification_date>2016/06/24</plugin_modification_date>
+<plugin_name>Web Application Sitemap</plugin_name>
+<plugin_publication_date>2016/06/24</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.1 $</script_version>
+<see_also>http://www.nessus.org/u?5496c8d9</see_also>
+<solution>n/a</solution>
+<synopsis>The remote web server hosts linkable content that can be crawled by Nessus.</synopsis>
+<plugin_output>
+The following sitemap was created from crawling linkable content on the target host :
+
+  - https://google-gruyere.appspot.com/
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/login
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/newaccount.gtl
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/saveprofile
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/snippets.gtl
+  - https://google-gruyere.appspot.com/code
+  - https://google-gruyere.appspot.com/code/
+  - https://google-gruyere.appspot.com/code/data.py
+  - https://google-gruyere.appspot.com/code/gruyere.py
+  - https://google-gruyere.appspot.com/code/gtl.py
+  - https://google-gruyere.appspot.com/code/resources/base.css
+  - https://google-gruyere.appspot.com/code/resources/dump.gtl
+  - https://google-gruyere.appspot.com/code/resources/editprofile.gtl
+  - https://google-gruyere.appspot.com/code/resources/error.gtl
+  - https://google-gruyere.appspot.com/code/resources/feed.gtl
+  - https://google-gruyere.appspot.com/code/resources/home.gtl
+  - https://google-gruyere.appspot.com/code/resources/lib.js
+  - https://google-gruyere.appspot.com/code/resources/login.gtl
+  - https://google-gruyere.appspot.com/code/resources/manage.gtl
+  - https://google-gruyere.appspot.com/code/resources/menubar.gtl
+  - https://google-gruyere.appspot.com/code/resources/newaccount.gtl
+  - https://google-gruyere.appspot.com/code/resources/newsnippet.gtl
+  - https://google-gruyere.appspot.com/code/resources/showprofile.gtl
+  - https://google-gruyere.appspot.com/code/resources/snippets.gtl
+  - https://google-gruyere.appspot.com/code/resources/upload.gtl
+  - https://google-gruyere.appspot.com/code/resources/upload2.gtl
+  - https://google-gruyere.appspot.com/code/sanitize.py
+  - https://google-gruyere.appspot.com/code/secret.txt
+  - https://google-gruyere.appspot.com/gruyere-code.zip
+  - https://google-gruyere.appspot.com/part1
+  - https://google-gruyere.appspot.com/part2
+  - https://google-gruyere.appspot.com/part3
+  - https://google-gruyere.appspot.com/part4
+  - https://google-gruyere.appspot.com/part5
+  - https://google-gruyere.appspot.com/resetbutton/559093312705275149262138428183007231424
+  - https://google-gruyere.appspot.com/start
+  - https://google-gruyere.appspot.com/static/codeindex.html
+  - https://google-gruyere.appspot.com/static/codelab.css
+  - https://google-gruyere.appspot.com/static/gruyere.png
+
+Attached is a copy of the sitemap file.
+</plugin_output>
+<attachment name="google-gruyere.appspot.com_443_sitemap.xml" type="application/xml">1bd68f98a6485bd3b35302c69fd1ecf6</attachment>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="50344" pluginName="Missing or Permissive Content-Security-Policy HTTP Response Header" pluginFamily="CGI abuses">
+<description>The remote web server in some responses sets a permissive Content-Security-Policy (CSP) response header or does not set one at all.
+
+The CSP header has been proposed by the W3C Web Application Security Working Group as a way to mitigate cross-site scripting and clickjacking attacks.</description>
+<fname>http_X_Content_Security_Policy_header.nasl</fname>
+<plugin_modification_date>2016/04/14</plugin_modification_date>
+<plugin_name>Missing or Permissive Content-Security-Policy HTTP Response Header</plugin_name>
+<plugin_publication_date>2010/10/26</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.3 $</script_version>
+<see_also>http://content-security-policy.com/
+https://www.w3.org/TR/CSP2/</see_also>
+<solution>Set a properly configured Content-Security-Policy header for all requested resources.</solution>
+<synopsis>The remote web server does not take steps to mitigate a class of web application vulnerabilities.</synopsis>
+<plugin_output>
+The following pages do not set a Content-Security-Policy response header or set a permissive policy:
+
+  - https://google-gruyere.appspot.com/
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/login
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/newaccount.gtl
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/saveprofile
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/snippets.gtl
+  - https://google-gruyere.appspot.com/code
+  - https://google-gruyere.appspot.com/code/
+  - https://google-gruyere.appspot.com/code/data.py
+  - https://google-gruyere.appspot.com/code/gruyere.py
+  - https://google-gruyere.appspot.com/code/gtl.py
+  - https://google-gruyere.appspot.com/code/resources/base.css
+  - https://google-gruyere.appspot.com/code/resources/dump.gtl
+  - https://google-gruyere.appspot.com/code/resources/editprofile.gtl
+  - https://google-gruyere.appspot.com/code/resources/error.gtl
+  - https://google-gruyere.appspot.com/code/resources/feed.gtl
+  - https://google-gruyere.appspot.com/code/resources/home.gtl
+  - https://google-gruyere.appspot.com/code/resources/lib.js
+  - https://google-gruyere.appspot.com/code/resources/login.gtl
+  - https://google-gruyere.appspot.com/code/resources/manage.gtl
+  - https://google-gruyere.appspot.com/code/resources/menubar.gtl
+  - https://google-gruyere.appspot.com/code/resources/newaccount.gtl
+  - https://google-gruyere.appspot.com/code/resources/newsnippet.gtl
+  - https://google-gruyere.appspot.com/code/resources/showprofile.gtl
+  - https://google-gruyere.appspot.com/code/resources/snippets.gtl
+  - https://google-gruyere.appspot.com/code/resources/upload.gtl
+  - https://google-gruyere.appspot.com/code/resources/upload2.gtl
+  - https://google-gruyere.appspot.com/code/sanitize.py
+  - https://google-gruyere.appspot.com/code/secret.txt
+  - https://google-gruyere.appspot.com/part1
+  - https://google-gruyere.appspot.com/part2
+  - https://google-gruyere.appspot.com/part3
+  - https://google-gruyere.appspot.com/part4
+  - https://google-gruyere.appspot.com/part5
+  - https://google-gruyere.appspot.com/resetbutton/559093312705275149262138428183007231424
+  - https://google-gruyere.appspot.com/start
+  - https://google-gruyere.appspot.com/static/codeindex.html
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="85601" pluginName="Web Application Cookies Not Marked HttpOnly" pluginFamily="Web Servers">
+<cwe>20</cwe>
+<cwe>74</cwe>
+<cwe>79</cwe>
+<cwe>442</cwe>
+<cwe>629</cwe>
+<cwe>711</cwe>
+<cwe>712</cwe>
+<cwe>722</cwe>
+<cwe>725</cwe>
+<cwe>750</cwe>
+<cwe>751</cwe>
+<cwe>800</cwe>
+<cwe>801</cwe>
+<cwe>809</cwe>
+<cwe>811</cwe>
+<cwe>864</cwe>
+<cwe>900</cwe>
+<cwe>928</cwe>
+<cwe>931</cwe>
+<cwe>990</cwe>
+<description>The remote web application sets various cookies throughout a user&apos;s unauthenticated and authenticated session. However, one or more of those cookies are not marked &apos;HttpOnly&apos;, meaning that a malicious client-side script, such as JavaScript, could read them. The HttpOnly flag is a security mechanism to protect against cross-site scripting attacks, which was proposed by Microsoft and initially implemented in Internet Explorer. All modern browsers now support it.
+
+Note that this plugin detects all general cookies missing the HttpOnly cookie flag, whereas plugin 48432 (Web Application Session Cookies Not Marked HttpOnly) will only detect session cookies from an authenticated session missing the HttpOnly cookie flag.</description>
+<fname>http_generic_httponly_cookies.nasl</fname>
+<plugin_modification_date>2015/08/24</plugin_modification_date>
+<plugin_name>Web Application Cookies Not Marked HttpOnly</plugin_name>
+<plugin_publication_date>2015/08/24</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.1 $</script_version>
+<see_also>https://www.owasp.org/index.php/HttpOnly</see_also>
+<solution>Each cookie should be carefully reviewed to determine if it contains sensitive data or is relied upon for a security decision.
+
+If possible, add the &apos;HttpOnly&apos; attribute to all session cookies and any cookies containing sensitive data.</solution>
+<synopsis>HTTP session cookies might be vulnerable to cross-site scripting attacks.</synopsis>
+<xref>CWE:20</xref>
+<xref>CWE:74</xref>
+<xref>CWE:79</xref>
+<xref>CWE:442</xref>
+<xref>CWE:629</xref>
+<xref>CWE:711</xref>
+<xref>CWE:712</xref>
+<xref>CWE:722</xref>
+<xref>CWE:725</xref>
+<xref>CWE:750</xref>
+<xref>CWE:751</xref>
+<xref>CWE:800</xref>
+<xref>CWE:801</xref>
+<xref>CWE:809</xref>
+<xref>CWE:811</xref>
+<xref>CWE:864</xref>
+<xref>CWE:900</xref>
+<xref>CWE:928</xref>
+<xref>CWE:931</xref>
+<xref>CWE:990</xref>
+<plugin_output>
+The following cookie does not set the HttpOnly cookie flag :
+
+Name : GRUYERE_ID
+Path : /
+Value : 559093312705275149262138428183007231424
+Domain : 
+Version : 1
+Expires : 
+Comment : 
+Secure : 0
+Httponly : 0
+Port : 
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="85602" pluginName="Web Application Cookies Not Marked Secure" pluginFamily="Web Servers">
+<cwe>522</cwe>
+<cwe>718</cwe>
+<cwe>724</cwe>
+<cwe>928</cwe>
+<cwe>930</cwe>
+<description>The remote web application sets various cookies throughout a user&apos;s unauthenticated and authenticated session. However, there are instances where the application is running over unencrypted HTTP or the cookies are not marked &apos;secure&apos;, meaning the browser could send them back over an unencrypted link under certain circumstances. As a result, it may be possible for a remote attacker to intercept these cookies.
+
+Note that this plugin detects all general cookies missing the &apos;secure&apos; cookie flag, whereas plugin 49218 (Web Application Session Cookies Not Marked Secure) will only detect session cookies from an authenticated session missing the secure cookie flag.</description>
+<fname>http_generic_secure_cookies.nasl</fname>
+<plugin_modification_date>2015/08/24</plugin_modification_date>
+<plugin_name>Web Application Cookies Not Marked Secure</plugin_name>
+<plugin_publication_date>2015/08/24</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.1 $</script_version>
+<see_also>https://www.owasp.org/index.php/SecureFlag</see_also>
+<solution>Each cookie should be carefully reviewed to determine if it contains sensitive data or is relied upon for a security decision.
+
+If possible, ensure all communication occurs over an encrypted channel and add the &apos;secure&apos; attribute to all session cookies or any cookies containing sensitive data.</solution>
+<synopsis>HTTP session cookies might be transmitted in cleartext.</synopsis>
+<xref>CWE:522</xref>
+<xref>CWE:718</xref>
+<xref>CWE:724</xref>
+<xref>CWE:928</xref>
+<xref>CWE:930</xref>
+<plugin_output>
+The following cookie does not set the secure cookie flag :
+
+Name : GRUYERE_ID
+Path : /
+Value : 559093312705275149262138428183007231424
+Domain : 
+Version : 1
+Expires : 
+Comment : 
+Secure : 0
+Httponly : 0
+Port : 
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="2" pluginID="85582" pluginName="Web Application Potentially Vulnerable to Clickjacking" pluginFamily="Web Servers">
+<cvss_base_score>4.3</cvss_base_score>
+<cvss_vector>CVSS2#AV:N/AC:M/Au:N/C:N/I:P/A:N</cvss_vector>
+<cwe>693</cwe>
+<description>The remote web server does not set an X-Frame-Options response header or a Content-Security-Policy &apos;frame-ancestors&apos; response header in all content responses. This could potentially expose the site to a clickjacking or UI redress attack, in which an attacker can trick a user into clicking an area of the vulnerable page that is different than what the user perceives the page to be. This can result in a user performing fraudulent or malicious transactions.
+
+X-Frame-Options has been proposed by Microsoft as a way to mitigate clickjacking attacks and is currently supported by all major browser vendors.
+
+Content-Security-Policy (CSP) has been proposed by the W3C Web Application Security Working Group, with increasing support among all major browser vendors, as a way to mitigate clickjacking and other attacks. The &apos;frame-ancestors&apos; policy directive restricts which sources can embed the protected resource.
+
+Note that while the X-Frame-Options and Content-Security-Policy response headers are not the only mitigations for clickjacking, they are currently the most reliable methods that can be detected through automation. Therefore, this plugin may produce false positives if other mitigation strategies (e.g., frame-busting JavaScript) are deployed or if the page does not perform any security-sensitive transactions.</description>
+<fname>http_generic_clickjacking.nasl</fname>
+<plugin_modification_date>2017/05/16</plugin_modification_date>
+<plugin_name>Web Application Potentially Vulnerable to Clickjacking</plugin_name>
+<plugin_publication_date>2015/08/22</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>Medium</risk_factor>
+<script_version>$Revision: 1.7 $</script_version>
+<see_also>http://www.nessus.org/u?399b1f56
+https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet
+https://en.wikipedia.org/wiki/Clickjacking</see_also>
+<solution>Return the X-Frame-Options or Content-Security-Policy (with the &apos;frame-ancestors&apos; directive) HTTP header with the page&apos;s response.
+This prevents the page&apos;s content from being rendered by another site when using the frame or iframe HTML tags.</solution>
+<synopsis>The remote web server may fail to mitigate a class of web application vulnerabilities.</synopsis>
+<xref>CWE:693</xref>
+<plugin_output>
+The following pages do not use a clickjacking mitigation response header and contain a clickable event :
+
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/login
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/newaccount.gtl
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/snippets.gtl
+  - https://google-gruyere.appspot.com/part1
+  - https://google-gruyere.appspot.com/part2
+  - https://google-gruyere.appspot.com/part3
+  - https://google-gruyere.appspot.com/part4
+  - https://google-gruyere.appspot.com/part5
+  - https://google-gruyere.appspot.com/resetbutton/559093312705275149262138428183007231424
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="42057" pluginName="Web Server Allows Password Auto-Completion" pluginFamily="Web Servers">
+<description>The remote web server contains at least one HTML form field that has an input of type &apos;password&apos; where &apos;autocomplete&apos; is not set to &apos;off&apos;.
+
+While this does not represent a risk to this web server per se, it does mean that users who use the affected forms may have their credentials saved in their browsers, which could in turn lead to a loss of confidentiality if any of them use a shared host or if their machine is compromised at some point.</description>
+<fname>www_autocomplete_passwords.nasl</fname>
+<plugin_modification_date>2016/06/16</plugin_modification_date>
+<plugin_name>Web Server Allows Password Auto-Completion</plugin_name>
+<plugin_publication_date>2009/10/07</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.8 $</script_version>
+<solution>Add the attribute &apos;autocomplete=off&apos; to these fields to prevent browsers from caching credentials.</solution>
+<synopsis>The &apos;autocomplete&apos; attribute is not disabled on password fields.</synopsis>
+<plugin_output>Page : /559093312705275149262138428183007231424/login
+Destination Page: /559093312705275149262138428183007231424/login
+
+Page : /559093312705275149262138428183007231424/newaccount.gtl
+Destination Page: /559093312705275149262138428183007231424/saveprofile
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="50345" pluginName="Missing or Permissive X-Frame-Options HTTP Response Header" pluginFamily="CGI abuses">
+<description>The remote web server in some responses sets a permissive X-Frame-Options response header or does not set one at all.
+
+The X-Frame-Options header has been proposed by Microsoft as a way to mitigate clickjacking attacks and is currently supported by all major browser vendors</description>
+<fname>http_X_Frame_Options_header.nasl</fname>
+<plugin_modification_date>2017/05/16</plugin_modification_date>
+<plugin_name>Missing or Permissive X-Frame-Options HTTP Response Header</plugin_name>
+<plugin_publication_date>2010/10/26</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.4 $</script_version>
+<see_also>https://en.wikipedia.org/wiki/Clickjacking
+http://www.nessus.org/u?399b1f56</see_also>
+<solution>Set a properly configured X-Frame-Options header for all requested resources.</solution>
+<synopsis>The remote web server does not take steps to mitigate a class of web application vulnerabilities.</synopsis>
+<plugin_output>
+The following pages do not set a X-Frame-Options response header or set a permissive policy:
+
+  - https://google-gruyere.appspot.com/
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/login
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/newaccount.gtl
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/saveprofile
+  - https://google-gruyere.appspot.com/559093312705275149262138428183007231424/snippets.gtl
+  - https://google-gruyere.appspot.com/code
+  - https://google-gruyere.appspot.com/code/
+  - https://google-gruyere.appspot.com/code/data.py
+  - https://google-gruyere.appspot.com/code/gruyere.py
+  - https://google-gruyere.appspot.com/code/gtl.py
+  - https://google-gruyere.appspot.com/code/resources/base.css
+  - https://google-gruyere.appspot.com/code/resources/dump.gtl
+  - https://google-gruyere.appspot.com/code/resources/editprofile.gtl
+  - https://google-gruyere.appspot.com/code/resources/error.gtl
+  - https://google-gruyere.appspot.com/code/resources/feed.gtl
+  - https://google-gruyere.appspot.com/code/resources/home.gtl
+  - https://google-gruyere.appspot.com/code/resources/lib.js
+  - https://google-gruyere.appspot.com/code/resources/login.gtl
+  - https://google-gruyere.appspot.com/code/resources/manage.gtl
+  - https://google-gruyere.appspot.com/code/resources/menubar.gtl
+  - https://google-gruyere.appspot.com/code/resources/newaccount.gtl
+  - https://google-gruyere.appspot.com/code/resources/newsnippet.gtl
+  - https://google-gruyere.appspot.com/code/resources/showprofile.gtl
+  - https://google-gruyere.appspot.com/code/resources/snippets.gtl
+  - https://google-gruyere.appspot.com/code/resources/upload.gtl
+  - https://google-gruyere.appspot.com/code/resources/upload2.gtl
+  - https://google-gruyere.appspot.com/code/sanitize.py
+  - https://google-gruyere.appspot.com/code/secret.txt
+  - https://google-gruyere.appspot.com/part1
+  - https://google-gruyere.appspot.com/part2
+  - https://google-gruyere.appspot.com/part3
+  - https://google-gruyere.appspot.com/part4
+  - https://google-gruyere.appspot.com/part5
+  - https://google-gruyere.appspot.com/resetbutton/559093312705275149262138428183007231424
+  - https://google-gruyere.appspot.com/start
+  - https://google-gruyere.appspot.com/static/codeindex.html
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="10662" pluginName="Web mirroring" pluginFamily="Web Servers">
+<description>This plugin makes a mirror of the remote website(s) and extracts the list of CGIs that are used by the remote host. 
+
+It is suggested that you change the number of pages to mirror in the &apos;Options&apos; section of the client.</description>
+<fname>webmirror3.nbin</fname>
+<plugin_modification_date>2017/07/07</plugin_modification_date>
+<plugin_name>Web mirroring</plugin_name>
+<plugin_publication_date>2001/05/04</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 3.38 $</script_version>
+<solution>n/a</solution>
+<synopsis>Nessus can crawl the remote website.</synopsis>
+<plugin_output>
+Webmirror performed 46 queries in 25s (1.0840 queries per second)
+
+The following CGIs have been discovered :
+
+
++ CGI : /code/
+  Methods : GET
+  Argument : 
+   Value: resources/dump.gtl
+
+
++ CGI : /559093312705275149262138428183007231424/snippets.gtl
+  Methods : GET
+  Argument : uid
+   Value: brie
+
+
++ CGI : /559093312705275149262138428183007231424/login
+  Methods : GET
+  Argument : pw
+  Argument : uid
+
+
++ CGI : /559093312705275149262138428183007231424/saveprofile
+  Methods : GET
+  Argument : action
+   Value: new
+  Argument : is_author
+   Value: True
+  Argument : pw
+  Argument : uid
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="2" pluginID="94437" pluginName="SSL 64-bit Block Size Cipher Suites Supported (SWEET32)" pluginFamily="General">
+<bid>92630</bid>
+<bid>92631</bid>
+<cve>CVE-2016-2183</cve>
+<cve>CVE-2016-6329</cve>
+<cvss3_base_score>5.3</cvss3_base_score>
+<cvss3_temporal_score>5.1</cvss3_temporal_score>
+<cvss3_temporal_vector>CVSS:3.0/E:F/RL:X/RC:X</cvss3_temporal_vector>
+<cvss3_vector>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</cvss3_vector>
+<cvss_base_score>5.0</cvss_base_score>
+<cvss_temporal_score>4.8</cvss_temporal_score>
+<cvss_temporal_vector>CVSS2#E:F/RL:ND/RC:ND</cvss_temporal_vector>
+<cvss_vector>CVSS2#AV:N/AC:L/Au:N/C:P/I:N/A:N</cvss_vector>
+<description>The remote host supports the use of a block cipher with 64-bit blocks in one or more cipher suites. It is, therefore, affected by a vulnerability, known as SWEET32, due to the use of weak 64-bit block ciphers. A man-in-the-middle attacker who has sufficient resources can exploit this vulnerability, via a &apos;birthday&apos; attack, to detect a collision that leaks the XOR between the fixed secret and a known plaintext, allowing the disclosure of the secret text, such as secure HTTPS cookies, and possibly resulting in the hijacking of an authenticated session.
+
+Proof-of-concepts have shown that attackers can recover authentication cookies from an HTTPS session in as little as 30 hours.
+
+Note that the ability to send a large number of requests over the same TLS connection between the client and server is an important requirement for carrying out this attack. If the number of requests allowed for a single connection were limited, this would mitigate the vulnerability. However, Nessus has not checked for such a mitigation.</description>
+<exploit_available>true</exploit_available>
+<exploitability_ease>Exploits are available</exploitability_ease>
+<fname>ssl_64bitblock_supported_ciphers.nasl</fname>
+<in_the_news>true</in_the_news>
+<osvdb>143387</osvdb>
+<osvdb>143388</osvdb>
+<plugin_modification_date>2017/01/24</plugin_modification_date>
+<plugin_name>SSL 64-bit Block Size Cipher Suites Supported (SWEET32)</plugin_name>
+<plugin_publication_date>2016/11/01</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>Medium</risk_factor>
+<script_version>$Revision: 1.6 $</script_version>
+<see_also>https://sweet32.info
+https://www.openssl.org/blog/blog/2016/08/24/sweet32/</see_also>
+<solution>Reconfigure the affected application, if possible, to avoid use of all 64-bit block ciphers. Alternatively, place limitations on the number of requests that are allowed to be processed over the same TLS connection to mitigate this vulnerability.</solution>
+<synopsis>The remote service supports the use of 64-bit block ciphers.</synopsis>
+<vuln_publication_date>2016/08/24</vuln_publication_date>
+<xref>OSVDB:143387</xref>
+<xref>OSVDB:143388</xref>
+<plugin_output>
+List of 64-bit block cipher suites supported by the remote server :
+
+  Medium Strength Ciphers (&gt; 64-bit and &lt; 112-bit key, or 3DES)
+
+    TLSv1
+      DES-CBC3-SHA                 Kx=RSA         Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="2" pluginID="42873" pluginName="SSL Medium Strength Cipher Suites Supported" pluginFamily="General">
+<cvss3_base_score>5.3</cvss3_base_score>
+<cvss3_vector>CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N</cvss3_vector>
+<cvss_base_score>5.0</cvss_base_score>
+<cvss_vector>CVSS2#AV:N/AC:L/Au:N/C:P/I:N/A:N</cvss_vector>
+<description>The remote host supports the use of SSL ciphers that offer medium strength encryption. Nessus regards medium strength as any encryption that uses key lengths at least 64 bits and less than 112 bits, or else that uses the 3DES encryption suite.
+
+Note that it is considerably easier to circumvent medium strength encryption if the attacker is on the same physical network.</description>
+<fname>ssl_medium_supported_ciphers.nasl</fname>
+<plugin_modification_date>2017/06/29</plugin_modification_date>
+<plugin_name>SSL Medium Strength Cipher Suites Supported</plugin_name>
+<plugin_publication_date>2009/11/23</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>Medium</risk_factor>
+<script_version>$Revision: 1.18 $</script_version>
+<see_also>https://www.openssl.org/blog/blog/2016/08/24/sweet32/</see_also>
+<solution>Reconfigure the affected application if possible to avoid use of medium strength ciphers.</solution>
+<synopsis>The remote service supports the use of medium strength SSL ciphers.</synopsis>
+<plugin_output>
+Here is the list of medium strength SSL ciphers supported by the remote server :
+
+  Medium Strength Ciphers (&gt; 64-bit and &lt; 112-bit key, or 3DES)
+
+    TLSv1
+      DES-CBC3-SHA                 Kx=RSA         Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+    TLSv11
+      DES-CBC3-SHA                 Kx=RSA         Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+    TLSv12
+      DES-CBC3-SHA                 Kx=RSA         Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="21643" pluginName="SSL Cipher Suites Supported" pluginFamily="General">
+<description>This plugin detects which SSL ciphers are supported by the remote service for encrypting communications.</description>
+<fname>ssl_supported_ciphers.nasl</fname>
+<plugin_modification_date>2017/06/29</plugin_modification_date>
+<plugin_name>SSL Cipher Suites Supported</plugin_name>
+<plugin_publication_date>2006/06/05</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>1.50</script_version>
+<see_also>https://www.openssl.org/docs/man1.1.0/apps/ciphers.html
+http://www.nessus.org/u?3a040ada</see_also>
+<solution>n/a</solution>
+<synopsis>The remote service encrypts communications using SSL.</synopsis>
+<plugin_output>
+Here is the list of SSL ciphers supported by the remote server :
+Each group is reported per SSL Version.
+
+SSL Version : TLSv12
+  Medium Strength Ciphers (&gt; 64-bit and &lt; 112-bit key, or 3DES)
+      DES-CBC3-SHA                 Kx=RSA         Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+  High Strength Ciphers (&gt;= 112-bit key)
+      ECDHE-RSA-AES128-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
+      AES128-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
+      AES256-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
+      ECDHE-RSA-AES256-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(256)         Mac=SHA1
+      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-GCM(128)         Mac=SHA256  
+      ECDHE-RSA-CHACHA20-POLY1305  Kx=ECDH        Au=RSA      Enc=ChaCha20-Poly1305(256)  Mac=SHA256  
+      RSA-AES128-SHA256            Kx=RSA         Au=RSA      Enc=AES-GCM(128)         Mac=SHA256  
+      ECDHE-RSA-AES256-SHA384      Kx=ECDH        Au=RSA      Enc=AES-GCM(256)         Mac=SHA384  
+      RSA-AES256-SHA384            Kx=RSA         Au=RSA      Enc=AES-GCM(256)         Mac=SHA384  
+
+
+SSL Version : TLSv11
+  Medium Strength Ciphers (&gt; 64-bit and &lt; 112-bit key, or 3DES)
+      DES-CBC3-SHA                 Kx=RSA         Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+  High Strength Ciphers (&gt;= 112-bit key)
+      AES128-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
+      ECDHE-RSA-AES256-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
+      ECDHE-RSA-AES128-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
+      AES256-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
+
+
+SSL Version : TLSv1
+  Medium Strength Ciphers (&gt; 64-bit and &lt; 112-bit key, or 3DES)
+      DES-CBC3-SHA                 Kx=RSA         Au=RSA      Enc=3DES-CBC(168)        Mac=SHA1   
+
+  High Strength Ciphers (&gt;= 112-bit key)
+      AES128-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
+      ECDHE-RSA-AES256-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
+      ECDHE-RSA-AES128-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
+      AES256-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
+
+The fields above are :
+
+  {OpenSSL ciphername}
+  Kx={key exchange}
+  Au={authentication}
+  Enc={symmetric encryption method}
+  Mac={message authentication code}
+  {export flag}
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="87242" pluginName="TLS NPN Supported Protocol Enumeration" pluginFamily="Misc.">
+<description>The remote host supports the TLS NPN (Transport Layer Security Next Protocol Negotiation) extension. This plugin enumerates the protocols the extension supports.</description>
+<fname>npn_protocol_enumeration.nasl</fname>
+<plugin_modification_date>2015/12/08</plugin_modification_date>
+<plugin_name>TLS NPN Supported Protocol Enumeration</plugin_name>
+<plugin_publication_date>2015/12/08</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>1.2</script_version>
+<see_also>https://tools.ietf.org/id/draft-agl-tls-nextprotoneg-03.html</see_also>
+<solution>n/a</solution>
+<synopsis>The remote host supports the TLS NPN extension.</synopsis>
+<plugin_output>
+NPN Supported Protocols: 
+
+  grpc-exp
+  h2
+  http/1.1
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="94761" pluginName="SSL Root Certification Authority Certificate Information" pluginFamily="General">
+<cpe>cpe:/a:ietf:md5
+cpe:/a:ietf:x.509_certificate</cpe>
+<description>The remote service uses an SSL certificate chain that contains a self-signed root Certification Authority certificate at the top of the chain.</description>
+<fname>ssl_root_ca_certificate.nasl</fname>
+<plugin_modification_date>2016/11/14</plugin_modification_date>
+<plugin_name>SSL Root Certification Authority Certificate Information</plugin_name>
+<plugin_publication_date>2016/11/14</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.1 $</script_version>
+<see_also>https://technet.microsoft.com/en-us/library/cc778623</see_also>
+<solution>Ensure that use of this root Certification Authority certificate complies with your organization&apos;s acceptable use and security policies.</solution>
+<synopsis>A root Certification Authority certificate was found at the top of the certificate chain.</synopsis>
+<plugin_output>
+The following root Certification Authority certificate was found :
+
+|-Subject             : OU=GlobalSign Root CA - R2/O=GlobalSign/CN=GlobalSign
+|-Issuer              : OU=GlobalSign Root CA - R2/O=GlobalSign/CN=GlobalSign
+|-Valid From          : Dec 15 08:00:00 2006 GMT
+|-Valid To            : Dec 15 08:00:00 2021 GMT
+|-Signature Algorithm : SHA-1 With RSA Encryption
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="95631" pluginName="SSL Certificate Signed Using Weak Hashing Algorithm (Known CA)" pluginFamily="General">
+<bid>11849</bid>
+<bid>33065</bid>
+<cert>836068</cert>
+<cpe>cpe:/a:ietf:md5
+cpe:/a:ietf:x.509_certificate</cpe>
+<cve>CVE-2004-2761</cve>
+<cwe>310</cwe>
+<description>The remote service uses a known CA certificate in the SSL certificate chain that has been signed using a cryptographically weak hashing algorithm (e.g., MD2, MD4, MD5, or SHA1). These signature algorithms are known to be vulnerable to collision attacks. An attacker can exploit this to generate another certificate with the same digital signature, allowing the attacker to masquerade as the affected service.
+
+Note that this plugin reports all SSL certificate chains signed with SHA-1 that expire after January 1, 2017 as vulnerable. This is in accordance with Google&apos;s gradual sunsetting of the SHA-1 cryptographic hash algorithm.</description>
+<fname>ssl_weak_hash_ca.nasl</fname>
+<osvdb>45106</osvdb>
+<osvdb>45108</osvdb>
+<osvdb>45127</osvdb>
+<plugin_modification_date>2016/12/08</plugin_modification_date>
+<plugin_name>SSL Certificate Signed Using Weak Hashing Algorithm (Known CA)</plugin_name>
+<plugin_publication_date>2016/12/08</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.1 $</script_version>
+<see_also>http://tools.ietf.org/html/rfc3279
+http://technet.microsoft.com/en-us/security/advisory/961509</see_also>
+<solution>Contact the Certificate Authority to have the certificate reissued.</solution>
+<synopsis>A known CA SSL certificate in the certificate chain has been signed using a weak hashing algorithm.</synopsis>
+<vuln_publication_date>2004/08/18</vuln_publication_date>
+<xref>OSVDB:45106</xref>
+<xref>OSVDB:45108</xref>
+<xref>OSVDB:45127</xref>
+<xref>CERT:836068</xref>
+<xref>CWE:310</xref>
+<plugin_output>
+The following known CA certificates were part of the certificate
+chain sent by the remote host, but contain hashes that are considered
+to be weak.
+
+|-Subject             : OU=GlobalSign Root CA - R2/O=GlobalSign/CN=GlobalSign
+|-Signature Algorithm : SHA-1 With RSA Encryption
+|-Valid From          : Dec 15 08:00:00 2006 GMT
+|-Valid To            : Dec 15 08:00:00 2021 GMT
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="50845" pluginName="OpenSSL Detection" pluginFamily="Service detection">
+<cpe>cpe:/a:openssl:openssl</cpe>
+<description>Based on its response to a TLS request with a specially crafted server name extension, it seems that the remote service is using the OpenSSL library to encrypt traffic.
+
+Note that this plugin can only detect OpenSSL implementations that have enabled support for TLS extensions (RFC 4366).</description>
+<fname>openssl_detect.nasl</fname>
+<plugin_modification_date>2013/10/18</plugin_modification_date>
+<plugin_name>OpenSSL Detection</plugin_name>
+<plugin_publication_date>2010/11/30</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>1.14</script_version>
+<see_also>http://www.openssl.org</see_also>
+<solution>n/a</solution>
+<synopsis>The remote service appears to use OpenSSL to encrypt traffic.</synopsis>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="84821" pluginName="TLS ALPN Supported Protocol Enumeration" pluginFamily="Misc.">
+<description>The remote host supports the TLS ALPN extension. This plugin enumerates the protocols the extension supports.</description>
+<fname>alpn_protocol_enumeration.nasl</fname>
+<plugin_modification_date>2016/02/15</plugin_modification_date>
+<plugin_name>TLS ALPN Supported Protocol Enumeration</plugin_name>
+<plugin_publication_date>2015/07/17</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>1.3</script_version>
+<see_also>https://tools.ietf.org/html/rfc7301</see_also>
+<solution>n/a</solution>
+<synopsis>The remote host supports the TLS ALPN extension.</synopsis>
+<plugin_output>
+ALPN Supported Protocols: 
+
+  http/1.1
+  h2
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="62564" pluginName="TLS Next Protocols Supported" pluginFamily="General">
+<description>This script detects which protocols are advertised by the remote service to be encapsulated by TLS connections.
+
+Note that Nessus did not attempt to negotiate TLS sessions with the protocols shown.  The remote service may be falsely advertising these protocols and / or failing to advertise other supported protocols.</description>
+<fname>ssl_supported_protocols.nasl</fname>
+<plugin_modification_date>2017/06/12</plugin_modification_date>
+<plugin_name>TLS Next Protocols Supported</plugin_name>
+<plugin_publication_date>2012/10/16</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>1.3</script_version>
+<see_also>https://tools.ietf.org/html/draft-agl-tls-nextprotoneg-04
+https://technotes.googlecode.com/git/nextprotoneg.html</see_also>
+<solution>n/a</solution>
+<synopsis>The remote service advertises one or more protocols as being supported over TLS.</synopsis>
+<plugin_output>
+The target advertises that the following protocols are
+supported over SSL / TLS :
+
+  grpc-exp
+  h2
+  http/1.1
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
+<description>This plugin connects to every SSL-related port and attempts to extract and dump the X.509 certificate.</description>
+<fname>ssl_ciphers.nasl</fname>
+<plugin_modification_date>2015/12/30</plugin_modification_date>
+<plugin_name>SSL Certificate Information</plugin_name>
+<plugin_publication_date>2008/05/19</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.16 $</script_version>
+<solution>n/a</solution>
+<synopsis>This plugin displays the SSL certificate.</synopsis>
+<plugin_output>Subject Name: 
+
+Country: US
+State/Province: California
+Locality: Mountain View
+Organization: Google Inc
+Common Name: *.appspot.com
+
+Issuer Name: 
+
+Country: US
+Organization: Google Trust Services
+Common Name: Google Internet Authority G3
+
+Serial Number: 61 36 20 B5 79 9B 8B 93 
+
+Version: 3
+
+Signature Algorithm: SHA-256 With RSA Encryption
+
+Not Valid Before: Jan 10 10:52:46 2018 GMT
+Not Valid After: Apr 04 09:41:00 2018 GMT
+
+Public Key Info: 
+
+Algorithm: RSA Encryption
+Key Length: 2048 bits
+Public Key: 00 E4 32 17 76 A7 50 ED 49 AD 12 59 89 52 06 09 74 71 72 5C 
+            9D 2A 97 10 32 8E 37 AE F7 46 CF 69 09 5C FE 81 68 B0 D0 46 
+            48 66 D7 F3 5D 66 B0 84 C4 53 D9 32 DE B4 C7 5B 3B 42 D6 14 
+            FD 83 20 56 69 6F 97 7D F7 2E E5 7F 68 FB D3 50 43 5B 72 01 
+            26 6F C2 7E 26 9C 13 3B C1 0E 07 6B 99 57 46 25 1E 98 D4 52 
+            ED DA 5C F2 86 FB 90 C6 4E 8F 82 61 BE 73 42 CE 38 90 4C 58 
+            2A 83 9B 7B 18 56 36 88 F5 D9 82 4C 2E 7D 75 11 4A DB F2 30 
+            C4 D1 52 DA AD 0E BA 56 2E 03 43 CC 61 6C 9B 18 C4 DA 41 9B 
+            01 05 50 4C 37 84 DC BE DE 21 B3 24 15 A6 18 2F FB 42 C8 7C 
+            B9 53 C5 37 7E A1 24 B2 78 78 13 45 A0 88 C7 AF E5 BB 4E A6 
+            B0 08 35 00 03 13 B0 0F 0B 70 BD 14 ED F9 2A DF DA 08 E9 3C 
+            EE 4D A5 2B 04 74 46 D1 3A 67 89 4D 1C FA AB F6 87 FC 69 F7 
+            E6 25 B9 F8 31 0C D6 48 C6 FB D6 71 88 38 D5 A5 39 
+Exponent: 01 00 01 
+
+Signature Length: 256 bytes / 2048 bits
+Signature: 00 8A 50 EC 6A E1 73 7E 5D 4D 1A 5B 8E 63 3A 39 2F D6 88 F7 
+           CB F9 55 68 87 10 8D 09 CD 42 A9 DF 58 5B E7 9D 2D AD 9A 71 
+           EC 25 4A 5F 56 9A 24 E2 EC 88 12 E6 17 75 83 CD 6F D4 95 F2 
+           3A 02 8A 25 C2 21 D4 85 36 D9 9D 72 84 C3 2F 3D 46 7A 31 61 
+           71 B6 9E 01 00 9F C4 9B 1B C5 1F 54 AC E1 46 77 47 E4 69 9A 
+           B6 5E 32 D9 61 79 6B 79 24 5C 43 27 D7 57 22 D0 9D 6D F0 03 
+           60 63 39 E3 A3 6A 4D 25 4C 7B 3E 3F 7C 95 B9 E5 D4 CE A5 FF 
+           D5 E1 FB 29 37 E9 F5 44 DA BE 7C 89 BA FA C9 7B 8B AD 3B 85 
+           A8 BD 8C D1 4B 14 E4 7A 0C 13 76 33 5A 27 FA 11 9E 91 5D A6 
+           06 3B 55 9F CC 8E B9 96 55 4E FC 41 8B 39 64 30 F5 7D 6A D2 
+           0D 5C 24 1B 88 FC 93 28 CC B4 57 8A 04 B3 61 EA 85 EE 05 65 
+           53 B0 67 26 CB 5E 1C B6 2F B7 1C 2F 53 3D 99 B4 E4 21 49 CB 
+           C2 29 6F 98 71 56 72 4B B3 FE 57 99 F8 19 24 7C 2D 
+
+Extension: Extended Key Usage (2.5.29.37)
+Critical: 0
+Purpose#1: Web Server Authentication (1.3.6.1.5.5.7.3.1)
+
+
+Extension: Subject Alternative Name (2.5.29.17)
+Critical: 0
+DNS: *.appspot.com
+DNS: *.thinkwithgoogle.com
+DNS: *.withgoogle.com
+DNS: *.withyoutube.com
+DNS: appspot.com
+DNS: thinkwithgoogle.com
+DNS: withgoogle.com
+DNS: withyoutube.com
+
+
+Extension: Authority Information Access (1.3.6.1.5.5.7.1.1)
+Critical: 0
+Method#1: Certificate Authority Issuers
+URI: http://pki.goog/gsr2/GTSGIAG3.crt
+Method#2: Online Certificate Status Protocol
+URI: http://ocsp.pki.goog/GTSGIAG3
+
+
+Extension: Subject Key Identifier (2.5.29.14)
+Critical: 0
+Subject Key Identifier: 76 E3 20 2C 6A DB 3C CE 3D 78 DE CD B6 5D 7E 2B 07 D0 7A 60 
+
+
+Extension: Basic Constraints (2.5.29.19)
+Critical: 1
+
+
+Extension: Authority Key Identifier (2.5.29.35)
+Critical: 0
+Key Identifier: 77 C2 B8 50 9A 67 76 76 B1 2D C2 86 D0 83 A0 7E A6 7E BA 4B 
+
+
+Extension: Policies (2.5.29.32)
+Critical: 0
+Policy ID #1: 1.3.6.1.4.1.11129.2.5.3
+Policy ID #2: 2.23.140.1.2.2
+
+
+Extension: CRL Distribution Points (2.5.29.31)
+Critical: 0
+URI: http://crl.pki.goog/GTSGIAG3.crl
+
+
+Fingerprints : 
+
+SHA-256 Fingerprint: 39 19 B3 63 DE 35 75 16 8C C7 4B 7B E4 8D EE E6 44 02 9B 71 
+                     67 8C F5 9F 6E A8 A0 D2 74 55 B1 22 
+SHA-1 Fingerprint: 34 A6 69 70 BF 83 44 8E 1D 2F 1A 2D 79 2B 06 AB E3 8D C7 F3 
+MD5 Fingerprint: 32 9D 09 78 88 7A 29 91 40 59 B6 A3 A4 9F 46 BD 
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="56984" pluginName="SSL / TLS Versions Supported" pluginFamily="General">
+<description>This plugin detects which SSL and TLS versions are supported by the remote service for encrypting communications.</description>
+<fname>ssl_supported_versions.nasl</fname>
+<plugin_modification_date>2017/06/15</plugin_modification_date>
+<plugin_name>SSL / TLS Versions Supported</plugin_name>
+<plugin_publication_date>2011/12/01</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>1.20</script_version>
+<solution>n/a</solution>
+<synopsis>The remote service encrypts communications.</synopsis>
+<plugin_output>
+This port supports TLSv1.0/TLSv1.1/TLSv1.2.
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="22964" pluginName="Service Detection" pluginFamily="Service detection">
+<description>Nessus was able to identify the remote service by its banner or by looking at the error message it sends when it receives an HTTP request.</description>
+<fname>find_service.nasl</fname>
+<plugin_modification_date>2017/07/07</plugin_modification_date>
+<plugin_name>Service Detection</plugin_name>
+<plugin_publication_date>2007/08/19</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.159 $</script_version>
+<solution>n/a</solution>
+<synopsis>The remote service could be identified.</synopsis>
+<plugin_output>A web server is running on this port through TLSv1.</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="22964" pluginName="Service Detection" pluginFamily="Service detection">
+<description>Nessus was able to identify the remote service by its banner or by looking at the error message it sends when it receives an HTTP request.</description>
+<fname>find_service.nasl</fname>
+<plugin_modification_date>2017/07/07</plugin_modification_date>
+<plugin_name>Service Detection</plugin_name>
+<plugin_publication_date>2007/08/19</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.159 $</script_version>
+<solution>n/a</solution>
+<synopsis>The remote service could be identified.</synopsis>
+<plugin_output>A TLSv1 server answered on this port.
+</plugin_output>
+</ReportItem>
+<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="11219" pluginName="Nessus SYN scanner" pluginFamily="Port scanners">
+<description>This plugin is a SYN &apos;half-open&apos; port scanner.  It shall be reasonably quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans against broken services, but they might cause problems for less robust firewalls and also leave unclosed connections on the remote target, if the network is loaded.</description>
+<fname>nessus_syn_scanner.nbin</fname>
+<plugin_modification_date>2017/05/22</plugin_modification_date>
+<plugin_name>Nessus SYN scanner</plugin_name>
+<plugin_publication_date>2009/02/04</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.24 $</script_version>
+<solution>Protect your target with an IP filter.</solution>
+<synopsis>It is possible to determine which TCP ports are open.</synopsis>
+<plugin_output>Port 443/tcp was found to be open</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="39470" pluginName="CGI Generic Tests Timeout" pluginFamily="CGI abuses">
+<description>Some generic CGI tests ran out of time during the scan. The results may be incomplete.</description>
+<fname>torture_cgi_timeout.nasl</fname>
+<plugin_modification_date>2016/09/21</plugin_modification_date>
+<plugin_name>CGI Generic Tests Timeout</plugin_name>
+<plugin_publication_date>2009/06/19</plugin_publication_date>
+<plugin_type>summary</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.13 $</script_version>
+<solution>Consider increasing the &apos;maximum run time (minutes)&apos; preference for the &apos;Web Applications Settings&apos; in order to prevent the CGI scanning from timing out. Less ambitious options could also be used, such as :
+
+  - Test more that one parameter at a time per form :
+    &apos;Test all combinations of parameters&apos; is much slower     than &apos;Test random pairs of parameters&apos; or &apos;Test all     pairs of parameters (slow)&apos;.
+
+  - &apos;Stop after one flaw is found per web server (fastest)&apos;     under &apos;Do not stop after the first flaw is found per web     page&apos; is quicker than &apos;Look for all flaws (slowest)&apos;.
+
+  - In the Settings/Advanced menu, try reducing the value     for &apos;Max number of concurrent TCP sessions per host&apos; or     &apos;Max simultaneous checks per host&apos;.</solution>
+<synopsis>Some generic CGI attacks ran out of time.</synopsis>
+<plugin_output>The following tests timed out without finding any flaw :
+- SQL injection (on HTTP headers)
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="2" pluginID="39466" pluginName="CGI Generic XSS (quick test)" pluginFamily="CGI abuses : XSS">
+<cvss_base_score>4.3</cvss_base_score>
+<cvss_vector>CVSS2#AV:N/AC:M/Au:N/C:N/I:P/A:N</cvss_vector>
+<cwe>20</cwe>
+<cwe>74</cwe>
+<cwe>79</cwe>
+<cwe>80</cwe>
+<cwe>81</cwe>
+<cwe>83</cwe>
+<cwe>86</cwe>
+<cwe>116</cwe>
+<cwe>442</cwe>
+<cwe>692</cwe>
+<cwe>712</cwe>
+<cwe>722</cwe>
+<cwe>725</cwe>
+<cwe>751</cwe>
+<cwe>801</cwe>
+<cwe>811</cwe>
+<cwe>928</cwe>
+<cwe>931</cwe>
+<description>The remote web server hosts CGI scripts that fail to adequately sanitize request strings with malicious JavaScript.  By leveraging this issue, an attacker may be able to cause arbitrary HTML and script code to be executed in a user&apos;s browser within the security context of the affected site.
+These XSS are likely to be &apos;non persistent&apos; or &apos;reflected&apos;.</description>
+<fname>torture_cgi_cross_site_scripting.nasl</fname>
+<plugin_modification_date>2017/06/12</plugin_modification_date>
+<plugin_name>CGI Generic XSS (quick test)</plugin_name>
+<plugin_publication_date>2009/06/19</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>Medium</risk_factor>
+<script_version>$Revision: 1.40 $</script_version>
+<see_also>https://en.wikipedia.org/wiki/Cross_site_scripting#Non-persistent
+http://www.nessus.org/u?9717ad85
+http://projects.webappsec.org/Cross-Site+Scripting</see_also>
+<solution>Restrict access to the vulnerable application. Contact the vendor for a patch or upgrade.</solution>
+<synopsis>The remote web server is prone to cross-site scripting attacks.</synopsis>
+<xref>CWE:20</xref>
+<xref>CWE:74</xref>
+<xref>CWE:79</xref>
+<xref>CWE:80</xref>
+<xref>CWE:81</xref>
+<xref>CWE:83</xref>
+<xref>CWE:86</xref>
+<xref>CWE:116</xref>
+<xref>CWE:442</xref>
+<xref>CWE:692</xref>
+<xref>CWE:712</xref>
+<xref>CWE:722</xref>
+<xref>CWE:725</xref>
+<xref>CWE:751</xref>
+<xref>CWE:801</xref>
+<xref>CWE:811</xref>
+<xref>CWE:928</xref>
+<xref>CWE:931</xref>
+<plugin_output>
+Using the GET HTTP method, Nessus found that :
+
++ The following resources may be vulnerable to cross-site scripting (quick test) :
+
++ The &apos;uid&apos; parameter of the /559093312705275149262138428183007231424/snippets.gtl CGI :
+
+/559093312705275149262138428183007231424/snippets.gtl?uid=&quot;&gt;&lt;object%20ty
+pe=&quot;text/html&quot;%20data=&quot;http://www.example.com/include.html&quot;&gt;&lt;/object&gt;
+
+-------- output --------
+&lt;h2 class=&apos;has-refresh&apos; id=&quot;user_name&quot;&gt;
+
+&quot;&gt;&lt;object type=&quot;text/html&quot; data=&quot;http://www.example.com/include.html&quot;&gt;&lt;/
+object&gt;
+------------------------
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="33817" pluginName="CGI Generic Tests Load Estimation (all tests)" pluginFamily="CGI abuses">
+<description>This script computes the maximum number of requests that would be done by the generic web tests, depending on miscellaneous options. It does not perform any test by itself.
+
+The results can be used to estimate the duration of these tests, or the complexity of additional manual tests.
+
+Note that the script does not try to compute this duration based on external factors such as the network and web servers loads.</description>
+<fname>torture_cgi_load_estimation.nasl</fname>
+<plugin_modification_date>2014/03/12</plugin_modification_date>
+<plugin_name>CGI Generic Tests Load Estimation (all tests)</plugin_name>
+<plugin_publication_date>2009/10/26</plugin_publication_date>
+<plugin_type>summary</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.63 $</script_version>
+<solution>n/a</solution>
+<synopsis>Load estimation for web application tests.</synopsis>
+<plugin_output>Here are the estimated number of requests in miscellaneous modes
+for one method only (GET or POST) :
+[Single / Some Pairs / All Pairs / Some Combinations / All Combinations]
+
+on site request forgery                  : S=2          SP=2         AP=2         SC=2         AC=2        
+SQL injection                            : S=168        SP=360       AP=360       SC=408       AC=408      
+unseen parameters                        : S=245        SP=525       AP=525       SC=595       AC=595      
+local file inclusion                     : S=7          SP=15        AP=15        SC=17        AC=17       
+web code injection                       : S=7          SP=15        AP=15        SC=17        AC=17       
+cookie manipulation                      : S=2          SP=2         AP=2         SC=2         AC=2        
+XML injection                            : S=7          SP=15        AP=15        SC=17        AC=17       
+format string                            : S=14         SP=30        AP=30        SC=34        AC=34       
+script injection                         : S=2          SP=2         AP=2         SC=2         AC=2        
+cross-site scripting (comprehensive test): S=28         SP=60        AP=60        SC=68        AC=68       
+injectable parameter                     : S=14         SP=30        AP=30        SC=34        AC=34       
+cross-site scripting (extended patterns) : S=12         SP=12        AP=12        SC=12        AC=12       
+directory traversal (write access)       : S=14         SP=30        AP=30        SC=34        AC=34       
+SSI injection                            : S=21         SP=45        AP=45        SC=51        AC=51       
+header injection                         : S=4          SP=4         AP=4         SC=4         AC=4        
+directory traversal                      : S=175        SP=375       AP=375       SC=425       AC=425      
+HTML injection                           : S=10         SP=10        AP=10        SC=10        AC=10       
+cross-site scripting (quick test)        : S=11         SP=11        AP=11        SC=11        AC=11       
+arbitrary command execution (time based) : S=42         SP=90        AP=90        SC=102       AC=102      
+SQL injection (2nd order)                : S=7          SP=15        AP=15        SC=17        AC=17       
+persistent XSS                           : S=28         SP=60        AP=60        SC=68        AC=68       
+directory traversal (extended test)      : S=357        SP=765       AP=765       SC=867       AC=867      
+arbitrary command execution              : S=112        SP=240       AP=240       SC=272       AC=272      
+blind SQL injection (4 requests)         : S=28         SP=60        AP=60        SC=68        AC=68       
+HTTP response splitting                  : S=18         SP=18        AP=18        SC=18        AC=18       
+blind SQL injection                      : S=84         SP=180       AP=180       SC=204       AC=204      
+
+All tests                                : S=1419       SP=2971      AP=2971      SC=3359      AC=3359     
+
+Here are the estimated number of requests in miscellaneous modes
+for both methods (GET and POST) :
+[Single / Some Pairs / All Pairs / Some Combinations / All Combinations]
+
+on site request forgery                  : S=4          SP=4         AP=4         SC=4         AC=4        
+SQL injection                            : S=336        SP=720       AP=720       SC=816       AC=816      
+unseen parameters                        : S=490        SP=1050      AP=1050      SC=1190      AC=1190     
+local file inclusion                     : S=14         SP=30        AP=30        SC=34        AC=34       
+web code injection                       : S=14         SP=30        AP=30        SC=34        AC=34       
+cookie manipulation                      : S=4          SP=4         AP=4         SC=4         AC=4        
+XML injection                            : S=14         SP=30        AP=30        SC=34        AC=34       
+format string                            : S=28         SP=60        AP=60        SC=68        AC=68       
+script injection                         : S=4          SP=4         AP=4         SC=4         AC=4        
+cross-site scripting (comprehensive test): S=56         SP=120       AP=120       SC=136       AC=136      
+injectable parameter                     : S=28         SP=60        AP=60        SC=68        AC=68       
+cross-site scripting (extended patterns) : S=24         SP=24        AP=24        SC=24        AC=24       
+directory traversal (write access)       : S=28         SP=60        AP=60        SC=68        AC=68       
+SSI injection                            : S=42         SP=90        AP=90        SC=102       AC=102      
+header injection                         : S=8          SP=8         AP=8         SC=8         AC=8        
+directory traversal                      : S=350        SP=750       AP=750       SC=850       AC=850      
+HTML injection                           : S=20         SP=20        AP=20        SC=20        AC=20       
+cross-site scripting (quick test)        : S=22         SP=22        AP=22        SC=22        AC=22       
+arbitrary command execution (time based) : S=84         SP=180       AP=180       SC=204       AC=204      
+SQL injection (2nd order)                : S=14         SP=30        AP=30        SC=34        AC=34       
+persistent XSS                           : S=56         SP=120       AP=120       SC=136       AC=136      
+directory traversal (extended test)      : S=714        SP=1530      AP=1530      SC=1734      AC=1734     
+arbitrary command execution              : S=224        SP=480       AP=480       SC=544       AC=544      
+blind SQL injection (4 requests)         : S=56         SP=120       AP=120       SC=136       AC=136      
+HTTP response splitting                  : S=36         SP=36        AP=36        SC=36        AC=36       
+blind SQL injection                      : S=168        SP=360       AP=360       SC=408       AC=408      
+
+All tests                                : S=2838       SP=5942      AP=5942      SC=6718      AC=6718     
+
+Your mode : single, GET or POST.
+Maximum number of requests : 1419
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="2" pluginID="49067" pluginName="CGI Generic HTML Injections (quick test)" pluginFamily="CGI abuses : XSS">
+<cvss_base_score>4.3</cvss_base_score>
+<cvss_vector>CVSS2#AV:N/AC:M/Au:N/C:N/I:P/A:N</cvss_vector>
+<cwe>80</cwe>
+<cwe>86</cwe>
+<description>The remote web server hosts CGI scripts that fail to adequately sanitize request strings with malicious JavaScript.  By leveraging this issue, an attacker may be able to cause arbitrary HTML to be executed in a user&apos;s browser within the security context of the affected site.
+
+The remote web server may be vulnerable to IFRAME injections or cross-site scripting attacks :
+
+  - IFRAME injections allow &apos;virtual defacement&apos; that     might scare or anger gullible users. Such injections     are sometimes implemented for &apos;phishing&apos; attacks. 
+
+  - XSS are extensively tested by four other scripts.
+
+  - Some applications (e.g. web forums) authorize a subset     of HTML without any ill effect. In this case, ignore     this warning.</description>
+<fname>torture_cgi_inject_html.nasl</fname>
+<plugin_modification_date>2017/01/05</plugin_modification_date>
+<plugin_name>CGI Generic HTML Injections (quick test)</plugin_name>
+<plugin_publication_date>2010/09/01</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>Medium</risk_factor>
+<script_version>$Revision: 1.13 $</script_version>
+<see_also>http://www.nessus.org/u?f8fdd645</see_also>
+<solution>Either restrict access to the vulnerable application or contact the vendor for an update.</solution>
+<synopsis>The remote web server may be prone to HTML injections.</synopsis>
+<xref>CWE:80</xref>
+<xref>CWE:86</xref>
+<plugin_output>
+Using the GET HTTP method, Nessus found that :
+
++ The following resources may be vulnerable to HTML injection :
+
++ The &apos;uid&apos; parameter of the /559093312705275149262138428183007231424/snippets.gtl CGI :
+
+/559093312705275149262138428183007231424/snippets.gtl?uid=&lt;&quot;orxahw%0A&gt;
+
+-------- output --------
+&lt;h2 class=&apos;has-refresh&apos; id=&quot;user_name&quot;&gt;
+
+&lt;&quot;orxahw
+&gt;
+------------------------
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="24260" pluginName="HyperText Transfer Protocol (HTTP) Information" pluginFamily="Web Servers">
+<description>This test gives some information about the remote HTTP protocol - the version used, whether HTTP Keep-Alive and HTTP pipelining are enabled, etc... 
+
+This test is informational only and does not denote any security problem.</description>
+<fname>http_info.nasl</fname>
+<plugin_modification_date>2011/05/31</plugin_modification_date>
+<plugin_name>HyperText Transfer Protocol (HTTP) Information</plugin_name>
+<plugin_publication_date>2007/01/30</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.12 $</script_version>
+<solution>n/a</solution>
+<synopsis>Some information about the remote HTTP configuration can be extracted.</synopsis>
+<plugin_output>
+Protocol version : HTTP/1.1
+SSL : no
+Keep-Alive : no
+Options allowed : (Not implemented)
+Headers :
+
+  Cache-Control: no-cache
+  Pragma: no-cache
+  Content-Type: text/html; charset=utf-8
+  X-Cloud-Trace-Context: de0eedbbf59766548e665bd9a6527f57
+  Date: Wed, 24 Jan 2018 00:39:48 GMT
+  Server: Google Frontend
+  Content-Length: 11506
+  Connection: close
+  
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="47830" pluginName="CGI Generic Injectable Parameter" pluginFamily="CGI abuses">
+<cwe>86</cwe>
+<description>Nessus was able to to inject innocuous strings into CGI parameters and read them back in the HTTP response.
+
+The affected parameters are candidates for extended injection tests like cross-site scripting attacks.
+
+This is not a weakness per se, the main purpose of this test is to speed up other scripts.  The results may be useful for a human pen-tester.</description>
+<fname>torture_cgi_injectable_param.nasl</fname>
+<plugin_modification_date>2017/01/05</plugin_modification_date>
+<plugin_name>CGI Generic Injectable Parameter</plugin_name>
+<plugin_publication_date>2010/07/26</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.14 $</script_version>
+<solution>n/a</solution>
+<synopsis>Some CGIs are candidate for extended injection tests.</synopsis>
+<xref>CWE:86</xref>
+<plugin_output>
+Using the GET HTTP method, Nessus found that :
+
++ The following resources may be vulnerable to injectable parameter :
+
++ The &apos;uid&apos; parameter of the /559093312705275149262138428183007231424/snippets.gtl CGI :
+
+/559093312705275149262138428183007231424/snippets.gtl?uid=%00rmtrom
+
+-------- output --------
+&lt;h2 class=&apos;has-refresh&apos; id=&quot;user_name&quot;&gt;
+
+.rmtrom
+------------------------
+
++ The &apos;uid&apos; parameter of the /559093312705275149262138428183007231424/saveprofile CGI :
+
+/559093312705275149262138428183007231424/saveprofile?uid=rmtrom&amp;pw=&amp;is_a
+uthor=True&amp;action=new
+
+-------- output --------
+Content-type: text/html
+Pragma: no-cache
+Set-Cookie: GRUYERE=49714845|rmtrom||author; path=/559093312705275149262
+138428183007231424
+X-XSS-Protection: 0
+X-Cloud-Trace-Context: 48ca2c804c69385a7bf264eaeaadbf84
+------------------------
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="43111" pluginName="HTTP Methods Allowed (per directory)" pluginFamily="Web Servers">
+<description>By calling the OPTIONS method, it is possible to determine which HTTP methods are allowed on each directory. 
+
+As this list may be incomplete, the plugin also tests - if &apos;Thorough tests&apos; are enabled or &apos;Enable web applications tests&apos; is set to &apos;yes&apos; in the scan policy - various known HTTP methods on each directory and considers them as unsupported if it receives a response code of 400, 403, 405, or 501. 
+
+Note that the plugin output is only informational and does not necessarily indicate the presence of any security vulnerabilities.</description>
+<fname>web_directory_options.nasl</fname>
+<plugin_modification_date>2013/05/09</plugin_modification_date>
+<plugin_name>HTTP Methods Allowed (per directory)</plugin_name>
+<plugin_publication_date>2009/12/10</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.7 $</script_version>
+<solution>n/a</solution>
+<synopsis>This plugin determines which HTTP methods are allowed on various CGI directories.</synopsis>
+<plugin_output>Based on the response to an OPTIONS request :
+
+  - HTTP methods  POST GET are allowed on : 
+
+    /559093312705275149262138428183007231424
+
+  - HTTP method GET is allowed on :
+
+    /
+    /code
+
+
+Based on tests of each method : 
+
+  - HTTP methods BCOPY BDELETE BMOVE BPROPFIND BPROPPATCH DEBUG 
+    DELETE GET HEAD INDEX NOTIFY OPTIONS ORDERPATCH POLL POST PUT 
+    RPC_IN_DATA RPC_OUT_DATA SEARCH SUBSCRIBE UNSUBSCRIBE 
+    X-MS-ENUMATTS are allowed on : 
+
+    /
+
+  - HTTP methods BCOPY BDELETE BMOVE BPROPFIND BPROPPATCH DEBUG GET 
+    INDEX NOTIFY ORDERPATCH POLL POST RPC_IN_DATA RPC_OUT_DATA SEARCH 
+    SUBSCRIBE UNSUBSCRIBE X-MS-ENUMATTS are allowed on : 
+
+    /559093312705275149262138428183007231424
+
+  - HTTP methods BCOPY BDELETE BMOVE BPROPFIND BPROPPATCH DEBUG GET 
+    INDEX NOTIFY ORDERPATCH POLL RPC_IN_DATA RPC_OUT_DATA SEARCH 
+    SUBSCRIBE UNSUBSCRIBE X-MS-ENUMATTS are allowed on : 
+
+    /code
+
+  - Invalid/unknown HTTP methods are allowed on :
+
+    /
+    /559093312705275149262138428183007231424
+    /code
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="49704" pluginName="External URLs" pluginFamily="Web Servers">
+<description>Nessus gathered HREF links to external sites by crawling the remote web server.</description>
+<fname>webmirror_ext_URL.nasl</fname>
+<plugin_modification_date>2011/08/19</plugin_modification_date>
+<plugin_name>External URLs</plugin_name>
+<plugin_publication_date>2010/10/04</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.3 $</script_version>
+<solution>n/a</solution>
+<synopsis>Links to external sites were gathered.</synopsis>
+<plugin_output>
+37 external URLs were gathered on this web server : 
+URL...                                  - Seen on...
+
+
+http://www.json.org/                    - /part2
+https://creativecommons.org/licenses/by-nd/3.0/us/ - /
+https://creativecommons.org/licenses/by/3.0/us/ - /
+https://images.google.com/?q=cheddar+cheese - /559093312705275149262138428183007231424/
+https://news.google.com/news/search?q=brie - /559093312705275149262138428183007231424/
+https://portswigger.net/burp/           - /
+https://security.googleblog.com/        - /part5
+https://svn.python.org/projects/python/trunk/Objects/stringobject.c - /part3
+https://www.google.com/about/appsecurity/ - /part5
+https://www.google.com/intl/en/policies/terms/ - /
+https://www.google.com/search?q=%22cross+site+script+inclusion%22 - /part3
+https://www.google.com/search?q=%22defense+in+depth%22+security - /part3
+https://www.google.com/search?q=E4X+markup+security - /part3
+https://www.google.com/search?q=XSS+auto+escaping - /part2
+https://www.google.com/search?q=all+your+base+are+belong+to+us - /part2
+https://www.google.com/search?q=blaster+worm - /part5
+https://www.google.com/search?q=buffer+overflow - /part5
+https://www.google.com/search?q=choosing+a+good+password - /part5
+https://www.google.com/search?q=code+red+worm - /part5
+https://www.google.com/search?q=fuzz+testing - /part5
+https://www.google.com/search?q=http+cookies - /part3
+https://www.google.com/search?q=integer+overflow+vulnerability - /part5
+https://www.google.com/search?q=least+privileges - /part4
+https://www.google.com/search?q=password+hashing - /part5
+https://www.google.com/search?q=preventing+(XSRF+OR+CSRF) - /part3
+https://www.google.com/search?q=same+origin+policy - /part2
+https://www.google.com/search?q=sanitize+html - /part2
+https://www.google.com/search?q=sql+injection - /part5
+https://www.google.com/search?q=sql+slammer - /part5
+https://www.google.com/search?q=understanding+cross-site+scripting - /part2
+https://www.google.com/search?q=unsafe+string+functions - /part4
+https://www.google.com/search?q=utf-7   - /part2
+https://www.kb.cert.org/vuls/           - /part2
+https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project - /
+https://www.python.org/downloads/       - /part1
+https://www.w3.org/TR/html40/index/attributes.html - /part2
+https://xkcd.com/327/                   - /part5
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="91815" pluginName="Web Application Sitemap" pluginFamily="Web Servers">
+<description>The remote web server contains linkable content that can be used to gather information about a target.</description>
+<fname>http_sitemap.nasl</fname>
+<plugin_modification_date>2016/06/24</plugin_modification_date>
+<plugin_name>Web Application Sitemap</plugin_name>
+<plugin_publication_date>2016/06/24</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.1 $</script_version>
+<see_also>http://www.nessus.org/u?5496c8d9</see_also>
+<solution>n/a</solution>
+<synopsis>The remote web server hosts linkable content that can be crawled by Nessus.</synopsis>
+<plugin_output>
+The following sitemap was created from crawling linkable content on the target host :
+
+  - http://google-gruyere.appspot.com/
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/login
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/newaccount.gtl
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/saveprofile
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/snippets.gtl
+  - http://google-gruyere.appspot.com/code
+  - http://google-gruyere.appspot.com/code/
+  - http://google-gruyere.appspot.com/code/data.py
+  - http://google-gruyere.appspot.com/code/gruyere.py
+  - http://google-gruyere.appspot.com/code/gtl.py
+  - http://google-gruyere.appspot.com/code/resources/base.css
+  - http://google-gruyere.appspot.com/code/resources/dump.gtl
+  - http://google-gruyere.appspot.com/code/resources/editprofile.gtl
+  - http://google-gruyere.appspot.com/code/resources/error.gtl
+  - http://google-gruyere.appspot.com/code/resources/feed.gtl
+  - http://google-gruyere.appspot.com/code/resources/home.gtl
+  - http://google-gruyere.appspot.com/code/resources/lib.js
+  - http://google-gruyere.appspot.com/code/resources/login.gtl
+  - http://google-gruyere.appspot.com/code/resources/manage.gtl
+  - http://google-gruyere.appspot.com/code/resources/menubar.gtl
+  - http://google-gruyere.appspot.com/code/resources/newaccount.gtl
+  - http://google-gruyere.appspot.com/code/resources/newsnippet.gtl
+  - http://google-gruyere.appspot.com/code/resources/showprofile.gtl
+  - http://google-gruyere.appspot.com/code/resources/snippets.gtl
+  - http://google-gruyere.appspot.com/code/resources/upload.gtl
+  - http://google-gruyere.appspot.com/code/resources/upload2.gtl
+  - http://google-gruyere.appspot.com/code/sanitize.py
+  - http://google-gruyere.appspot.com/code/secret.txt
+  - http://google-gruyere.appspot.com/gruyere-code.zip
+  - http://google-gruyere.appspot.com/part1
+  - http://google-gruyere.appspot.com/part2
+  - http://google-gruyere.appspot.com/part3
+  - http://google-gruyere.appspot.com/part4
+  - http://google-gruyere.appspot.com/part5
+  - http://google-gruyere.appspot.com/start
+  - http://google-gruyere.appspot.com/static/codeindex.html
+  - http://google-gruyere.appspot.com/static/codelab.css
+  - http://google-gruyere.appspot.com/static/gruyere.png
+
+Attached is a copy of the sitemap file.
+</plugin_output>
+<attachment name="google-gruyere.appspot.com_80_sitemap.xml" type="application/xml">2b2a405835367abb40282c8235600057</attachment>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="50344" pluginName="Missing or Permissive Content-Security-Policy HTTP Response Header" pluginFamily="CGI abuses">
+<description>The remote web server in some responses sets a permissive Content-Security-Policy (CSP) response header or does not set one at all.
+
+The CSP header has been proposed by the W3C Web Application Security Working Group as a way to mitigate cross-site scripting and clickjacking attacks.</description>
+<fname>http_X_Content_Security_Policy_header.nasl</fname>
+<plugin_modification_date>2016/04/14</plugin_modification_date>
+<plugin_name>Missing or Permissive Content-Security-Policy HTTP Response Header</plugin_name>
+<plugin_publication_date>2010/10/26</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.3 $</script_version>
+<see_also>http://content-security-policy.com/
+https://www.w3.org/TR/CSP2/</see_also>
+<solution>Set a properly configured Content-Security-Policy header for all requested resources.</solution>
+<synopsis>The remote web server does not take steps to mitigate a class of web application vulnerabilities.</synopsis>
+<plugin_output>
+The following pages do not set a Content-Security-Policy response header or set a permissive policy:
+
+  - http://google-gruyere.appspot.com/
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/login
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/newaccount.gtl
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/saveprofile
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/snippets.gtl
+  - http://google-gruyere.appspot.com/code
+  - http://google-gruyere.appspot.com/code/
+  - http://google-gruyere.appspot.com/code/data.py
+  - http://google-gruyere.appspot.com/code/gruyere.py
+  - http://google-gruyere.appspot.com/code/gtl.py
+  - http://google-gruyere.appspot.com/code/resources/base.css
+  - http://google-gruyere.appspot.com/code/resources/dump.gtl
+  - http://google-gruyere.appspot.com/code/resources/editprofile.gtl
+  - http://google-gruyere.appspot.com/code/resources/error.gtl
+  - http://google-gruyere.appspot.com/code/resources/feed.gtl
+  - http://google-gruyere.appspot.com/code/resources/home.gtl
+  - http://google-gruyere.appspot.com/code/resources/lib.js
+  - http://google-gruyere.appspot.com/code/resources/login.gtl
+  - http://google-gruyere.appspot.com/code/resources/manage.gtl
+  - http://google-gruyere.appspot.com/code/resources/menubar.gtl
+  - http://google-gruyere.appspot.com/code/resources/newaccount.gtl
+  - http://google-gruyere.appspot.com/code/resources/newsnippet.gtl
+  - http://google-gruyere.appspot.com/code/resources/showprofile.gtl
+  - http://google-gruyere.appspot.com/code/resources/snippets.gtl
+  - http://google-gruyere.appspot.com/code/resources/upload.gtl
+  - http://google-gruyere.appspot.com/code/resources/upload2.gtl
+  - http://google-gruyere.appspot.com/code/sanitize.py
+  - http://google-gruyere.appspot.com/code/secret.txt
+  - http://google-gruyere.appspot.com/part1
+  - http://google-gruyere.appspot.com/part2
+  - http://google-gruyere.appspot.com/part3
+  - http://google-gruyere.appspot.com/part4
+  - http://google-gruyere.appspot.com/part5
+  - http://google-gruyere.appspot.com/start
+  - http://google-gruyere.appspot.com/static/codeindex.html
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="85601" pluginName="Web Application Cookies Not Marked HttpOnly" pluginFamily="Web Servers">
+<cwe>20</cwe>
+<cwe>74</cwe>
+<cwe>79</cwe>
+<cwe>442</cwe>
+<cwe>629</cwe>
+<cwe>711</cwe>
+<cwe>712</cwe>
+<cwe>722</cwe>
+<cwe>725</cwe>
+<cwe>750</cwe>
+<cwe>751</cwe>
+<cwe>800</cwe>
+<cwe>801</cwe>
+<cwe>809</cwe>
+<cwe>811</cwe>
+<cwe>864</cwe>
+<cwe>900</cwe>
+<cwe>928</cwe>
+<cwe>931</cwe>
+<cwe>990</cwe>
+<description>The remote web application sets various cookies throughout a user&apos;s unauthenticated and authenticated session. However, one or more of those cookies are not marked &apos;HttpOnly&apos;, meaning that a malicious client-side script, such as JavaScript, could read them. The HttpOnly flag is a security mechanism to protect against cross-site scripting attacks, which was proposed by Microsoft and initially implemented in Internet Explorer. All modern browsers now support it.
+
+Note that this plugin detects all general cookies missing the HttpOnly cookie flag, whereas plugin 48432 (Web Application Session Cookies Not Marked HttpOnly) will only detect session cookies from an authenticated session missing the HttpOnly cookie flag.</description>
+<fname>http_generic_httponly_cookies.nasl</fname>
+<plugin_modification_date>2015/08/24</plugin_modification_date>
+<plugin_name>Web Application Cookies Not Marked HttpOnly</plugin_name>
+<plugin_publication_date>2015/08/24</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.1 $</script_version>
+<see_also>https://www.owasp.org/index.php/HttpOnly</see_also>
+<solution>Each cookie should be carefully reviewed to determine if it contains sensitive data or is relied upon for a security decision.
+
+If possible, add the &apos;HttpOnly&apos; attribute to all session cookies and any cookies containing sensitive data.</solution>
+<synopsis>HTTP session cookies might be vulnerable to cross-site scripting attacks.</synopsis>
+<xref>CWE:20</xref>
+<xref>CWE:74</xref>
+<xref>CWE:79</xref>
+<xref>CWE:442</xref>
+<xref>CWE:629</xref>
+<xref>CWE:711</xref>
+<xref>CWE:712</xref>
+<xref>CWE:722</xref>
+<xref>CWE:725</xref>
+<xref>CWE:750</xref>
+<xref>CWE:751</xref>
+<xref>CWE:800</xref>
+<xref>CWE:801</xref>
+<xref>CWE:809</xref>
+<xref>CWE:811</xref>
+<xref>CWE:864</xref>
+<xref>CWE:900</xref>
+<xref>CWE:928</xref>
+<xref>CWE:931</xref>
+<xref>CWE:990</xref>
+<plugin_output>
+The following cookie does not set the HttpOnly cookie flag :
+
+Name : GRUYERE_ID
+Path : /
+Value : 559093312705275149262138428183007231424
+Domain : 
+Version : 1
+Expires : 
+Comment : 
+Secure : 0
+Httponly : 0
+Port : 
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="85602" pluginName="Web Application Cookies Not Marked Secure" pluginFamily="Web Servers">
+<cwe>522</cwe>
+<cwe>718</cwe>
+<cwe>724</cwe>
+<cwe>928</cwe>
+<cwe>930</cwe>
+<description>The remote web application sets various cookies throughout a user&apos;s unauthenticated and authenticated session. However, there are instances where the application is running over unencrypted HTTP or the cookies are not marked &apos;secure&apos;, meaning the browser could send them back over an unencrypted link under certain circumstances. As a result, it may be possible for a remote attacker to intercept these cookies.
+
+Note that this plugin detects all general cookies missing the &apos;secure&apos; cookie flag, whereas plugin 49218 (Web Application Session Cookies Not Marked Secure) will only detect session cookies from an authenticated session missing the secure cookie flag.</description>
+<fname>http_generic_secure_cookies.nasl</fname>
+<plugin_modification_date>2015/08/24</plugin_modification_date>
+<plugin_name>Web Application Cookies Not Marked Secure</plugin_name>
+<plugin_publication_date>2015/08/24</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.1 $</script_version>
+<see_also>https://www.owasp.org/index.php/SecureFlag</see_also>
+<solution>Each cookie should be carefully reviewed to determine if it contains sensitive data or is relied upon for a security decision.
+
+If possible, ensure all communication occurs over an encrypted channel and add the &apos;secure&apos; attribute to all session cookies or any cookies containing sensitive data.</solution>
+<synopsis>HTTP session cookies might be transmitted in cleartext.</synopsis>
+<xref>CWE:522</xref>
+<xref>CWE:718</xref>
+<xref>CWE:724</xref>
+<xref>CWE:928</xref>
+<xref>CWE:930</xref>
+<plugin_output>
+The following cookie does not set the secure cookie flag :
+
+Name : GRUYERE_ID
+Path : /
+Value : 559093312705275149262138428183007231424
+Domain : 
+Version : 1
+Expires : 
+Comment : 
+Secure : 0
+Httponly : 0
+Port : 
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="1" pluginID="26194" pluginName="Web Server Transmits Cleartext Credentials" pluginFamily="Web Servers">
+<cvss_base_score>2.6</cvss_base_score>
+<cvss_vector>CVSS2#AV:N/AC:H/Au:N/C:P/I:N/A:N</cvss_vector>
+<cwe>522</cwe>
+<cwe>523</cwe>
+<cwe>718</cwe>
+<cwe>724</cwe>
+<cwe>928</cwe>
+<cwe>930</cwe>
+<description>The remote web server contains several HTML form fields containing an input of type &apos;password&apos; which transmit their information to a remote web server in cleartext.
+
+An attacker eavesdropping the traffic between web browser and server may obtain logins and passwords of valid users.</description>
+<fname>www_clear_text_passwords.nasl</fname>
+<plugin_modification_date>2016/11/29</plugin_modification_date>
+<plugin_name>Web Server Transmits Cleartext Credentials</plugin_name>
+<plugin_publication_date>2007/09/28</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>Low</risk_factor>
+<script_version>$Revision: 1.17 $</script_version>
+<solution>Make sure that every sensitive form transmits content over HTTPS.</solution>
+<synopsis>The remote web server might transmit credentials in cleartext.</synopsis>
+<xref>CWE:522</xref>
+<xref>CWE:523</xref>
+<xref>CWE:718</xref>
+<xref>CWE:724</xref>
+<xref>CWE:928</xref>
+<xref>CWE:930</xref>
+<plugin_output>Page : /559093312705275149262138428183007231424/login
+Destination Page: /559093312705275149262138428183007231424/login
+
+Page : /559093312705275149262138428183007231424/newaccount.gtl
+Destination Page: /559093312705275149262138428183007231424/saveprofile
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="2" pluginID="85582" pluginName="Web Application Potentially Vulnerable to Clickjacking" pluginFamily="Web Servers">
+<cvss_base_score>4.3</cvss_base_score>
+<cvss_vector>CVSS2#AV:N/AC:M/Au:N/C:N/I:P/A:N</cvss_vector>
+<cwe>693</cwe>
+<description>The remote web server does not set an X-Frame-Options response header or a Content-Security-Policy &apos;frame-ancestors&apos; response header in all content responses. This could potentially expose the site to a clickjacking or UI redress attack, in which an attacker can trick a user into clicking an area of the vulnerable page that is different than what the user perceives the page to be. This can result in a user performing fraudulent or malicious transactions.
+
+X-Frame-Options has been proposed by Microsoft as a way to mitigate clickjacking attacks and is currently supported by all major browser vendors.
+
+Content-Security-Policy (CSP) has been proposed by the W3C Web Application Security Working Group, with increasing support among all major browser vendors, as a way to mitigate clickjacking and other attacks. The &apos;frame-ancestors&apos; policy directive restricts which sources can embed the protected resource.
+
+Note that while the X-Frame-Options and Content-Security-Policy response headers are not the only mitigations for clickjacking, they are currently the most reliable methods that can be detected through automation. Therefore, this plugin may produce false positives if other mitigation strategies (e.g., frame-busting JavaScript) are deployed or if the page does not perform any security-sensitive transactions.</description>
+<fname>http_generic_clickjacking.nasl</fname>
+<plugin_modification_date>2017/05/16</plugin_modification_date>
+<plugin_name>Web Application Potentially Vulnerable to Clickjacking</plugin_name>
+<plugin_publication_date>2015/08/22</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>Medium</risk_factor>
+<script_version>$Revision: 1.7 $</script_version>
+<see_also>http://www.nessus.org/u?399b1f56
+https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet
+https://en.wikipedia.org/wiki/Clickjacking</see_also>
+<solution>Return the X-Frame-Options or Content-Security-Policy (with the &apos;frame-ancestors&apos; directive) HTTP header with the page&apos;s response.
+This prevents the page&apos;s content from being rendered by another site when using the frame or iframe HTML tags.</solution>
+<synopsis>The remote web server may fail to mitigate a class of web application vulnerabilities.</synopsis>
+<xref>CWE:693</xref>
+<plugin_output>
+The following pages do not use a clickjacking mitigation response header and contain a clickable event :
+
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/login
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/newaccount.gtl
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/snippets.gtl
+  - http://google-gruyere.appspot.com/part1
+  - http://google-gruyere.appspot.com/part2
+  - http://google-gruyere.appspot.com/part3
+  - http://google-gruyere.appspot.com/part4
+  - http://google-gruyere.appspot.com/part5
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="42057" pluginName="Web Server Allows Password Auto-Completion" pluginFamily="Web Servers">
+<description>The remote web server contains at least one HTML form field that has an input of type &apos;password&apos; where &apos;autocomplete&apos; is not set to &apos;off&apos;.
+
+While this does not represent a risk to this web server per se, it does mean that users who use the affected forms may have their credentials saved in their browsers, which could in turn lead to a loss of confidentiality if any of them use a shared host or if their machine is compromised at some point.</description>
+<fname>www_autocomplete_passwords.nasl</fname>
+<plugin_modification_date>2016/06/16</plugin_modification_date>
+<plugin_name>Web Server Allows Password Auto-Completion</plugin_name>
+<plugin_publication_date>2009/10/07</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.8 $</script_version>
+<solution>Add the attribute &apos;autocomplete=off&apos; to these fields to prevent browsers from caching credentials.</solution>
+<synopsis>The &apos;autocomplete&apos; attribute is not disabled on password fields.</synopsis>
+<plugin_output>Page : /559093312705275149262138428183007231424/login
+Destination Page: /559093312705275149262138428183007231424/login
+
+Page : /559093312705275149262138428183007231424/newaccount.gtl
+Destination Page: /559093312705275149262138428183007231424/saveprofile
+
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="50345" pluginName="Missing or Permissive X-Frame-Options HTTP Response Header" pluginFamily="CGI abuses">
+<description>The remote web server in some responses sets a permissive X-Frame-Options response header or does not set one at all.
+
+The X-Frame-Options header has been proposed by Microsoft as a way to mitigate clickjacking attacks and is currently supported by all major browser vendors</description>
+<fname>http_X_Frame_Options_header.nasl</fname>
+<plugin_modification_date>2017/05/16</plugin_modification_date>
+<plugin_name>Missing or Permissive X-Frame-Options HTTP Response Header</plugin_name>
+<plugin_publication_date>2010/10/26</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.4 $</script_version>
+<see_also>https://en.wikipedia.org/wiki/Clickjacking
+http://www.nessus.org/u?399b1f56</see_also>
+<solution>Set a properly configured X-Frame-Options header for all requested resources.</solution>
+<synopsis>The remote web server does not take steps to mitigate a class of web application vulnerabilities.</synopsis>
+<plugin_output>
+The following pages do not set a X-Frame-Options response header or set a permissive policy:
+
+  - http://google-gruyere.appspot.com/
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/login
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/newaccount.gtl
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/saveprofile
+  - http://google-gruyere.appspot.com/559093312705275149262138428183007231424/snippets.gtl
+  - http://google-gruyere.appspot.com/code
+  - http://google-gruyere.appspot.com/code/
+  - http://google-gruyere.appspot.com/code/data.py
+  - http://google-gruyere.appspot.com/code/gruyere.py
+  - http://google-gruyere.appspot.com/code/gtl.py
+  - http://google-gruyere.appspot.com/code/resources/base.css
+  - http://google-gruyere.appspot.com/code/resources/dump.gtl
+  - http://google-gruyere.appspot.com/code/resources/editprofile.gtl
+  - http://google-gruyere.appspot.com/code/resources/error.gtl
+  - http://google-gruyere.appspot.com/code/resources/feed.gtl
+  - http://google-gruyere.appspot.com/code/resources/home.gtl
+  - http://google-gruyere.appspot.com/code/resources/lib.js
+  - http://google-gruyere.appspot.com/code/resources/login.gtl
+  - http://google-gruyere.appspot.com/code/resources/manage.gtl
+  - http://google-gruyere.appspot.com/code/resources/menubar.gtl
+  - http://google-gruyere.appspot.com/code/resources/newaccount.gtl
+  - http://google-gruyere.appspot.com/code/resources/newsnippet.gtl
+  - http://google-gruyere.appspot.com/code/resources/showprofile.gtl
+  - http://google-gruyere.appspot.com/code/resources/snippets.gtl
+  - http://google-gruyere.appspot.com/code/resources/upload.gtl
+  - http://google-gruyere.appspot.com/code/resources/upload2.gtl
+  - http://google-gruyere.appspot.com/code/sanitize.py
+  - http://google-gruyere.appspot.com/code/secret.txt
+  - http://google-gruyere.appspot.com/part1
+  - http://google-gruyere.appspot.com/part2
+  - http://google-gruyere.appspot.com/part3
+  - http://google-gruyere.appspot.com/part4
+  - http://google-gruyere.appspot.com/part5
+  - http://google-gruyere.appspot.com/start
+  - http://google-gruyere.appspot.com/static/codeindex.html
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="10662" pluginName="Web mirroring" pluginFamily="Web Servers">
+<description>This plugin makes a mirror of the remote website(s) and extracts the list of CGIs that are used by the remote host. 
+
+It is suggested that you change the number of pages to mirror in the &apos;Options&apos; section of the client.</description>
+<fname>webmirror3.nbin</fname>
+<plugin_modification_date>2017/07/07</plugin_modification_date>
+<plugin_name>Web mirroring</plugin_name>
+<plugin_publication_date>2001/05/04</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 3.38 $</script_version>
+<solution>n/a</solution>
+<synopsis>Nessus can crawl the remote website.</synopsis>
+<plugin_output>
+Webmirror performed 44 queries in 15s (2.0933 queries per second)
+
+The following CGIs have been discovered :
+
+
++ CGI : /code/
+  Methods : GET
+  Argument : 
+   Value: resources/dump.gtl
+
+
++ CGI : /559093312705275149262138428183007231424/snippets.gtl
+  Methods : GET
+  Argument : uid
+   Value: brie
+
+
++ CGI : /559093312705275149262138428183007231424/login
+  Methods : GET
+  Argument : pw
+  Argument : uid
+
+
++ CGI : /559093312705275149262138428183007231424/saveprofile
+  Methods : GET
+  Argument : action
+   Value: new
+  Argument : is_author
+   Value: True
+  Argument : pw
+  Argument : uid
+</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="22964" pluginName="Service Detection" pluginFamily="Service detection">
+<description>Nessus was able to identify the remote service by its banner or by looking at the error message it sends when it receives an HTTP request.</description>
+<fname>find_service.nasl</fname>
+<plugin_modification_date>2017/07/07</plugin_modification_date>
+<plugin_name>Service Detection</plugin_name>
+<plugin_publication_date>2007/08/19</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.159 $</script_version>
+<solution>n/a</solution>
+<synopsis>The remote service could be identified.</synopsis>
+<plugin_output>A web server is running on this port.</plugin_output>
+</ReportItem>
+<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="11219" pluginName="Nessus SYN scanner" pluginFamily="Port scanners">
+<description>This plugin is a SYN &apos;half-open&apos; port scanner.  It shall be reasonably quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans against broken services, but they might cause problems for less robust firewalls and also leave unclosed connections on the remote target, if the network is loaded.</description>
+<fname>nessus_syn_scanner.nbin</fname>
+<plugin_modification_date>2017/05/22</plugin_modification_date>
+<plugin_name>Nessus SYN scanner</plugin_name>
+<plugin_publication_date>2009/02/04</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>$Revision: 1.24 $</script_version>
+<solution>Protect your target with an IP filter.</solution>
+<synopsis>It is possible to determine which TCP ports are open.</synopsis>
+<plugin_output>Port 80/tcp was found to be open</plugin_output>
+</ReportItem>
+<ReportItem port="0" svc_name="general" protocol="udp" severity="0" pluginID="10287" pluginName="Traceroute Information" pluginFamily="General">
+<description>Makes a traceroute to the remote host.</description>
+<fname>traceroute.nasl</fname>
+<plugin_modification_date>2013/04/11</plugin_modification_date>
+<plugin_name>Traceroute Information</plugin_name>
+<plugin_publication_date>1999/11/27</plugin_publication_date>
+<plugin_type>remote</plugin_type>
+<risk_factor>None</risk_factor>
+<script_version>1.62</script_version>
+<solution>n/a</solution>
+<synopsis>It was possible to obtain traceroute information.</synopsis>
+<plugin_output>For your information, here is the traceroute from 10.142.120.140 to 216.58.203.116 : 
+10.142.120.140
+10.142.120.251
+103.36.6.66
+103.36.4.32
+103.36.4.44
+45.127.172.73
+108.170.247.65
+209.85.255.165
+216.58.203.116
+</plugin_output>
+</ReportItem>
 <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="19506" pluginName="Nessus Scan Information" pluginFamily="Settings">
 <agent>all</agent>
 <description>This plugin displays, for each tested host, information about the scan itself :
@@ -5449,514 +7670,8 @@ Max checks : 4
 Recv timeout : 5
 Backports : None
 Allow post-scan editing: Yes
-Scan Start Date : 2018/1/19 16:27 +11
-Scan duration : 1833 sec
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="24260" pluginName="HyperText Transfer Protocol (HTTP) Information" pluginFamily="Web Servers">
-<description>This test gives some information about the remote HTTP protocol - the version used, whether HTTP Keep-Alive and HTTP pipelining are enabled, etc... 
-
-This test is informational only and does not denote any security problem.</description>
-<fname>http_info.nasl</fname>
-<plugin_modification_date>2011/05/31</plugin_modification_date>
-<plugin_name>HyperText Transfer Protocol (HTTP) Information</plugin_name>
-<plugin_publication_date>2007/01/30</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.12 $</script_version>
-<solution>n/a</solution>
-<synopsis>Some information about the remote HTTP configuration can be extracted.</synopsis>
-<plugin_output>
-Protocol version : HTTP/1.1
-SSL : yes
-Keep-Alive : no
-Options allowed : OPTIONS, GET, HEAD, POST
-Headers :
-
-  Accept-Ranges: bytes
-  Cache-Control: max-age=604800
-  Content-Type: text/html
-  Date: Fri, 19 Jan 2018 05:49:14 GMT
-  Etag: &quot;359670651&quot;
-  Expires: Fri, 26 Jan 2018 05:49:14 GMT
-  Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT
-  Server: ECS (oxr/83C5)
-  Vary: Accept-Encoding
-  X-Cache: HIT
-  Content-Length: 1270
-  Connection: close
-  
-</plugin_output>
-</ReportItem>
-<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="24260" pluginName="HyperText Transfer Protocol (HTTP) Information" pluginFamily="Web Servers">
-<description>This test gives some information about the remote HTTP protocol - the version used, whether HTTP Keep-Alive and HTTP pipelining are enabled, etc... 
-
-This test is informational only and does not denote any security problem.</description>
-<fname>http_info.nasl</fname>
-<plugin_modification_date>2011/05/31</plugin_modification_date>
-<plugin_name>HyperText Transfer Protocol (HTTP) Information</plugin_name>
-<plugin_publication_date>2007/01/30</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.12 $</script_version>
-<solution>n/a</solution>
-<synopsis>Some information about the remote HTTP configuration can be extracted.</synopsis>
-<plugin_output>
-Protocol version : HTTP/1.1
-SSL : no
-Keep-Alive : no
-Options allowed : OPTIONS, GET, HEAD, POST
-Headers :
-
-  Accept-Ranges: bytes
-  Cache-Control: max-age=604800
-  Content-Type: text/html
-  Date: Fri, 19 Jan 2018 05:49:11 GMT
-  Etag: &quot;359670651&quot;
-  Expires: Fri, 26 Jan 2018 05:49:11 GMT
-  Last-Modified: Fri, 09 Aug 2013 23:54:35 GMT
-  Server: ECS (oxr/837F)
-  Vary: Accept-Encoding
-  X-Cache: HIT
-  Content-Length: 1270
-  Connection: close
-  
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="11040" pluginName="HTTP Reverse Proxy Detection" pluginFamily="Web Servers">
-<cve>CVE-2004-2320</cve>
-<cve>CVE-2005-3398</cve>
-<cve>CVE-2005-3498</cve>
-<cve>CVE-2007-3008</cve>
-<cwe>200</cwe>
-<cwe>79</cwe>
-<description>This web server is reachable through a reverse HTTP proxy.</description>
-<fname>http_trace.nasl</fname>
-<osvdb>877</osvdb>
-<osvdb>3726</osvdb>
-<osvdb>35511</osvdb>
-<osvdb>50485</osvdb>
-<plugin_modification_date>2016/01/07</plugin_modification_date>
-<plugin_name>HTTP Reverse Proxy Detection</plugin_name>
-<plugin_publication_date>2002/07/02</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.29 $</script_version>
-<solution>n/a</solution>
-<synopsis>A transparent or reverse HTTP proxy is running on this port.</synopsis>
-<xref>OSVDB:877</xref>
-<xref>OSVDB:3726</xref>
-<xref>OSVDB:35511</xref>
-<xref>OSVDB:50485</xref>
-<xref>CWE:200</xref>
-<xref>CWE:79</xref>
-<plugin_output>There might be a caching proxy on the way to this web server:
-HIT</plugin_output>
-</ReportItem>
-<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="11040" pluginName="HTTP Reverse Proxy Detection" pluginFamily="Web Servers">
-<cve>CVE-2004-2320</cve>
-<cve>CVE-2005-3398</cve>
-<cve>CVE-2005-3498</cve>
-<cve>CVE-2007-3008</cve>
-<cwe>200</cwe>
-<cwe>79</cwe>
-<description>This web server is reachable through a reverse HTTP proxy.</description>
-<fname>http_trace.nasl</fname>
-<osvdb>877</osvdb>
-<osvdb>3726</osvdb>
-<osvdb>35511</osvdb>
-<osvdb>50485</osvdb>
-<plugin_modification_date>2016/01/07</plugin_modification_date>
-<plugin_name>HTTP Reverse Proxy Detection</plugin_name>
-<plugin_publication_date>2002/07/02</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.29 $</script_version>
-<solution>n/a</solution>
-<synopsis>A transparent or reverse HTTP proxy is running on this port.</synopsis>
-<xref>OSVDB:877</xref>
-<xref>OSVDB:3726</xref>
-<xref>OSVDB:35511</xref>
-<xref>OSVDB:50485</xref>
-<xref>CWE:200</xref>
-<xref>CWE:79</xref>
-<plugin_output>There might be a caching proxy on the way to this web server:
-HIT</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="84502" pluginName="HSTS Missing From HTTPS Server" pluginFamily="Web Servers">
-<description>The remote HTTPS server is not enforcing HTTP Strict Transport Security (HSTS). The lack of HSTS allows downgrade attacks, SSL-stripping man-in-the-middle attacks, and weakens cookie-hijacking protections.</description>
-<fname>hsts_missing_on_https_server.nasl</fname>
-<plugin_modification_date>2015/07/02</plugin_modification_date>
-<plugin_name>HSTS Missing From HTTPS Server</plugin_name>
-<plugin_publication_date>2015/07/02</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.1 $</script_version>
-<see_also>https://tools.ietf.org/html/rfc6797</see_also>
-<solution>Configure the remote web server to use HSTS.</solution>
-<synopsis>The remote web server is not enforcing HSTS.</synopsis>
-<plugin_output>
-  The remote HTTPS server does not send the HTTP
-  &quot;Strict-Transport-Security&quot; header.
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="43111" pluginName="HTTP Methods Allowed (per directory)" pluginFamily="Web Servers">
-<description>By calling the OPTIONS method, it is possible to determine which HTTP methods are allowed on each directory. 
-
-As this list may be incomplete, the plugin also tests - if &apos;Thorough tests&apos; are enabled or &apos;Enable web applications tests&apos; is set to &apos;yes&apos; in the scan policy - various known HTTP methods on each directory and considers them as unsupported if it receives a response code of 400, 403, 405, or 501. 
-
-Note that the plugin output is only informational and does not necessarily indicate the presence of any security vulnerabilities.</description>
-<fname>web_directory_options.nasl</fname>
-<plugin_modification_date>2013/05/09</plugin_modification_date>
-<plugin_name>HTTP Methods Allowed (per directory)</plugin_name>
-<plugin_publication_date>2009/12/10</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.7 $</script_version>
-<solution>n/a</solution>
-<synopsis>This plugin determines which HTTP methods are allowed on various CGI directories.</synopsis>
-<plugin_output>Based on the response to an OPTIONS request :
-
-  - HTTP methods  GET  HEAD  POST OPTIONS are allowed on : 
-
-    /
-
-
-Based on tests of each method : 
-
-  - HTTP methods ACL BASELINE-CONTROL BCOPY BDELETE BMOVE BPROPFIND 
-    BPROPPATCH CHECKIN CHECKOUT CONNECT COPY DEBUG DELETE GET HEAD 
-    LABEL LOCK MERGE MKACTIVITY MKCOL MKWORKSPACE MOVE NOTIFY OPTIONS 
-    ORDERPATCH PATCH POLL POST PROPFIND PROPPATCH PUT REPORT 
-    RPC_IN_DATA RPC_OUT_DATA SEARCH SUBSCRIBE TRACE UNCHECKOUT UNLOCK 
-    UNSUBSCRIBE VERSION-CONTROL X-MS-ENUMATTS are allowed on : 
-
-    /
-
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="10107" pluginName="HTTP Server Type and Version" pluginFamily="Web Servers">
-<description>This plugin attempts to determine the type and the version of the remote web server.</description>
-<fname>http_version.nasl</fname>
-<plugin_modification_date>2016/02/19</plugin_modification_date>
-<plugin_name>HTTP Server Type and Version</plugin_name>
-<plugin_publication_date>2000/01/04</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.123 $</script_version>
-<solution>n/a</solution>
-<synopsis>A web server is running on the remote host.</synopsis>
-<plugin_output>The remote web server type is :
-
-ECS (oxr/83B7)</plugin_output>
-</ReportItem>
-<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="10107" pluginName="HTTP Server Type and Version" pluginFamily="Web Servers">
-<description>This plugin attempts to determine the type and the version of the remote web server.</description>
-<fname>http_version.nasl</fname>
-<plugin_modification_date>2016/02/19</plugin_modification_date>
-<plugin_name>HTTP Server Type and Version</plugin_name>
-<plugin_publication_date>2000/01/04</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.123 $</script_version>
-<solution>n/a</solution>
-<synopsis>A web server is running on the remote host.</synopsis>
-<plugin_output>The remote web server type is :
-
-ECS (oxr/83BD)</plugin_output>
-</ReportItem>
-<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="43111" pluginName="HTTP Methods Allowed (per directory)" pluginFamily="Web Servers">
-<description>By calling the OPTIONS method, it is possible to determine which HTTP methods are allowed on each directory. 
-
-As this list may be incomplete, the plugin also tests - if &apos;Thorough tests&apos; are enabled or &apos;Enable web applications tests&apos; is set to &apos;yes&apos; in the scan policy - various known HTTP methods on each directory and considers them as unsupported if it receives a response code of 400, 403, 405, or 501. 
-
-Note that the plugin output is only informational and does not necessarily indicate the presence of any security vulnerabilities.</description>
-<fname>web_directory_options.nasl</fname>
-<plugin_modification_date>2013/05/09</plugin_modification_date>
-<plugin_name>HTTP Methods Allowed (per directory)</plugin_name>
-<plugin_publication_date>2009/12/10</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.7 $</script_version>
-<solution>n/a</solution>
-<synopsis>This plugin determines which HTTP methods are allowed on various CGI directories.</synopsis>
-<plugin_output>Based on the response to an OPTIONS request :
-
-  - HTTP methods  GET  HEAD  POST OPTIONS are allowed on : 
-
-    /
-
-
-Based on tests of each method : 
-
-  - HTTP methods ACL BASELINE-CONTROL BCOPY BDELETE BMOVE BPROPFIND 
-    BPROPPATCH CHECKIN CHECKOUT CONNECT COPY DEBUG DELETE GET HEAD 
-    LABEL LOCK MERGE MKACTIVITY MKCOL MKWORKSPACE MOVE NOTIFY OPTIONS 
-    ORDERPATCH PATCH POLL POST PROPFIND PROPPATCH PUT REPORT 
-    RPC_IN_DATA RPC_OUT_DATA SEARCH SUBSCRIBE TRACE UNCHECKOUT UNLOCK 
-    UNSUBSCRIBE VERSION-CONTROL X-MS-ENUMATTS are allowed on : 
-
-    /
-
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="49704" pluginName="External URLs" pluginFamily="Web Servers">
-<description>Nessus gathered HREF links to external sites by crawling the remote web server.</description>
-<fname>webmirror_ext_URL.nasl</fname>
-<plugin_modification_date>2011/08/19</plugin_modification_date>
-<plugin_name>External URLs</plugin_name>
-<plugin_publication_date>2010/10/04</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.3 $</script_version>
-<solution>n/a</solution>
-<synopsis>Links to external sites were gathered.</synopsis>
-<plugin_output>
-1 external URL was gathered on this web server : 
-URL...                                  - Seen on...
-
-
-http://www.iana.org/domains/example     - 
-</plugin_output>
-</ReportItem>
-<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="49704" pluginName="External URLs" pluginFamily="Web Servers">
-<description>Nessus gathered HREF links to external sites by crawling the remote web server.</description>
-<fname>webmirror_ext_URL.nasl</fname>
-<plugin_modification_date>2011/08/19</plugin_modification_date>
-<plugin_name>External URLs</plugin_name>
-<plugin_publication_date>2010/10/04</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.3 $</script_version>
-<solution>n/a</solution>
-<synopsis>Links to external sites were gathered.</synopsis>
-<plugin_output>
-1 external URL was gathered on this web server : 
-URL...                                  - Seen on...
-
-
-http://www.iana.org/domains/example     - /
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="91815" pluginName="Web Application Sitemap" pluginFamily="Web Servers">
-<description>The remote web server contains linkable content that can be used to gather information about a target.</description>
-<fname>http_sitemap.nasl</fname>
-<plugin_modification_date>2016/06/24</plugin_modification_date>
-<plugin_name>Web Application Sitemap</plugin_name>
-<plugin_publication_date>2016/06/24</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.1 $</script_version>
-<see_also>http://www.nessus.org/u?5496c8d9</see_also>
-<solution>n/a</solution>
-<synopsis>The remote web server hosts linkable content that can be crawled by Nessus.</synopsis>
-<plugin_output>
-The following sitemap was created from crawling linkable content on the target host :
-
-  - https://example.com/
-
-Attached is a copy of the sitemap file.
-</plugin_output>
-<attachment name="example.com_443_sitemap.xml" type="application/xml">605ce8d917722aa13feb1f913e36738d</attachment>
-</ReportItem>
-<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="91815" pluginName="Web Application Sitemap" pluginFamily="Web Servers">
-<description>The remote web server contains linkable content that can be used to gather information about a target.</description>
-<fname>http_sitemap.nasl</fname>
-<plugin_modification_date>2016/06/24</plugin_modification_date>
-<plugin_name>Web Application Sitemap</plugin_name>
-<plugin_publication_date>2016/06/24</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.1 $</script_version>
-<see_also>http://www.nessus.org/u?5496c8d9</see_also>
-<solution>n/a</solution>
-<synopsis>The remote web server hosts linkable content that can be crawled by Nessus.</synopsis>
-<plugin_output>
-The following sitemap was created from crawling linkable content on the target host :
-
-  - http://example.com/
-
-Attached is a copy of the sitemap file.
-</plugin_output>
-<attachment name="example.com_80_sitemap.xml" type="application/xml">f436355e5f471a55d207425a449746e9</attachment>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="50344" pluginName="Missing or Permissive Content-Security-Policy HTTP Response Header" pluginFamily="CGI abuses">
-<description>The remote web server in some responses sets a permissive Content-Security-Policy (CSP) response header or does not set one at all.
-
-The CSP header has been proposed by the W3C Web Application Security Working Group as a way to mitigate cross-site scripting and clickjacking attacks.</description>
-<fname>http_X_Content_Security_Policy_header.nasl</fname>
-<plugin_modification_date>2016/04/14</plugin_modification_date>
-<plugin_name>Missing or Permissive Content-Security-Policy HTTP Response Header</plugin_name>
-<plugin_publication_date>2010/10/26</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.3 $</script_version>
-<see_also>http://content-security-policy.com/
-https://www.w3.org/TR/CSP2/</see_also>
-<solution>Set a properly configured Content-Security-Policy header for all requested resources.</solution>
-<synopsis>The remote web server does not take steps to mitigate a class of web application vulnerabilities.</synopsis>
-<plugin_output>
-The following pages do not set a Content-Security-Policy response header or set a permissive policy:
-
-  - https://example.com/
-</plugin_output>
-</ReportItem>
-<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="50344" pluginName="Missing or Permissive Content-Security-Policy HTTP Response Header" pluginFamily="CGI abuses">
-<description>The remote web server in some responses sets a permissive Content-Security-Policy (CSP) response header or does not set one at all.
-
-The CSP header has been proposed by the W3C Web Application Security Working Group as a way to mitigate cross-site scripting and clickjacking attacks.</description>
-<fname>http_X_Content_Security_Policy_header.nasl</fname>
-<plugin_modification_date>2016/04/14</plugin_modification_date>
-<plugin_name>Missing or Permissive Content-Security-Policy HTTP Response Header</plugin_name>
-<plugin_publication_date>2010/10/26</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.3 $</script_version>
-<see_also>http://content-security-policy.com/
-https://www.w3.org/TR/CSP2/</see_also>
-<solution>Set a properly configured Content-Security-Policy header for all requested resources.</solution>
-<synopsis>The remote web server does not take steps to mitigate a class of web application vulnerabilities.</synopsis>
-<plugin_output>
-The following pages do not set a Content-Security-Policy response header or set a permissive policy:
-
-  - http://example.com/
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="50345" pluginName="Missing or Permissive X-Frame-Options HTTP Response Header" pluginFamily="CGI abuses">
-<description>The remote web server in some responses sets a permissive X-Frame-Options response header or does not set one at all.
-
-The X-Frame-Options header has been proposed by Microsoft as a way to mitigate clickjacking attacks and is currently supported by all major browser vendors</description>
-<fname>http_X_Frame_Options_header.nasl</fname>
-<plugin_modification_date>2017/05/16</plugin_modification_date>
-<plugin_name>Missing or Permissive X-Frame-Options HTTP Response Header</plugin_name>
-<plugin_publication_date>2010/10/26</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.4 $</script_version>
-<see_also>https://en.wikipedia.org/wiki/Clickjacking
-http://www.nessus.org/u?399b1f56</see_also>
-<solution>Set a properly configured X-Frame-Options header for all requested resources.</solution>
-<synopsis>The remote web server does not take steps to mitigate a class of web application vulnerabilities.</synopsis>
-<plugin_output>
-The following pages do not set a X-Frame-Options response header or set a permissive policy:
-
-  - https://example.com/
-</plugin_output>
-</ReportItem>
-<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="50345" pluginName="Missing or Permissive X-Frame-Options HTTP Response Header" pluginFamily="CGI abuses">
-<description>The remote web server in some responses sets a permissive X-Frame-Options response header or does not set one at all.
-
-The X-Frame-Options header has been proposed by Microsoft as a way to mitigate clickjacking attacks and is currently supported by all major browser vendors</description>
-<fname>http_X_Frame_Options_header.nasl</fname>
-<plugin_modification_date>2017/05/16</plugin_modification_date>
-<plugin_name>Missing or Permissive X-Frame-Options HTTP Response Header</plugin_name>
-<plugin_publication_date>2010/10/26</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.4 $</script_version>
-<see_also>https://en.wikipedia.org/wiki/Clickjacking
-http://www.nessus.org/u?399b1f56</see_also>
-<solution>Set a properly configured X-Frame-Options header for all requested resources.</solution>
-<synopsis>The remote web server does not take steps to mitigate a class of web application vulnerabilities.</synopsis>
-<plugin_output>
-The following pages do not set a X-Frame-Options response header or set a permissive policy:
-
-  - http://example.com/
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="87242" pluginName="TLS NPN Supported Protocol Enumeration" pluginFamily="Misc.">
-<description>The remote host supports the TLS NPN (Transport Layer Security Next Protocol Negotiation) extension. This plugin enumerates the protocols the extension supports.</description>
-<fname>npn_protocol_enumeration.nasl</fname>
-<plugin_modification_date>2015/12/08</plugin_modification_date>
-<plugin_name>TLS NPN Supported Protocol Enumeration</plugin_name>
-<plugin_publication_date>2015/12/08</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>1.2</script_version>
-<see_also>https://tools.ietf.org/id/draft-agl-tls-nextprotoneg-03.html</see_also>
-<solution>n/a</solution>
-<synopsis>The remote host supports the TLS NPN extension.</synopsis>
-<plugin_output>
-NPN Supported Protocols: 
-
-  h2
-  http/1.1
-  http/1.0
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="84821" pluginName="TLS ALPN Supported Protocol Enumeration" pluginFamily="Misc.">
-<description>The remote host supports the TLS ALPN extension. This plugin enumerates the protocols the extension supports.</description>
-<fname>alpn_protocol_enumeration.nasl</fname>
-<plugin_modification_date>2016/02/15</plugin_modification_date>
-<plugin_name>TLS ALPN Supported Protocol Enumeration</plugin_name>
-<plugin_publication_date>2015/07/17</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>1.3</script_version>
-<see_also>https://tools.ietf.org/html/rfc7301</see_also>
-<solution>n/a</solution>
-<synopsis>The remote host supports the TLS ALPN extension.</synopsis>
-<plugin_output>
-ALPN Supported Protocols: 
-
-  http/1.1
-  h2
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="50845" pluginName="OpenSSL Detection" pluginFamily="Service detection">
-<cpe>cpe:/a:openssl:openssl</cpe>
-<description>Based on its response to a TLS request with a specially crafted server name extension, it seems that the remote service is using the OpenSSL library to encrypt traffic.
-
-Note that this plugin can only detect OpenSSL implementations that have enabled support for TLS extensions (RFC 4366).</description>
-<fname>openssl_detect.nasl</fname>
-<plugin_modification_date>2013/10/18</plugin_modification_date>
-<plugin_name>OpenSSL Detection</plugin_name>
-<plugin_publication_date>2010/11/30</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>1.14</script_version>
-<see_also>http://www.openssl.org</see_also>
-<solution>n/a</solution>
-<synopsis>The remote service appears to use OpenSSL to encrypt traffic.</synopsis>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="22964" pluginName="Service Detection" pluginFamily="Service detection">
-<description>Nessus was able to identify the remote service by its banner or by looking at the error message it sends when it receives an HTTP request.</description>
-<fname>find_service.nasl</fname>
-<plugin_modification_date>2017/07/07</plugin_modification_date>
-<plugin_name>Service Detection</plugin_name>
-<plugin_publication_date>2007/08/19</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.159 $</script_version>
-<solution>n/a</solution>
-<synopsis>The remote service could be identified.</synopsis>
-<plugin_output>A web server is running on this port through TLSv1.</plugin_output>
-</ReportItem>
-<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="22964" pluginName="Service Detection" pluginFamily="Service detection">
-<description>Nessus was able to identify the remote service by its banner or by looking at the error message it sends when it receives an HTTP request.</description>
-<fname>find_service.nasl</fname>
-<plugin_modification_date>2017/07/07</plugin_modification_date>
-<plugin_name>Service Detection</plugin_name>
-<plugin_publication_date>2007/08/19</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.159 $</script_version>
-<solution>n/a</solution>
-<synopsis>The remote service could be identified.</synopsis>
-<plugin_output>A web server is running on this port.</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="22964" pluginName="Service Detection" pluginFamily="Service detection">
-<description>Nessus was able to identify the remote service by its banner or by looking at the error message it sends when it receives an HTTP request.</description>
-<fname>find_service.nasl</fname>
-<plugin_modification_date>2017/07/07</plugin_modification_date>
-<plugin_name>Service Detection</plugin_name>
-<plugin_publication_date>2007/08/19</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.159 $</script_version>
-<solution>n/a</solution>
-<synopsis>The remote service could be identified.</synopsis>
-<plugin_output>A TLSv1 server answered on this port.
+Scan Start Date : 2018/1/24 11:18 +11
+Scan duration : 3085 sec
 </plugin_output>
 </ReportItem>
 <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="45590" pluginName="Common Platform Enumeration (CPE)" pluginFamily="General">
@@ -6023,452 +7738,19 @@ Linux Kernel 2.2
 Linux Kernel 2.4
 Linux Kernel 2.6</plugin_output>
 </ReportItem>
-<ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="46180" pluginName="Additional DNS Hostnames" pluginFamily="General">
-<description>Hostnames different from the current hostname have been collected by miscellaneous plugins. Nessus has generated a list of hostnames that point to the remote host. Note that these are only the alternate hostnames for vhosts discovered on a web server.
-
-Different web servers may be hosted on name-based virtual hosts.</description>
-<fname>alternate_hostnames.nasl</fname>
-<plugin_modification_date>2017/04/27</plugin_modification_date>
-<plugin_name>Additional DNS Hostnames</plugin_name>
-<plugin_publication_date>2010/04/29</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>1.12</script_version>
-<see_also>https://en.wikipedia.org/wiki/Virtual_hosting</see_also>
-<solution>If you want to test them, re-scan using the special vhost syntax, such as :
-
-www.example.com[192.0.32.10]</solution>
-<synopsis>Nessus has detected potential virtual hosts.</synopsis>
-<plugin_output>The following hostnames point to the remote host :
-  - www.example.org
-  - www.example.net
-  - www.example.edu
-  - www.example.com
-  - example.edu
-  - example.net
-  - example.org
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="70544" pluginName="SSL Cipher Block Chaining Cipher Suites Supported" pluginFamily="General">
-<description>The remote host supports the use of SSL ciphers that operate in Cipher Block Chaining (CBC) mode.  These cipher suites offer additional security over Electronic Codebook (ECB) mode, but have the potential to leak information if used improperly.</description>
-<fname>ssl_cbc_supported_ciphers.nasl</fname>
-<plugin_modification_date>2013/10/22</plugin_modification_date>
-<plugin_name>SSL Cipher Block Chaining Cipher Suites Supported</plugin_name>
-<plugin_publication_date>2013/10/22</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.1 $</script_version>
-<see_also>http://www.openssl.org/docs/apps/ciphers.html
-http://www.nessus.org/u?cc4a822a
-http://www.openssl.org/~bodo/tls-cbc.txt</see_also>
-<solution>n/a</solution>
-<synopsis>The remote service supports the use of SSL Cipher Block Chaining ciphers, which combine previous blocks with subsequent ones.</synopsis>
-<plugin_output>
-Here is the list of SSL CBC ciphers supported by the remote server :
-
-  High Strength Ciphers (&gt;= 112-bit key)
-
-    TLSv1
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-
-The fields above are :
-
-  {OpenSSL ciphername}
-  Kx={key exchange}
-  Au={authentication}
-  Enc={symmetric encryption method}
-  Mac={message authentication code}
-  {export flag}
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="57041" pluginName="SSL Perfect Forward Secrecy Cipher Suites Supported" pluginFamily="General">
-<description>The remote host supports the use of SSL ciphers that offer Perfect Forward Secrecy (PFS) encryption.  These cipher suites ensure that recorded SSL traffic cannot be broken at a future date if the server&apos;s private key is compromised.</description>
-<fname>ssl_pfs_supported_ciphers.nasl</fname>
-<plugin_modification_date>2017/06/12</plugin_modification_date>
-<plugin_name>SSL Perfect Forward Secrecy Cipher Suites Supported</plugin_name>
-<plugin_publication_date>2011/12/07</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.8 $</script_version>
-<see_also>http://www.openssl.org/docs/apps/ciphers.html
-https://en.wikipedia.org/wiki/Diffie-Hellman_key_exchange
-https://en.wikipedia.org/wiki/Perfect_forward_secrecy</see_also>
-<solution>n/a</solution>
-<synopsis>The remote service supports the use of SSL Perfect Forward Secrecy ciphers, which maintain confidentiality even if the key is stolen.</synopsis>
-<plugin_output>
-Here is the list of SSL PFS ciphers supported by the remote server :
-
-  High Strength Ciphers (&gt;= 112-bit key)
-
-    TLSv1
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256  
-
-The fields above are :
-
-  {OpenSSL ciphername}
-  Kx={key exchange}
-  Au={authentication}
-  Enc={symmetric encryption method}
-  Mac={message authentication code}
-  {export flag}
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="21643" pluginName="SSL Cipher Suites Supported" pluginFamily="General">
-<description>This plugin detects which SSL ciphers are supported by the remote service for encrypting communications.</description>
-<fname>ssl_supported_ciphers.nasl</fname>
-<plugin_modification_date>2017/06/29</plugin_modification_date>
-<plugin_name>SSL Cipher Suites Supported</plugin_name>
-<plugin_publication_date>2006/06/05</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>1.50</script_version>
-<see_also>https://www.openssl.org/docs/man1.1.0/apps/ciphers.html
-http://www.nessus.org/u?3a040ada</see_also>
-<solution>n/a</solution>
-<synopsis>The remote service encrypts communications using SSL.</synopsis>
-<plugin_output>
-Here is the list of SSL ciphers supported by the remote server :
-Each group is reported per SSL Version.
-
-SSL Version : TLSv12
-  High Strength Ciphers (&gt;= 112-bit key)
-      ECDHE-RSA-AES256-SHA384      Kx=ECDH        Au=RSA      Enc=AES-CBC(256)         Mac=SHA384  
-      ECDHE-RSA-AES128-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
-      AES128-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
-      SEED-SHA                     Kx=RSA         Au=RSA      Enc=SEED-CBC(128)        Mac=SHA1   
-      AES256-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
-      CAMELLIA128-SHA              Kx=RSA         Au=RSA      Enc=Camellia-CBC(128)    Mac=SHA1   
-      CAMELLIA256-SHA              Kx=RSA         Au=RSA      Enc=Camellia-CBC(256)    Mac=SHA1   
-      ECDHE-RSA-AES256-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA256
-      ECDHE-RSA-AES128-SHA256      Kx=ECDH        Au=RSA      Enc=AES-GCM(128)         Mac=SHA256  
-      RSA-AES128-SHA256            Kx=RSA         Au=RSA      Enc=AES-GCM(128)         Mac=SHA256  
-      ECDHE-RSA-AES256-SHA384      Kx=ECDH        Au=RSA      Enc=AES-GCM(256)         Mac=SHA384  
-
-
-SSL Version : TLSv11
-  High Strength Ciphers (&gt;= 112-bit key)
-      ECDHE-RSA-AES128-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
-      AES128-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
-      SEED-SHA                     Kx=RSA         Au=RSA      Enc=SEED-CBC(128)        Mac=SHA1   
-      AES256-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
-      CAMELLIA128-SHA              Kx=RSA         Au=RSA      Enc=Camellia-CBC(128)    Mac=SHA1   
-      CAMELLIA256-SHA              Kx=RSA         Au=RSA      Enc=Camellia-CBC(256)    Mac=SHA1   
-      ECDHE-RSA-AES256-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
-
-
-SSL Version : TLSv1
-  High Strength Ciphers (&gt;= 112-bit key)
-      ECDHE-RSA-AES128-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
-      AES128-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(128)         Mac=SHA1   
-      SEED-SHA                     Kx=RSA         Au=RSA      Enc=SEED-CBC(128)        Mac=SHA1   
-      AES256-SHA                   Kx=RSA         Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
-      CAMELLIA128-SHA              Kx=RSA         Au=RSA      Enc=Camellia-CBC(128)    Mac=SHA1   
-      CAMELLIA256-SHA              Kx=RSA         Au=RSA      Enc=Camellia-CBC(256)    Mac=SHA1   
-      ECDHE-RSA-AES256-SHA         Kx=ECDH        Au=RSA      Enc=AES-CBC(256)         Mac=SHA1   
-
-The fields above are :
-
-  {OpenSSL ciphername}
-  Kx={key exchange}
-  Au={authentication}
-  Enc={symmetric encryption method}
-  Mac={message authentication code}
-  {export flag}
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="94761" pluginName="SSL Root Certification Authority Certificate Information" pluginFamily="General">
-<cpe>cpe:/a:ietf:md5
-cpe:/a:ietf:x.509_certificate</cpe>
-<description>The remote service uses an SSL certificate chain that contains a self-signed root Certification Authority certificate at the top of the chain.</description>
-<fname>ssl_root_ca_certificate.nasl</fname>
-<plugin_modification_date>2016/11/14</plugin_modification_date>
-<plugin_name>SSL Root Certification Authority Certificate Information</plugin_name>
-<plugin_publication_date>2016/11/14</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.1 $</script_version>
-<see_also>https://technet.microsoft.com/en-us/library/cc778623</see_also>
-<solution>Ensure that use of this root Certification Authority certificate complies with your organization&apos;s acceptable use and security policies.</solution>
-<synopsis>A root Certification Authority certificate was found at the top of the certificate chain.</synopsis>
-<plugin_output>
-The following root Certification Authority certificate was found :
-
-|-Subject             : C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance EV Root CA
-|-Issuer              : C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance EV Root CA
-|-Valid From          : Nov 10 00:00:00 2006 GMT
-|-Valid To            : Nov 10 00:00:00 2031 GMT
-|-Signature Algorithm : SHA-1 With RSA Encryption
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="95631" pluginName="SSL Certificate Signed Using Weak Hashing Algorithm (Known CA)" pluginFamily="General">
-<bid>11849</bid>
-<bid>33065</bid>
-<cert>836068</cert>
-<cpe>cpe:/a:ietf:md5
-cpe:/a:ietf:x.509_certificate</cpe>
-<cve>CVE-2004-2761</cve>
-<cwe>310</cwe>
-<description>The remote service uses a known CA certificate in the SSL certificate chain that has been signed using a cryptographically weak hashing algorithm (e.g., MD2, MD4, MD5, or SHA1). These signature algorithms are known to be vulnerable to collision attacks. An attacker can exploit this to generate another certificate with the same digital signature, allowing the attacker to masquerade as the affected service.
-
-Note that this plugin reports all SSL certificate chains signed with SHA-1 that expire after January 1, 2017 as vulnerable. This is in accordance with Google&apos;s gradual sunsetting of the SHA-1 cryptographic hash algorithm.</description>
-<fname>ssl_weak_hash_ca.nasl</fname>
-<osvdb>45106</osvdb>
-<osvdb>45108</osvdb>
-<osvdb>45127</osvdb>
-<plugin_modification_date>2016/12/08</plugin_modification_date>
-<plugin_name>SSL Certificate Signed Using Weak Hashing Algorithm (Known CA)</plugin_name>
-<plugin_publication_date>2016/12/08</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.1 $</script_version>
-<see_also>http://tools.ietf.org/html/rfc3279
-http://technet.microsoft.com/en-us/security/advisory/961509</see_also>
-<solution>Contact the Certificate Authority to have the certificate reissued.</solution>
-<synopsis>A known CA SSL certificate in the certificate chain has been signed using a weak hashing algorithm.</synopsis>
-<vuln_publication_date>2004/08/18</vuln_publication_date>
-<xref>OSVDB:45106</xref>
-<xref>OSVDB:45108</xref>
-<xref>OSVDB:45127</xref>
-<xref>CERT:836068</xref>
-<xref>CWE:310</xref>
-<plugin_output>
-The following known CA certificates were part of the certificate
-chain sent by the remote host, but contain hashes that are considered
-to be weak.
-
-|-Subject             : C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance EV Root CA
-|-Signature Algorithm : SHA-1 With RSA Encryption
-|-Valid From          : Nov 10 00:00:00 2006 GMT
-|-Valid To            : Nov 10 00:00:00 2031 GMT
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="62564" pluginName="TLS Next Protocols Supported" pluginFamily="General">
-<description>This script detects which protocols are advertised by the remote service to be encapsulated by TLS connections.
-
-Note that Nessus did not attempt to negotiate TLS sessions with the protocols shown.  The remote service may be falsely advertising these protocols and / or failing to advertise other supported protocols.</description>
-<fname>ssl_supported_protocols.nasl</fname>
-<plugin_modification_date>2017/06/12</plugin_modification_date>
-<plugin_name>TLS Next Protocols Supported</plugin_name>
-<plugin_publication_date>2012/10/16</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>1.3</script_version>
-<see_also>https://tools.ietf.org/html/draft-agl-tls-nextprotoneg-04
-https://technotes.googlecode.com/git/nextprotoneg.html</see_also>
-<solution>n/a</solution>
-<synopsis>The remote service advertises one or more protocols as being supported over TLS.</synopsis>
-<plugin_output>
-The target advertises that the following protocols are
-supported over SSL / TLS :
-
-  h2
-  http/1.0
-  http/1.1
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="10863" pluginName="SSL Certificate Information" pluginFamily="General">
-<description>This plugin connects to every SSL-related port and attempts to extract and dump the X.509 certificate.</description>
-<fname>ssl_ciphers.nasl</fname>
-<plugin_modification_date>2015/12/30</plugin_modification_date>
-<plugin_name>SSL Certificate Information</plugin_name>
-<plugin_publication_date>2008/05/19</plugin_publication_date>
+<ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="12053" pluginName="Host Fully Qualified Domain Name (FQDN) Resolution" pluginFamily="General">
+<description>Nessus was able to resolve the fully qualified domain name (FQDN) of the remote host.</description>
+<fname>fqdn.nasl</fname>
+<plugin_modification_date>2017/04/14</plugin_modification_date>
+<plugin_name>Host Fully Qualified Domain Name (FQDN) Resolution</plugin_name>
+<plugin_publication_date>2004/02/11</plugin_publication_date>
 <plugin_type>remote</plugin_type>
 <risk_factor>None</risk_factor>
 <script_version>$Revision: 1.16 $</script_version>
 <solution>n/a</solution>
-<synopsis>This plugin displays the SSL certificate.</synopsis>
-<plugin_output>Subject Name: 
-
-Country: US
-State/Province: California
-Locality: Los Angeles
-Organization: Internet Corporation for Assigned Names and Numbers
-Organization Unit: Technology
-Common Name: www.example.org
-
-Issuer Name: 
-
-Country: US
-Organization: DigiCert Inc
-Organization Unit: www.digicert.com
-Common Name: DigiCert SHA2 High Assurance Server CA
-
-Serial Number: 0E 64 C5 FB C2 36 AD E1 4B 17 2A EB 41 C7 8C B0 
-
-Version: 3
-
-Signature Algorithm: SHA-256 With RSA Encryption
-
-Not Valid Before: Nov 03 00:00:00 2015 GMT
-Not Valid After: Nov 28 12:00:00 2018 GMT
-
-Public Key Info: 
-
-Algorithm: RSA Encryption
-Key Length: 2048 bits
-Public Key: 00 B3 40 96 2F 61 63 3E 25 C1 97 AD 65 45 FB EF 13 42 B3 2C 
-            99 86 F4 B5 80 0B 76 DC 06 38 2C 1F A3 62 55 5A 36 76 DE AE 
-            5D FC E2 E5 B4 E6 EC 5D CA EE CA DF 50 16 24 2C EE FC 9A B6 
-            8C F6 A8 B3 AC 7A 08 7B 2A 1F AD 5F E7 FA 96 59 25 AB 90 B0 
-            F8 C2 3F 13 04 26 74 68 0F C6 78 2A 95 8A 5F 42 F2 0E ED 52 
-            A6 EB 68 23 89 E5 43 F8 6D 12 1B 62 42 7B A8 05 F3 59 C4 5E 
-            D6 C5 CC 46 C0 4B 19 B9 2D 4A 71 72 24 1E 5E 55 44 93 AB 78 
-            A1 47 4D A5 DC 07 5A 9C 67 F4 11 68 12 2F D3 28 71 BC AD 72 
-            05 3C 16 75 D4 F8 72 58 BA 19 F1 DC 09 ED F1 18 C6 92 2F 7D 
-            BC 16 0B 37 8D 8A EF 1B 6F 4F B9 E0 7A 54 98 BF B5 B6 CF BB 
-            AA 93 7F 0A 7F 1F 56 EB A9 D8 E1 DB D5 39 D8 18 5B D1 F2 64 
-            33 D0 D6 C4 23 FF 09 AB 6D 71 CE DA CF C1 17 9C 23 BE 2C AF 
-            2F 92 1C 3F 90 08 89 58 F2 B1 E1 10 6F 83 2E F7 9F 
-Exponent: 01 00 01 
-
-Signature Length: 256 bytes / 2048 bits
-Signature: 00 84 A8 9A 11 A7 D8 BD 0B 26 7E 52 24 7B B2 55 9D EA 30 89 
-           51 08 87 6F A9 ED 10 EA 5B 3E 0B C7 2D 47 04 4E DD 45 37 C7 
-           CA BC 38 7F B6 6A 1C 65 42 6A 73 74 2E 5A 97 85 D0 CC 92 E2 
-           2E 38 89 D9 0D 69 FA 1B 9B F0 C1 62 32 65 4F 3D 98 DB DA D6 
-           66 DA 2A 56 56 E3 11 33 EC E0 A5 15 4C EA 75 49 F4 5D EF 15 
-           F5 12 1C E6 F8 FC 9B 04 21 4B CF 63 E7 7C FC AA DC FA 43 D0 
-           C0 BB F2 89 EA 91 6D CB 85 8E 6A 9F C8 F9 94 BF 55 3D 42 82 
-           38 4D 08 A4 A7 0E D3 65 4D 33 61 90 0D 3F 80 BF 82 3E 11 CB 
-           8F 3F CE 79 94 69 1B F2 DA 4B C8 97 B8 11 43 6D 6A 25 32 B9 
-           B2 EA 22 62 86 0D A3 72 7D 4F EA 57 3C 65 3B 2F 27 73 FC 7C 
-           16 FB 0D 03 A4 0A ED 01 AB A4 23 C6 8D 5F 8A 21 15 42 92 C0 
-           34 A2 20 85 88 58 98 89 19 B1 1E 20 ED 13 20 5C 04 55 64 CE 
-           9D B3 65 FD F6 8F 5E 99 39 21 15 E2 71 AA 6A 88 82 
-
-Extension: Authority Key Identifier (2.5.29.35)
-Critical: 0
-Key Identifier: 51 68 FF 90 AF 02 07 75 3C CC D9 65 64 62 A2 12 B8 59 72 3B 
-
-
-Extension: Subject Key Identifier (2.5.29.14)
-Critical: 0
-Subject Key Identifier: A6 4F 60 1E 1F 2D D1 E7 F1 23 A0 2A 95 16 E4 E8 9A EA 6E 48 
-
-
-Extension: Subject Alternative Name (2.5.29.17)
-Critical: 0
-DNS: www.example.org
-DNS: example.com
-DNS: example.edu
-DNS: example.net
-DNS: example.org
-DNS: www.example.com
-DNS: www.example.edu
-DNS: www.example.net
-
-
-Extension: Key Usage (2.5.29.15)
-Critical: 1
-Key Usage: Digital Signature, Key Encipherment
-
-
-Extension: Extended Key Usage (2.5.29.37)
-Critical: 0
-Purpose#1: Web Server Authentication (1.3.6.1.5.5.7.3.1)
-Purpose#2: Web Client Authentication (1.3.6.1.5.5.7.3.2)
-
-
-Extension: CRL Distribution Points (2.5.29.31)
-Critical: 0
-URI: http://crl3.digicert.com/sha2-ha-server-g4.crl
-URI: http://crl4.digicert.com/sha2-ha-server-g4.crl
-
-
-Extension: Policies (2.5.29.32)
-Critical: 0
-Policy ID #1: 2.16.840.1.114412.1.1
-Qualifier ID #1: Certification Practice Statement (1.3.6.1.5.5.7.2.1)
-CPS URI: https://www.digicert.com/CPS
-Policy ID #2: 2.23.140.1.2.2
-
-
-Extension: Authority Information Access (1.3.6.1.5.5.7.1.1)
-Critical: 0
-Method#1: Online Certificate Status Protocol
-URI: http://ocsp.digicert.com
-Method#2: Certificate Authority Issuers
-URI: http://cacerts.digicert.com/DigiCertSHA2HighAssuranceServerCA.crt
-
-
-Extension: Basic Constraints (2.5.29.19)
-Critical: 1
-
-
-Fingerprints : 
-
-SHA-256 Fingerprint: 64 2D E5 4D 84 C3 04 94 15 7F 53 F6 57 BF 9F 89 B4 EA 6C 8B 
-                     16 35 1F D7 EC 25 8D 55 6F 82 10 40 
-SHA-1 Fingerprint: 25 09 FB 22 F7 67 1A EA 2D 0A 28 AE 80 51 6F 39 0D E0 CA 21 
-MD5 Fingerprint: 68 42 3D 55 EA 27 D0 B4 FD A1 87 8F CA B7 A1 EB 
-
-</plugin_output>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="56984" pluginName="SSL / TLS Versions Supported" pluginFamily="General">
-<description>This plugin detects which SSL and TLS versions are supported by the remote service for encrypting communications.</description>
-<fname>ssl_supported_versions.nasl</fname>
-<plugin_modification_date>2017/06/15</plugin_modification_date>
-<plugin_name>SSL / TLS Versions Supported</plugin_name>
-<plugin_publication_date>2011/12/01</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>1.20</script_version>
-<solution>n/a</solution>
-<synopsis>The remote service encrypts communications.</synopsis>
+<synopsis>It was possible to resolve the name of the remote host.</synopsis>
 <plugin_output>
-This port supports TLSv1.0/TLSv1.1/TLSv1.2.
-</plugin_output>
-</ReportItem>
-<ReportItem port="0" svc_name="general" protocol="udp" severity="0" pluginID="10287" pluginName="Traceroute Information" pluginFamily="General">
-<description>Makes a traceroute to the remote host.</description>
-<fname>traceroute.nasl</fname>
-<plugin_modification_date>2013/04/11</plugin_modification_date>
-<plugin_name>Traceroute Information</plugin_name>
-<plugin_publication_date>1999/11/27</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>1.62</script_version>
-<solution>n/a</solution>
-<synopsis>It was possible to obtain traceroute information.</synopsis>
-<plugin_output>For your information, here is the traceroute from 10.142.120.140 to 93.184.216.34 : 
-10.142.120.140
-10.142.120.251
-103.36.6.66
-103.36.4.32
-121.200.226.193
-150.207.242.17
-49.255.202.65
-114.31.196.50
-114.31.192.114
-49.255.255.10
-49.255.255.1
-49.255.255.9
-?
-152.195.77.133
-93.184.216.34
+216.58.203.116 resolves as syd09s15-in-f20.1e100.net.
 </plugin_output>
 </ReportItem>
 <ReportItem port="0" svc_name="general" protocol="tcp" severity="0" pluginID="25220" pluginName="TCP/IP Timestamps Supported" pluginFamily="General">
@@ -6483,36 +7765,6 @@ This port supports TLSv1.0/TLSv1.1/TLSv1.2.
 <see_also>http://www.ietf.org/rfc/rfc1323.txt</see_also>
 <solution>n/a</solution>
 <synopsis>The remote service implements TCP timestamps.</synopsis>
-</ReportItem>
-<ReportItem port="443" svc_name="www" protocol="tcp" severity="0" pluginID="11219" pluginName="Nessus SYN scanner" pluginFamily="Port scanners">
-<description>This plugin is a SYN &apos;half-open&apos; port scanner.  It shall be reasonably quick even against a firewalled target. 
-
-Note that SYN scans are less intrusive than TCP (full connect) scans against broken services, but they might cause problems for less robust firewalls and also leave unclosed connections on the remote target, if the network is loaded.</description>
-<fname>nessus_syn_scanner.nbin</fname>
-<plugin_modification_date>2017/05/22</plugin_modification_date>
-<plugin_name>Nessus SYN scanner</plugin_name>
-<plugin_publication_date>2009/02/04</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.24 $</script_version>
-<solution>Protect your target with an IP filter.</solution>
-<synopsis>It is possible to determine which TCP ports are open.</synopsis>
-<plugin_output>Port 443/tcp was found to be open</plugin_output>
-</ReportItem>
-<ReportItem port="80" svc_name="www" protocol="tcp" severity="0" pluginID="11219" pluginName="Nessus SYN scanner" pluginFamily="Port scanners">
-<description>This plugin is a SYN &apos;half-open&apos; port scanner.  It shall be reasonably quick even against a firewalled target. 
-
-Note that SYN scans are less intrusive than TCP (full connect) scans against broken services, but they might cause problems for less robust firewalls and also leave unclosed connections on the remote target, if the network is loaded.</description>
-<fname>nessus_syn_scanner.nbin</fname>
-<plugin_modification_date>2017/05/22</plugin_modification_date>
-<plugin_name>Nessus SYN scanner</plugin_name>
-<plugin_publication_date>2009/02/04</plugin_publication_date>
-<plugin_type>remote</plugin_type>
-<risk_factor>None</risk_factor>
-<script_version>$Revision: 1.24 $</script_version>
-<solution>Protect your target with an IP filter.</solution>
-<synopsis>It is possible to determine which TCP ports are open.</synopsis>
-<plugin_output>Port 80/tcp was found to be open</plugin_output>
 </ReportItem>
 </ReportHost>
 </Report>
